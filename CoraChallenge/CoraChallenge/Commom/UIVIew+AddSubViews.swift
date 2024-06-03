@@ -8,4 +8,8 @@ public extension UIView {
         }
     }
     
+    func addSubviews(_ views: UIView...) {
+        addSubviews(views)
+    }
+    
 }
