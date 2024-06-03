@@ -9,32 +9,41 @@ import UIKit
 
 final class CoraButton: UIButton {
     
-    enum FontName{}
+    struct Style {
+        let font: UIFont?
+        let backgroundColor: UIColor
+        let tintColor: UIColor
+    }
     
     enum Metrics {
         static var cornerRadius: CGFloat = 16
         static var defaultFontSize: CGFloat = 14
+        static var largeFontSize: CGFloat = 16
     }
 
-    override init(frame: CGRect = .zero) {
+    init(frame: CGRect = .zero, style: Style = .default) {
         super.init(frame: frame)
-        clipsToBounds = true
-        layer.cornerRadius = Metrics.cornerRadius
-        titleLabel?.font = UIFont(
-            name: "Avenir",
-            size: Metrics.defaultFontSize
-        )
+        setup(with: style)
+        additionalSettings()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("This view is not intended for Interface Builder.")
     }
     
-    public func setFontSize(_ size: CGFloat) {
-        titleLabel?.font = UIFont(
-            name: "Avenir",
-            size: size
+    private func setup(with style: Style) {
+        titleLabel?.font = style.font
+        setTitleColor(
+            style.tintColor,
+            for: .normal
         )
+        imageView?.tintColor = style.tintColor
+        backgroundColor = style.backgroundColor
+    }
+    
+    private func additionalSettings() {
+        clipsToBounds = true
+        layer.cornerRadius = Metrics.cornerRadius
     }
     
 }
