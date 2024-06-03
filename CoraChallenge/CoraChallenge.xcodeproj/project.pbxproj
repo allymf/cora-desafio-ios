@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
-		3F3D72F42C0D56B700448F19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F32C0D56B700448F19 /* ViewController.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
 		3F3D72FC2C0D56B800448F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72FA2C0D56B800448F19 /* LaunchScreen.storyboard */; };
 		3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */; };
 		3F3D73112C0D56B900448F19 /* CoraChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73102C0D56B900448F19 /* CoraChallengeUITests.swift */; };
 		3F3D73132C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */; };
+		3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E2E2C0E04F200364913 /* WelcomeViewController.swift */; };
+		3F4A2E322C0E051700364913 /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E312C0E051700364913 /* WelcomeInteractor.swift */; };
+		3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E332C0E052200364913 /* WelcomePresenter.swift */; };
+		3F4A2E362C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E352C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift */; };
+		3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E372C0E076400364913 /* WelcomeSceneFactory.swift */; };
+		3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E392C0E08FE00364913 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +43,6 @@
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3F3D72F32C0D56B700448F19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F3D72F82C0D56B800448F19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F3D72FB2C0D56B800448F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F3D72FD2C0D56B800448F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		3F3D730C2C0D56B900448F19 /* CoraChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D73102C0D56B900448F19 /* CoraChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITests.swift; sourceTree = "<group>"; };
 		3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F4A2E2E2C0E04F200364913 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		3F4A2E312C0E051700364913 /* WelcomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		3F4A2E332C0E052200364913 /* WelcomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		3F4A2E352C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		3F4A2E372C0E076400364913 /* WelcomeSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSceneFactory.swift; sourceTree = "<group>"; };
+		3F4A2E392C0E08FE00364913 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +107,9 @@
 		3F3D72EE2C0D56B700448F19 /* CoraChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				3F4A2E2D2C0E03C500364913 /* Scenes */,
 				3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */,
 				3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */,
-				3F3D72F32C0D56B700448F19 /* ViewController.swift */,
 				3F3D72F82C0D56B800448F19 /* Assets.xcassets */,
 				3F3D72FA2C0D56B800448F19 /* LaunchScreen.storyboard */,
 				3F3D72FD2C0D56B800448F19 /* Info.plist */,
@@ -122,6 +132,27 @@
 				3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */,
 			);
 			path = CoraChallengeUITests;
+			sourceTree = "<group>";
+		};
+		3F4A2E2D2C0E03C500364913 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A2E302C0E050000364913 /* Welcome */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		3F4A2E302C0E050000364913 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A2E2E2C0E04F200364913 /* WelcomeViewController.swift */,
+				3F4A2E352C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift */,
+				3F4A2E392C0E08FE00364913 /* WelcomeView.swift */,
+				3F4A2E312C0E051700364913 /* WelcomeInteractor.swift */,
+				3F4A2E332C0E052200364913 /* WelcomePresenter.swift */,
+				3F4A2E372C0E076400364913 /* WelcomeSceneFactory.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F3D72F42C0D56B700448F19 /* ViewController.swift in Sources */,
+				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
+				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
+				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
+				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
 				3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */,
+				3F4A2E362C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift in Sources */,
+				3F4A2E322C0E051700364913 /* WelcomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
