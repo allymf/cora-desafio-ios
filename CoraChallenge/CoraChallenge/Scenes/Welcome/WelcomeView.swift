@@ -47,7 +47,7 @@ final class WelcomeView: UIView {
         let imageView = UIImageView(image: UIImage(named: "coraLogo"))
         
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
