@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F140A0F2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F140A0E2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift */; };
 		3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */; };
 		3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F140A0E2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+SugarSyntax.swift"; path = "../../../../../../NSLayoutConstraint+SugarSyntax.swift"; sourceTree = "<group>"; };
 		3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoraButton+Styles.swift"; sourceTree = "<group>"; };
 		3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F140A0D2C0E87AD0044374C /* UIKit+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A2E3C2C0E0BF100364913 /* UIVIew+AddSubViews.swift */,
+				3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */,
+				3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */,
+				3F140A0E2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift */,
+			);
+			path = "UIKit+Extensions";
+			sourceTree = "<group>";
+		};
 		3F3D72E32C0D56B700448F19 = {
 			isa = PBXGroup;
 			children = (
@@ -176,10 +189,8 @@
 		3F4A2E3B2C0E0BDD00364913 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				3F140A0D2C0E87AD0044374C /* UIKit+Extensions */,
 				3F4A2E462C0E0FD800364913 /* Identifiable */,
-				3F4A2E3C2C0E0BF100364913 /* UIVIew+AddSubViews.swift */,
-				3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */,
-				3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -337,6 +348,7 @@
 				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
 				3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */,
 				3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */,
+				3F140A0F2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,

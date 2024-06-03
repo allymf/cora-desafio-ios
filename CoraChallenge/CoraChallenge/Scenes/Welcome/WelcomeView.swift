@@ -169,7 +169,7 @@ extension WelcomeView {
     }
     
     private func constrainButtonStackView() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
             buttonStackView.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
                 constant: Metrics.ButtonStackView.margin
@@ -178,24 +178,24 @@ extension WelcomeView {
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -Metrics.ButtonStackView.margin
             ),
-            buttonStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metrics.ButtonStackView.margin),
-        ])
+            buttonStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metrics.ButtonStackView.margin)
+        )
     }
     
     private func constrainSignUpButton() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
                 signUpButton.heightAnchor.constraint(equalToConstant: Metrics.SignUpButton.height)
-        ])
+        )
     }
     
     private func constrainLoginButton() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
                 loginButton.heightAnchor.constraint(equalToConstant: Metrics.LoginButton.height)
-        ])
+        )
     }
     
     private func constrainLabelStackView() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
             labelsStackView.topAnchor.constraint(
                 equalTo: personImageView.bottomAnchor,
                 constant: Metrics.LabelsStackView.margin
@@ -208,11 +208,11 @@ extension WelcomeView {
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -Metrics.LabelsStackView.margin
             )
-        ])
+        )
     }
     
     private func constrainLogoImageView() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
             logoImageView.topAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.topAnchor,
                 constant: Metrics.LogoImageView.margin
@@ -223,16 +223,16 @@ extension WelcomeView {
             ),
             logoImageView.widthAnchor.constraint(equalToConstant: Metrics.LogoImageView.width),
             logoImageView.heightAnchor.constraint(equalToConstant: Metrics.LogoImageView.height)
-        ])
+        )
     }
     
     private func constrainPersonImageView() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate(
             personImageView.topAnchor.constraint(equalTo: topAnchor),
             personImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             personImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             personImageView.heightAnchor.constraint(equalToConstant: Metrics.PersonImageView.height)
-        ])
+        )
     }
     
 }
