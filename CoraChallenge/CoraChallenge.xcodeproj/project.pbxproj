@@ -20,6 +20,10 @@
 		3F4A2E362C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E352C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift */; };
 		3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E372C0E076400364913 /* WelcomeSceneFactory.swift */; };
 		3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E392C0E08FE00364913 /* WelcomeView.swift */; };
+		3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E3C2C0E0BF100364913 /* UIVIew+AddSubViews.swift */; };
+		3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E3E2C0E0C8100364913 /* Identifiable.swift */; };
+		3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */; };
+		3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		3F4A2E352C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F4A2E372C0E076400364913 /* WelcomeSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSceneFactory.swift; sourceTree = "<group>"; };
 		3F4A2E392C0E08FE00364913 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		3F4A2E3C2C0E0BF100364913 /* UIVIew+AddSubViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+AddSubViews.swift"; sourceTree = "<group>"; };
+		3F4A2E3E2C0E0C8100364913 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuser.swift"; sourceTree = "<group>"; };
+		3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuser.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		3F3D72EE2C0D56B700448F19 /* CoraChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				3F4A2E3B2C0E0BDD00364913 /* Commom */,
 				3F4A2E2D2C0E03C500364913 /* Scenes */,
 				3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */,
 				3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */,
@@ -153,6 +162,25 @@
 				3F4A2E372C0E076400364913 /* WelcomeSceneFactory.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		3F4A2E3B2C0E0BDD00364913 /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A2E462C0E0FD800364913 /* Identifiable */,
+				3F4A2E3C2C0E0BF100364913 /* UIVIew+AddSubViews.swift */,
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		3F4A2E462C0E0FD800364913 /* Identifiable */ = {
+			isa = PBXGroup;
+			children = (
+				3F4A2E3E2C0E0C8100364913 /* Identifiable.swift */,
+				3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */,
+				3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */,
+			);
+			path = Identifiable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,8 +313,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */,
 				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
+				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
+				3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */,
+				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
