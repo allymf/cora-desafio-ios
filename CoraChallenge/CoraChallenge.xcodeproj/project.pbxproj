@@ -27,6 +27,7 @@
 		3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */; };
 		3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */; };
 		3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E482C0E12BE00364913 /* CoraButton.swift */; };
+		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuser.swift"; sourceTree = "<group>"; };
 		3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuser.swift"; sourceTree = "<group>"; };
 		3F4A2E482C0E12BE00364913 /* CoraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraButton.swift; sourceTree = "<group>"; };
+		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				3F4A2E462C0E0FD800364913 /* Identifiable */,
 				3F4A2E3C2C0E0BF100364913 /* UIVIew+AddSubViews.swift */,
 				3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */,
+				3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */,
 				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
 				3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */,
+				3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */,
 				3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
