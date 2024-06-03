@@ -1,8 +1,19 @@
-//
-//  CoraButton+Styles.swift
-//  CoraChallenge
-//
-//  Created by Alysson Moreira on 03/06/24.
-//
-
-import Foundation
+extension CoraButton.Style {
+    static var `default` = CoraButton.Style(
+        font: .init(
+            name: "AvenirNext-Bold",
+            size: CoraButton.Metrics.defaultFontSize
+        ),
+        backgroundColor: .mainPink,
+        tintColor: .white
+    )
+    
+    static var largeButton = CoraButton.Style(
+        font: .init(
+            name: "AvenirNext-Bold",
+            size: CoraButton.Metrics.largeFontSize
+        ),
+        backgroundColor: .white,
+        tintColor: .mainPink
+    )
+}
