@@ -29,6 +29,7 @@
 		3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */; };
 		3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E482C0E12BE00364913 /* CoraButton.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
+		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuser.swift"; sourceTree = "<group>"; };
 		3F4A2E482C0E12BE00364913 /* CoraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraButton.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
+		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				3F3D72F82C0D56B800448F19 /* Assets.xcassets */,
 				3F3D72FA2C0D56B800448F19 /* LaunchScreen.storyboard */,
 				3F3D72FD2C0D56B800448F19 /* Info.plist */,
+				3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */,
 			);
 			path = CoraChallenge;
 			sourceTree = "<group>";
@@ -295,11 +298,11 @@
 			};
 			buildConfigurationList = 3F3D72E72C0D56B700448F19 /* Build configuration list for PBXProject "CoraChallenge" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 3F3D72E32C0D56B700448F19;
 			productRefGroup = 3F3D72ED2C0D56B700448F19 /* Products */;
@@ -320,6 +323,7 @@
 			files = (
 				3F3D72FC2C0D56B800448F19 /* LaunchScreen.storyboard in Resources */,
 				3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */,
+				3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,48 @@
+{
+  "sourceLanguage" : "pt-BR",
+  "strings" : {
+    "WelcomeScene.Login.Title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Já sou cliente"
+          }
+        }
+      }
+    },
+    "WelcomeScene.Rationale" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
+          }
+        }
+      }
+    },
+    "WelcomeScene.SignUp.Title" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quero fazer parte!"
+          }
+        }
+      }
+    },
+    "WelcomeScene.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conta Digital PJ Poderosamente simples"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

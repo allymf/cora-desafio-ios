@@ -34,6 +34,7 @@ final class WelcomeView: UIView {
         }
         
         enum SignUpButton {
+            static var fontSize: CGFloat = 16
             static var height: CGFloat = 64
         }
         
@@ -79,7 +80,7 @@ final class WelcomeView: UIView {
     private lazy var titleLabel = {
         let label = UILabel()
         
-        label.text = "Conta Digital PJ Poderosamente simples"
+        label.text = String(localized: "WelcomeScene.Title")
         label.textAlignment = .left
         label.font = .avenir(size: Metrics.TitleLabel.fontSize)
         label.textColor = .white
@@ -92,7 +93,7 @@ final class WelcomeView: UIView {
     private lazy var rationaleLabel = {
         let label = UILabel()
         
-        label.text = "Sua empresa livre burocracias e de taxas para gerar boletos, fazer transferências e pagamentos."
+        label.text = String(localized: "WelcomeScene.Rationale")
         label.textAlignment = .left
         label.textColor = .white
         label.font = .avenir(size: Metrics.RationaleLabel.fontSize)
@@ -117,16 +118,38 @@ final class WelcomeView: UIView {
     }()
     
     private lazy var signUpButton = {
-        let button = CoraButton(style: .largeButton)
-        button.setTitle("SignUp", for: .normal)
-        button.setImage(UIImage(systemName: "arrow.forward"), for: .normal)
+        let button = CoraButton()
+        
+        var configuration = UIButton.Configuration.filled()
+        
+        var container = AttributeContainer()
+        container.font = .avenir(size: Metrics.SignUpButton.fontSize)
+        
+        let attributedTitle = AttributedString.init(
+            String(localized: "WelcomeScene.SignUp.Title"),
+            attributes: container
+        )
+        
+        configuration.attributedTitle = attributedTitle
+        configuration.image = UIImage(named: "arrowRight")
+        configuration.imagePlacement = .trailing
+        configuration.imagePadding = 150
+        configuration.baseForegroundColor = .mainPink
+        configuration.baseBackgroundColor = .white
+        
+        button.configuration = configuration
+        
         button.translatesAutoresizingMaskIntoConstraints = false
+        
         return button
     }()
     
     private lazy var loginButton = {
         let button = CoraButton(style: .default)
-        button.setTitle("Login", for: .normal)
+        button.setTitle(
+            String(localized: "WelcomeScene.Login.Title"),
+            for: .normal
+        )
         
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
