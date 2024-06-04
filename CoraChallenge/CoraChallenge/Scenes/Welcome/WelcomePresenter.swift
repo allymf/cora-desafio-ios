@@ -1,13 +1,15 @@
 import Foundation
 
-public protocol WelcomePresentationLogic {}
+public protocol WelcomePresentationLogic {
+    func presentLogin()
+}
 
 final class WelcomePresenter: WelcomePresentationLogic {
     
-    private(set) weak var displayer: WelcomeDisplayLogic?
+    weak var displayer: WelcomeDisplayLogic?
     
-    init(displayer: WelcomeDisplayLogic) {
-        self.displayer = displayer
+    func presentLogin() {
+        displayer?.displayLogin()
     }
     
 }

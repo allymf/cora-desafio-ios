@@ -1,5 +1,11 @@
 import Foundation
 
-public protocol WelcomeDisplayLogic: AnyObject {}
+public protocol WelcomeDisplayLogic: AnyObject {
+    func displayLogin()
+}
 
-extension WelcomeViewController: WelcomeDisplayLogic {}
+extension WelcomeViewController: WelcomeDisplayLogic {
+    func displayLogin() {
+        router.routeToLogin()
+    }
+}
