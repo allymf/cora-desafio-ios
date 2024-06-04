@@ -1,6 +1,6 @@
 import UIKit
 
-final class WelcomeView: UIView {
+final class WelcomeView: CodedView {
     
     // MARK: - Metrics
     enum Metrics {
@@ -155,26 +155,9 @@ final class WelcomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    // MARK: - Initialization
-    override init(frame: CGRect = .zero) {
-        super.init(frame: frame)
-        backgroundColor = .mainPink
-        
-        addSubViews()
-        constrainSubviews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
 
-// MARK: - Layout
-extension WelcomeView {
-    
-    func addSubViews() {
+    // MARK: - Layout
+    override func addSubviews() {
         addSubviews(
             personImageView,
             logoImageView,
@@ -183,13 +166,17 @@ extension WelcomeView {
         )
     }
     
-    func constrainSubviews() {
+    override func constrainSubviews() {
         constrainButtonStackView()
         constrainSignUpButton()
         constrainLoginButton()
         constrainLabelStackView()
         constrainLogoImageView()
         constrainPersonImageView()
+    }
+    
+    override func configureAdditionalSettings() {
+        backgroundColor = .mainPink
     }
     
     private func constrainButtonStackView() {
