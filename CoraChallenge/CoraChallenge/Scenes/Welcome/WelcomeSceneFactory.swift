@@ -2,12 +2,14 @@ import Foundation
 
 public struct WelcomeSceneFactory {
     static func makeScene() -> WelcomeViewController {
-        let viewController = WelcomeViewController()
-        
-        let presenter = WelcomePresenter(displayer: viewController)
+        let presenter = WelcomePresenter()
         let interactor = WelcomeInteractor(presenter: presenter)
+        let router = WelcomeRouter()
         
-        viewController.interactor = interactor
+        let viewController = WelcomeViewController(interactor: interactor, router: router)
+        
+        presenter.displayer = viewController
+        router.viewController = viewController
         
         return viewController
     }

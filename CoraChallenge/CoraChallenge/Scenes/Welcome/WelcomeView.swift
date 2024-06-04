@@ -1,6 +1,14 @@
 import UIKit
 
-final class WelcomeView: CodedView {
+protocol WelcomeSceneActions {
+    var didTapLoginButton: () -> Void { get }
+}
+
+protocol WelcomeViewProtocol: ViewInitializer {
+    var actions: WelcomeSceneActions? { get set }
+}
+
+final class WelcomeView: CodedView, WelcomeViewProtocol {
     
     // MARK: - Metrics
     enum Metrics {
@@ -43,6 +51,9 @@ final class WelcomeView: CodedView {
             static var height: CGFloat = 48
         }
     }
+    
+    // MARK: - Properties
+    var actions: WelcomeSceneActions?
 
     // MARK: - Subviews
     private let logoImageView = {
@@ -151,8 +162,14 @@ final class WelcomeView: CodedView {
             String(localized: "WelcomeScene.Login.Title"),
             for: .normal
         )
-        
         button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addTarget(
+            self,
+            action: #selector(didTapLoginButton),
+            for: .touchUpInside
+        )
+        
         return button
     }()
 
@@ -247,6 +264,12 @@ final class WelcomeView: CodedView {
             personImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             personImageView.heightAnchor.constraint(equalToConstant: Metrics.PersonImageView.height)
         )
+    }
+    
+    // MARK: - Actions
+    @objc
+    func didTapLoginButton () {
+        actions?.didTapLoginButton()
     }
     
 }

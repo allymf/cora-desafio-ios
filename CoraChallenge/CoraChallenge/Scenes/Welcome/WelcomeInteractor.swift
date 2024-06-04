@@ -1,6 +1,8 @@
 import Foundation
 
-public protocol WelcomeBusinessLogic {}
+public protocol WelcomeBusinessLogic {
+    func didTapLogin()
+}
 public protocol WelcomeDataStore {}
 
 final class WelcomeInteractor: WelcomeBusinessLogic, WelcomeDataStore {
@@ -9,6 +11,10 @@ final class WelcomeInteractor: WelcomeBusinessLogic, WelcomeDataStore {
     
     init(presenter: WelcomePresentationLogic) {
         self.presenter = presenter
+    }
+    
+    func didTapLogin() {
+        presenter.presentLogin()
     }
     
 }
