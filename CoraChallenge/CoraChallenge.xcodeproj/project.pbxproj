@@ -28,6 +28,13 @@
 		3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */; };
 		3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */; };
 		3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E482C0E12BE00364913 /* CoraButton.swift */; };
+		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
+		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
+		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
+		3F57CABF2C0F7FEB001E0B76 /* LoginCPFInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABE2C0F7FEB001E0B76 /* LoginCPFInteractor.swift */; };
+		3F57CAC12C0F8019001E0B76 /* LoginCPFPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */; };
+		3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */; };
+		3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
 		3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF979FF2C0E956A0044D1D5 /* CodedView.swift */; };
@@ -81,6 +88,13 @@
 		3F4A2E422C0E0DA600364913 /* UICollectionView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuser.swift"; sourceTree = "<group>"; };
 		3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuser.swift"; sourceTree = "<group>"; };
 		3F4A2E482C0E12BE00364913 /* CoraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraButton.swift; sourceTree = "<group>"; };
+		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
+		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
+		3F57CABE2C0F7FEB001E0B76 /* LoginCPFInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFInteractor.swift; sourceTree = "<group>"; };
+		3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFPresenter.swift; sourceTree = "<group>"; };
+		3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFRouter.swift; sourceTree = "<group>"; };
+		3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFSceneFactory.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3FF979FF2C0E956A0044D1D5 /* CodedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedView.swift; sourceTree = "<group>"; };
@@ -184,6 +198,7 @@
 		3F4A2E2D2C0E03C500364913 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3F57CAB62C0F7F02001E0B76 /* Login */,
 				3F4A2E302C0E050000364913 /* Welcome */,
 			);
 			path = Scenes;
@@ -232,6 +247,28 @@
 				3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3F57CAB62C0F7F02001E0B76 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3F57CAB72C0F7F16001E0B76 /* LoginCPF */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3F57CAB72C0F7F16001E0B76 /* LoginCPF */ = {
+			isa = PBXGroup;
+			children = (
+				3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */,
+				3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */,
+				3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */,
+				3F57CABE2C0F7FEB001E0B76 /* LoginCPFInteractor.swift */,
+				3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */,
+				3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */,
+				3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */,
+			);
+			path = LoginCPF;
 			sourceTree = "<group>";
 		};
 		3FF97A072C0EA7430044D1D5 /* Scenes */ = {
@@ -376,22 +413,29 @@
 			files = (
 				3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */,
 				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
+				3F57CAC12C0F8019001E0B76 /* LoginCPFPresenter.swift in Sources */,
 				3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */,
 				3FF97A042C0EA2100044D1D5 /* WelcomeRouter.swift in Sources */,
+				3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */,
 				3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */,
 				3F140A0F2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */,
+				3F57CABF2C0F7FEB001E0B76 /* LoginCPFInteractor.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
 				3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */,
+				3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */,
 				3FF97A022C0E9E5F0044D1D5 /* WelcomeModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
+				3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */,
 				3FF97A062C0EA4810044D1D5 /* ViewInitializer.swift in Sources */,
+				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
+				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
 				3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */,
 				3F4A2E362C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift in Sources */,
 				3F4A2E322C0E051700364913 /* WelcomeInteractor.swift in Sources */,
