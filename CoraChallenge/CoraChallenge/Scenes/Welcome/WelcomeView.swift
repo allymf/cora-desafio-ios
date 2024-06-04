@@ -30,6 +30,7 @@ final class WelcomeView: UIView {
         enum ButtonStackView {
             static var spacing: CGFloat = 16
             static var margin: CGFloat = 16
+            static var bottomMargin: CGFloat = 8
             static var height: CGFloat = 128
         }
         
@@ -201,7 +202,10 @@ extension WelcomeView {
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -Metrics.ButtonStackView.margin
             ),
-            buttonStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Metrics.ButtonStackView.margin)
+            buttonStackView.bottomAnchor.constraint(
+                equalTo: safeAreaLayoutGuide.bottomAnchor,
+                constant: -Metrics.ButtonStackView.bottomMargin
+            )
         )
     }
     
