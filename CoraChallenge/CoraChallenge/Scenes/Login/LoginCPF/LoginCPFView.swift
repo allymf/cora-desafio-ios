@@ -53,7 +53,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     
     private lazy var welcomeLabel = {
         let label = UILabel()
-        label.text = "Bem-vindo de volta!"
+        label.text = String(localized: "LoginCPF.Welcome")
         label.font = .avenir(size: Metrics.WelcomeLabel.fontSize)
         label.textColor = .secondaryText
         return label
@@ -61,7 +61,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     
     private lazy var insertCPFLabel = {
         let label = UILabel()
-        label.text = "Qual seu CPF?"
+        label.text = String(localized: "LoginCPF.InsertCPF")
         label.font = .avenirBold(size: Metrics.InsertCPFLabel.fontSize)
         label.textColor = .primaryText
         return label
@@ -89,7 +89,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         container.font = .avenirBold(size: Metrics.NextButton.fontSize)
         
         let attributedTitle = AttributedString.init(
-            String(localized: "WelcomeScene.SignUp.Title"),
+            String(localized: "LoginCPF.NextButton.Title"),
             attributes: container
         )
         

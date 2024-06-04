@@ -1,6 +1,42 @@
 {
   "sourceLanguage" : "pt-BR",
   "strings" : {
+    "Key" : {
+      "extractionState" : "manual"
+    },
+    "LoginCPF.InsertCPF" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual seu CPF?"
+          }
+        }
+      }
+    },
+    "LoginCPF.NextButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo"
+          }
+        }
+      }
+    },
+    "LoginCPF.Welcome" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bem-vindo de volta!"
+          }
+        }
+      }
+    },
     "WelcomeScene.Login.Title" : {
       "localizations" : {
         "pt-BR" : {
