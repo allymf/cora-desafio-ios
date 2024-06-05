@@ -1,8 +1,8 @@
 import Foundation
 
-enum LoginCPFModels {
+enum LoginPasswordModels {
     
-    struct Actions: LoginCPFViewActions {
+    struct Actions: LoginPasswordActions {
         let didTapNextButton: (String?) -> Void
     }
     

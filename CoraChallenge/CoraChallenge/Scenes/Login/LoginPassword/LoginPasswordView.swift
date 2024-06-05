@@ -1,6 +1,12 @@
 import UIKit
 
-protocol LoginPasswordViewProtocol: ViewInitializer, KeyboardAdjustableViewProtocol {}
+protocol LoginPasswordActions {
+    var didTapNextButton: (String?) -> Void { get }
+}
+
+protocol LoginPasswordViewProtocol: ViewInitializer, KeyboardAdjustableViewProtocol {
+    var actions: LoginPasswordActions? { get set }
+}
 
 final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
     
@@ -135,6 +141,12 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         
         button.configuration = configuration
         
+        button.addTarget(
+            self,
+            action: #selector(didTapNextButton),
+            for: .touchUpInside
+        )
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -148,6 +160,8 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
     }
     
     // MARK: - Public API
+    var actions: LoginPasswordActions?
+    
     public func updateNextButtonBottomConstraint(keyboardHeight: CGFloat) {
         let newBottomConstant = (keyboardHeight - safeAreaInsets.bottom) + Metrics.margin
         updateNextButtonBottomConstraint(constant: newBottomConstant)
@@ -179,12 +193,22 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         backgroundColor = .white
     }
     
+    // MARK: - Button Tap Methods
     @objc
     private func didTapPasswordToggleButton() {
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
     }
+    
+    @objc func didTapNextButton() {
+        let passwordText = passwordTextField.text
+        actions?.didTapNextButton(passwordText)
+    }
+    
+}
 
-    private func constrainInsertPasswordLabel() {
+// MARK: - Contraint Related Methods
+private extension LoginPasswordView {
+    func constrainInsertPasswordLabel() {
         NSLayoutConstraint.activate(
             insertPasswordLabel.topAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.topAnchor,
@@ -201,7 +225,7 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         )
     }
     
-    private func constrainPasswordStackView() {
+    func constrainPasswordStackView() {
         NSLayoutConstraint.activate(
             passwordStackView.topAnchor.constraint(
                 equalTo: insertPasswordLabel.bottomAnchor,
@@ -219,13 +243,13 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         )
     }
     
-    private func constrainPasswordToggleButton() {
+    func constrainPasswordToggleButton() {
         NSLayoutConstraint.activate(
             passwordToggleButton.widthAnchor.constraint(equalToConstant: Metrics.PasswordToggleButton.width)
         )
     }
     
-    private func constrainForgotPasswordButton() {
+    func constrainForgotPasswordButton() {
         NSLayoutConstraint.activate(
             forgotPasswordButton.topAnchor.constraint(
                 equalTo: passwordStackView.bottomAnchor,
@@ -243,7 +267,7 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         )
     }
     
-    private func constrainNextButton() {
+    func constrainNextButton() {
         let nextButtonBottomConstraint = nextButton.bottomAnchor.constraint(
             equalTo: safeAreaLayoutGuide.bottomAnchor,
             constant: -Metrics.margin
@@ -273,5 +297,4 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
             self.layoutIfNeeded()
         }
     }
-    
 }
