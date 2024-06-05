@@ -29,6 +29,7 @@ final class LoginPasswordViewController: KeyboardAdjustableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = String(localized: "LoginCPF.Title")
+        viewProtocol.actions = LoginPasswordModels.Actions(didTapNextButton: didTapNextButton)
     }
     
     override func keyboardIsShowing(keyboardHeight: CGFloat) {
@@ -37,6 +38,14 @@ final class LoginPasswordViewController: KeyboardAdjustableViewController {
     
     override func keyboardIsHiding() {
         viewProtocol.resetNextButtonBottomConstraint()
+    }
+    
+    private func didTapNextButton(_ passwordText: String?) {
+        // Temporary until api requests are implemented
+        show(
+            StatementSceneFactory.makeScene(),
+            sender: self
+        )
     }
     
 }
