@@ -1,6 +1,6 @@
 import UIKit
 
-protocol LoginPasswordViewProtocol: ViewInitializer {}
+protocol LoginPasswordViewProtocol: ViewInitializer, KeyboardAdjustableViewProtocol {}
 
 final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
     
@@ -74,6 +74,8 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         textField.font = .avenirBold(size: Metrics.PasswordTextField.fontSize)
         textField.tintColor = .primaryGray
         
+        textField.becomeFirstResponder()
+        
         return textField
     }()
     
@@ -137,10 +139,22 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         
         return button
     }()
+    
+    private var nextButtonBottomConstraint: NSLayoutConstraint?
 
     public override func layoutSubviews() {
         super.layoutSubviews()
         nextButton.configuration?.imagePadding = nextButton.frame.width * Metrics.NextButton.imagePaddingMultiplier
+    }
+    
+    // MARK: - Public API
+    public func updateNextButtonBottomConstraint(keyboardHeight: CGFloat) {
+        let newBottomConstant = (keyboardHeight - safeAreaInsets.bottom) + Metrics.margin
+        updateNextButtonBottomConstraint(constant: newBottomConstant)
+    }
+    
+    public func resetNextButtonBottomConstraint() {
+        updateNextButtonBottomConstraint(constant: Metrics.margin)
     }
     
     // MARK: - CodedView Life Cycle
@@ -230,6 +244,12 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
     }
     
     private func constrainNextButton() {
+        let nextButtonBottomConstraint = nextButton.bottomAnchor.constraint(
+            equalTo: safeAreaLayoutGuide.bottomAnchor,
+            constant: -Metrics.margin
+        )
+        self.nextButtonBottomConstraint = nextButtonBottomConstraint
+        
         NSLayoutConstraint.activate(
             nextButton.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
@@ -239,12 +259,19 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -Metrics.margin
             ),
-            nextButton.bottomAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.bottomAnchor,
-                constant: -Metrics.margin
-            ),
+            nextButtonBottomConstraint,
             nextButton.heightAnchor.constraint(equalToConstant: Metrics.NextButton.height)
         )
+    }
+    
+    private func updateNextButtonBottomConstraint(constant: CGFloat) {
+        nextButtonBottomConstraint?.constant = -constant
+        
+        UIView.animate(
+            withDuration: 0
+        ) {
+            self.layoutIfNeeded()
+        }
     }
     
 }

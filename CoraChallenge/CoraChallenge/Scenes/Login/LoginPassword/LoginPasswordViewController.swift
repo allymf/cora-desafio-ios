@@ -1,6 +1,6 @@
 import UIKit
 
-final class LoginPasswordViewController: UIViewController {
+final class LoginPasswordViewController: KeyboardAdjustableViewController {
 
     let viewProtocol: LoginPasswordViewProtocol
     private let interactor: LoginPasswordBusinessLogic
@@ -15,10 +15,7 @@ final class LoginPasswordViewController: UIViewController {
         self.interactor = interactor
         self.router = router
         
-        super.init(
-            nibName: nil,
-            bundle: nil
-        )
+        super.init()
     }
     
     required init?(coder: NSCoder) {
@@ -27,6 +24,14 @@ final class LoginPasswordViewController: UIViewController {
     
     override func loadView() {
         view = viewProtocol.concreteView
+    }
+    
+    override func keyboardIsShowing(keyboardHeight: CGFloat) {
+        viewProtocol.updateNextButtonBottomConstraint(keyboardHeight: keyboardHeight)
+    }
+    
+    override func keyboardIsHiding() {
+        viewProtocol.resetNextButtonBottomConstraint()
     }
     
 }

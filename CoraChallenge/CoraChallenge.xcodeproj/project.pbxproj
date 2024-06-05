@@ -44,6 +44,8 @@
 		3F57CAC12C0F8019001E0B76 /* LoginCPFPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */; };
 		3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */; };
 		3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */; };
+		3F75B71C2C10E5FB0027524F /* KeyboardAdjustableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */; };
+		3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
 		3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF979FF2C0E956A0044D1D5 /* CodedView.swift */; };
@@ -113,6 +115,8 @@
 		3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFPresenter.swift; sourceTree = "<group>"; };
 		3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFRouter.swift; sourceTree = "<group>"; };
 		3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFSceneFactory.swift; sourceTree = "<group>"; };
+		3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustableViewController.swift; sourceTree = "<group>"; };
+		3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustableViewProtocol.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3FF979FF2C0E956A0044D1D5 /* CodedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedView.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		3F4A2E3B2C0E0BDD00364913 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				3F75B71F2C10EB950027524F /* KeyboardAdjustable */,
 				3F140A0D2C0E87AD0044374C /* UIKit+Extensions */,
 				3F4A2E462C0E0FD800364913 /* Identifiable */,
 				3FF979FF2C0E956A0044D1D5 /* CodedView.swift */,
@@ -304,6 +309,15 @@
 				3F027F1A2C1002720054F570 /* LoginCPFModels.swift */,
 			);
 			path = LoginCPF;
+			sourceTree = "<group>";
+		};
+		3F75B71F2C10EB950027524F /* KeyboardAdjustable */ = {
+			isa = PBXGroup;
+			children = (
+				3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */,
+				3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */,
+			);
+			path = KeyboardAdjustable;
 			sourceTree = "<group>";
 		};
 		3FF97A072C0EA7430044D1D5 /* Scenes */ = {
@@ -453,6 +467,7 @@
 				3FF97A042C0EA2100044D1D5 /* WelcomeRouter.swift in Sources */,
 				3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */,
 				3F027F132C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift in Sources */,
+				3F75B71C2C10E5FB0027524F /* KeyboardAdjustableViewController.swift in Sources */,
 				3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */,
 				3F140A0F2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */,
@@ -477,6 +492,7 @@
 				3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */,
 				3FF97A062C0EA4810044D1D5 /* ViewInitializer.swift in Sources */,
 				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
+				3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
 				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
