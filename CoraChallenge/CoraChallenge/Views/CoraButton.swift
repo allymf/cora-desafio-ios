@@ -21,7 +21,7 @@ final class CoraButton: UIButton {
         static var largeFontSize: CGFloat = 16
     }
 
-    init(frame: CGRect = .zero, style: Style = .default) {
+    init(frame: CGRect = .zero, style: Style = .defaultPink) {
         super.init(frame: frame)
         setup(with: style)
         additionalSettings()

@@ -159,7 +159,7 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
     }()
     
     private lazy var loginButton = {
-        let button = CoraButton(style: .default)
+        let button = CoraButton()
         button.setTitle(
             String(localized: "WelcomeScene.Login.Title"),
             for: .normal

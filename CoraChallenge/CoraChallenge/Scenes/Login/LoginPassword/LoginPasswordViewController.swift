@@ -25,4 +25,8 @@ final class LoginPasswordViewController: UIViewController {
         fatalError("View Controller not intended for Interface Builder.")
     }
     
+    override func loadView() {
+        view = viewProtocol.concreteView
+    }
+    
 }

@@ -45,6 +45,28 @@
         }
       }
     },
+    "LoginPassword.ForgotPasswordButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esqueci minha senha"
+          }
+        }
+      }
+    },
+    "LoginPassword.InsertLabel.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digite sua senha de acesso"
+          }
+        }
+      }
+    },
     "WelcomeScene.Login.Title" : {
       "localizations" : {
         "pt-BR" : {
