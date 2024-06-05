@@ -1,6 +1,9 @@
 import UIKit
 
-protocol LoginCPFViewProtocol: ViewInitializer {}
+protocol LoginCPFViewProtocol: ViewInitializer {
+    func updateNextButtonBottomConstraint(keyboardHeight: CGFloat)
+    func resetNextButtonBottomConstraint()
+}
 
 final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     
@@ -29,7 +32,8 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         
         enum NextButton {
             static var fontSize: CGFloat = 14
-            static var imagePadding: CGFloat = 150
+            static var imagePaddingMultiplier = 0.64
+            static var imagePadding: CGFloat = 230
             static var height: CGFloat = 48
             static var margin: CGFloat = 16
         }
@@ -107,6 +111,18 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         return button
     }()
     
+    private var nextButtonBottomConstraint: NSLayoutConstraint?
+    
+    // MARK: - Public API
+    func updateNextButtonBottomConstraint(keyboardHeight: CGFloat) {
+        let newBottomConstant = (keyboardHeight - safeAreaInsets.bottom) + Metrics.NextButton.margin
+        updateNextButtonBottomConstraint(constant: newBottomConstant)
+    }
+    
+    func resetNextButtonBottomConstraint() {
+        updateNextButtonBottomConstraint(constant: Metrics.NextButton.margin)
+    }
+    
     // MARK: - CodedView Life Cycle
     override func addSubviews() {
         addSubviews(
@@ -124,6 +140,15 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     
     override func configureAdditionalSettings() {
         backgroundColor = .white
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        nextButton.configuration?.imagePadding = nextButton.frame.width * Metrics.NextButton.imagePaddingMultiplier
+    }
+    
+    override func didMoveToSuperview() {
+        nextButton.configuration?.imagePadding = nextButton.frame.width * Metrics.NextButton.imagePaddingMultiplier
     }
     
     private func constrainLabelsStackView() {
@@ -161,6 +186,13 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     }
     
     private func constrainNextButton() {
+        let nextButtonBottomConstraint = nextButton.bottomAnchor.constraint(
+            equalTo: safeAreaLayoutGuide.bottomAnchor,
+            constant: -Metrics.NextButton.margin
+        )
+        
+        self.nextButtonBottomConstraint = nextButtonBottomConstraint
+        
         NSLayoutConstraint.activate(
             nextButton.heightAnchor.constraint(equalToConstant: Metrics.NextButton.height),
             nextButton.leadingAnchor.constraint(
@@ -171,11 +203,18 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
                 equalTo: safeAreaLayoutGuide.trailingAnchor,
                 constant: -Metrics.NextButton.margin
             ),
-            nextButton.bottomAnchor.constraint(
-                equalTo: safeAreaLayoutGuide.bottomAnchor,
-                constant: -Metrics.NextButton.margin
-            )
+            nextButtonBottomConstraint
         )
+    }
+    
+    private func updateNextButtonBottomConstraint(constant: CGFloat) {
+        nextButtonBottomConstraint?.constant = -constant
+        
+        UIView.animate(
+            withDuration: 0
+        ) {
+            self.layoutIfNeeded()
+        }
     }
     
 }

@@ -45,6 +45,7 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         enum SignUpButton {
             static var fontSize: CGFloat = 16
             static var height: CGFloat = 64
+            static var imagePaddingMultiplier = 0.4
             static var imagePadding: CGFloat = 150
         }
         
@@ -173,7 +174,12 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         
         return button
     }()
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        signUpButton.configuration?.imagePadding = buttonStackView.bounds.width * Metrics.SignUpButton.imagePaddingMultiplier
+    }
+    
     // MARK: - Layout
     override func addSubviews() {
         addSubviews(
