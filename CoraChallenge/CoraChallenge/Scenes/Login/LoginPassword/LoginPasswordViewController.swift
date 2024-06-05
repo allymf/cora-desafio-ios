@@ -26,6 +26,11 @@ final class LoginPasswordViewController: KeyboardAdjustableViewController {
         view = viewProtocol.concreteView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = String(localized: "LoginCPF.Title")
+    }
+    
     override func keyboardIsShowing(keyboardHeight: CGFloat) {
         viewProtocol.updateNextButtonBottomConstraint(keyboardHeight: keyboardHeight)
     }
