@@ -275,7 +275,7 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
     
     // MARK: - Actions
     @objc
-    func didTapLoginButton () {
+    private func didTapLoginButton () {
         actions?.didTapLoginButton()
     }
     
