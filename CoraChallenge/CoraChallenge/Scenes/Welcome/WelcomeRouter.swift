@@ -6,7 +6,7 @@ protocol WelcomeRoutingLogic {
 
 final class WelcomeRouter: WelcomeRoutingLogic {
     
-    weak var viewController: WelcomeViewController?
+    weak var viewController: UIViewController?
     
     func routeToLogin() {
         let loginCPFViewController = LoginCPFSceneFactory.makeScene()

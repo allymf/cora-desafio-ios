@@ -1,12 +1,18 @@
 import UIKit
 
-protocol LoginCPFViewProtocol: ViewInitializer {
+public protocol LoginCPFViewActions {
+    var didTapNextButton: (_ cpfText: String?) -> Void { get }
+}
+
+public protocol LoginCPFViewProtocol: ViewInitializer {
+    var actions: LoginCPFViewActions? { get set }
+    
     func updateNextButtonBottomConstraint(keyboardHeight: CGFloat)
     func resetNextButtonBottomConstraint()
 }
 
-final class LoginCPFView: CodedView, LoginCPFViewProtocol {
-    
+public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
+
     enum Metrics {
         
         enum LabelsStackView {
@@ -84,7 +90,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         return textField
     }()
     
-    private let nextButton = {
+    private lazy var nextButton = {
         let button = CoraButton()
         
         var configuration = UIButton.Configuration.filled()
@@ -106,6 +112,12 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         
         button.configuration = configuration
         
+        button.addTarget(
+            self,
+            action: #selector(didTapNextButton),
+            for: .touchUpInside
+        )
+        
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -114,12 +126,14 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     private var nextButtonBottomConstraint: NSLayoutConstraint?
     
     // MARK: - Public API
-    func updateNextButtonBottomConstraint(keyboardHeight: CGFloat) {
+    public var actions: LoginCPFViewActions?
+    
+    public func updateNextButtonBottomConstraint(keyboardHeight: CGFloat) {
         let newBottomConstant = (keyboardHeight - safeAreaInsets.bottom) + Metrics.NextButton.margin
         updateNextButtonBottomConstraint(constant: newBottomConstant)
     }
     
-    func resetNextButtonBottomConstraint() {
+    public func resetNextButtonBottomConstraint() {
         updateNextButtonBottomConstraint(constant: Metrics.NextButton.margin)
     }
     
@@ -142,12 +156,8 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         backgroundColor = .white
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
-        nextButton.configuration?.imagePadding = nextButton.frame.width * Metrics.NextButton.imagePaddingMultiplier
-    }
-    
-    override func didMoveToSuperview() {
         nextButton.configuration?.imagePadding = nextButton.frame.width * Metrics.NextButton.imagePaddingMultiplier
     }
     
@@ -217,4 +227,9 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         }
     }
     
+    // MARK: - Actions
+    @objc
+    private func didTapNextButton() {
+        actions?.didTapNextButton(cpfTextfield.text)
+    }
 }

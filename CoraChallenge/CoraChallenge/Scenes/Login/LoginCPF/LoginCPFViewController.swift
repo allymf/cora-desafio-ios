@@ -40,6 +40,9 @@ final class LoginCPFViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        viewProtocol.actions = LoginCPFModels.Actions(didTapNextButton: didTapNextButton)
+        
         notificationCenter.addObserver(
             self,
             selector: #selector(keyboardWillChange),
@@ -72,6 +75,18 @@ final class LoginCPFViewController: UIViewController {
     }
     
 }
+
+extension LoginCPFViewController {
+    func didTapNextButton(_ cpfText: String?) {
+        // Temporary until cpf validation is implemented
+        let loginPasswordViewController = LoginPasswordSceneFactory.makeScene()
+        show(
+            loginPasswordViewController,
+            sender: self
+        )
+    }
+}
+
 
 extension LoginCPFViewController {
     @objc

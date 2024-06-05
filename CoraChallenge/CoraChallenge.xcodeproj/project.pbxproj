@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F027F0B2C0FFB230054F570 /* LoginPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F0A2C0FFB230054F570 /* LoginPasswordInteractor.swift */; };
+		3F027F0D2C0FFB2D0054F570 /* LoginPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F0C2C0FFB2D0054F570 /* LoginPasswordPresenter.swift */; };
+		3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F0E2C0FFB390054F570 /* LoginPasswordRouter.swift */; };
+		3F027F112C0FFC9D0054F570 /* LoginPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F102C0FFC9D0054F570 /* LoginPasswordViewController.swift */; };
+		3F027F132C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F122C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift */; };
+		3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F142C0FFD710054F570 /* LoginPasswordWorker.swift */; };
+		3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F162C0FFDDF0054F570 /* LoginPasswordView.swift */; };
+		3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F182C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift */; };
+		3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F1A2C1002720054F570 /* LoginCPFModels.swift */; };
 		3F140A0F2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F140A0E2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift */; };
 		3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */; };
 		3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */; };
@@ -63,6 +72,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F027F0A2C0FFB230054F570 /* LoginPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginPasswordInteractor.swift; path = ../../../../../../../LoginPasswordInteractor.swift; sourceTree = "<group>"; };
+		3F027F0C2C0FFB2D0054F570 /* LoginPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordPresenter.swift; sourceTree = "<group>"; };
+		3F027F0E2C0FFB390054F570 /* LoginPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordRouter.swift; sourceTree = "<group>"; };
+		3F027F102C0FFC9D0054F570 /* LoginPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordViewController.swift; sourceTree = "<group>"; };
+		3F027F122C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginPasswordViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		3F027F142C0FFD710054F570 /* LoginPasswordWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordWorker.swift; sourceTree = "<group>"; };
+		3F027F162C0FFDDF0054F570 /* LoginPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordView.swift; sourceTree = "<group>"; };
+		3F027F182C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordSceneFactory.swift; sourceTree = "<group>"; };
+		3F027F1A2C1002720054F570 /* LoginCPFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFModels.swift; sourceTree = "<group>"; };
 		3F140A0E2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+SugarSyntax.swift"; path = "../../../../../../NSLayoutConstraint+SugarSyntax.swift"; sourceTree = "<group>"; };
 		3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoraButton+Styles.swift"; sourceTree = "<group>"; };
 		3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
@@ -130,6 +148,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F027F092C0FFB030054F570 /* LoginPassword */ = {
+			isa = PBXGroup;
+			children = (
+				3F027F102C0FFC9D0054F570 /* LoginPasswordViewController.swift */,
+				3F027F122C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift */,
+				3F027F162C0FFDDF0054F570 /* LoginPasswordView.swift */,
+				3F027F0A2C0FFB230054F570 /* LoginPasswordInteractor.swift */,
+				3F027F0C2C0FFB2D0054F570 /* LoginPasswordPresenter.swift */,
+				3F027F0E2C0FFB390054F570 /* LoginPasswordRouter.swift */,
+				3F027F142C0FFD710054F570 /* LoginPasswordWorker.swift */,
+				3F027F182C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift */,
+			);
+			path = LoginPassword;
+			sourceTree = "<group>";
+		};
 		3F140A0D2C0E87AD0044374C /* UIKit+Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				3F57CAB72C0F7F16001E0B76 /* LoginCPF */,
+				3F027F092C0FFB030054F570 /* LoginPassword */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -267,6 +301,7 @@
 				3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */,
 				3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */,
 				3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */,
+				3F027F1A2C1002720054F570 /* LoginCPFModels.swift */,
 			);
 			path = LoginCPF;
 			sourceTree = "<group>";
@@ -417,22 +452,31 @@
 				3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */,
 				3FF97A042C0EA2100044D1D5 /* WelcomeRouter.swift in Sources */,
 				3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */,
+				3F027F132C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift in Sources */,
 				3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */,
 				3F140A0F2C0E87E70044374C /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */,
+				3F027F0D2C0FFB2D0054F570 /* LoginPasswordPresenter.swift in Sources */,
 				3F57CABF2C0F7FEB001E0B76 /* LoginCPFInteractor.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
 				3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */,
 				3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */,
 				3FF97A022C0E9E5F0044D1D5 /* WelcomeModels.swift in Sources */,
+				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
+				3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */,
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
+				3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
+				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
+				3F027F112C0FFC9D0054F570 /* LoginPasswordViewController.swift in Sources */,
+				3F027F0B2C0FFB230054F570 /* LoginPasswordInteractor.swift in Sources */,
 				3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */,
 				3FF97A062C0EA4810044D1D5 /* ViewInitializer.swift in Sources */,
+				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
 				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
