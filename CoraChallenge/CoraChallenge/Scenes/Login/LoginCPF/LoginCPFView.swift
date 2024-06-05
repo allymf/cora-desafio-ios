@@ -4,11 +4,8 @@ public protocol LoginCPFViewActions {
     var didTapNextButton: (_ cpfText: String?) -> Void { get }
 }
 
-public protocol LoginCPFViewProtocol: ViewInitializer {
+public protocol LoginCPFViewProtocol: ViewInitializer, KeyboardAdjustableViewProtocol {
     var actions: LoginCPFViewActions? { get set }
-    
-    func updateNextButtonBottomConstraint(keyboardHeight: CGFloat)
-    func resetNextButtonBottomConstraint()
 }
 
 public final class LoginCPFView: CodedView, LoginCPFViewProtocol {

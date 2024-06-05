@@ -1,6 +1,6 @@
 import UIKit
 
-final class LoginPasswordViewController: UIViewController {
+final class LoginPasswordViewController: KeyboardAdjustableViewController {
 
     let viewProtocol: LoginPasswordViewProtocol
     private let interactor: LoginPasswordBusinessLogic
@@ -15,14 +15,28 @@ final class LoginPasswordViewController: UIViewController {
         self.interactor = interactor
         self.router = router
         
-        super.init(
-            nibName: nil,
-            bundle: nil
-        )
+        super.init()
     }
     
     required init?(coder: NSCoder) {
         fatalError("View Controller not intended for Interface Builder.")
+    }
+    
+    override func loadView() {
+        view = viewProtocol.concreteView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = String(localized: "LoginCPF.Title")
+    }
+    
+    override func keyboardIsShowing(keyboardHeight: CGFloat) {
+        viewProtocol.updateNextButtonBottomConstraint(keyboardHeight: keyboardHeight)
+    }
+    
+    override func keyboardIsHiding() {
+        viewProtocol.resetNextButtonBottomConstraint()
     }
     
 }
