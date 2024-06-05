@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public struct WelcomeSceneFactory {
     static func makeScene() -> WelcomeViewController {
@@ -12,5 +12,10 @@ public struct WelcomeSceneFactory {
         router.viewController = viewController
         
         return viewController
+    }
+    
+    static func makeSceneInNavigationController() -> UINavigationController {
+        let viewController = makeScene()
+        return UINavigationController(rootViewController: viewController)
     }
 }

@@ -45,6 +45,8 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         enum SignUpButton {
             static var fontSize: CGFloat = 16
             static var height: CGFloat = 64
+            static var imagePaddingMultiplier = 0.4
+            static var imagePadding: CGFloat = 150
         }
         
         enum LoginButton {
@@ -135,7 +137,7 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         var configuration = UIButton.Configuration.filled()
         
         var container = AttributeContainer()
-        container.font = .avenir(size: Metrics.SignUpButton.fontSize)
+        container.font = .avenirBold(size: Metrics.SignUpButton.fontSize)
         
         let attributedTitle = AttributedString.init(
             String(localized: "WelcomeScene.SignUp.Title"),
@@ -145,7 +147,7 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         configuration.attributedTitle = attributedTitle
         configuration.image = UIImage(named: "arrowRight")
         configuration.imagePlacement = .trailing
-        configuration.imagePadding = 150
+        configuration.imagePadding = Metrics.SignUpButton.imagePadding
         configuration.baseForegroundColor = .mainPink
         configuration.baseBackgroundColor = .white
         
@@ -172,7 +174,12 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         
         return button
     }()
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        signUpButton.configuration?.imagePadding = buttonStackView.bounds.width * Metrics.SignUpButton.imagePaddingMultiplier
+    }
+    
     // MARK: - Layout
     override func addSubviews() {
         addSubviews(

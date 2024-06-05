@@ -9,9 +9,11 @@ final class WelcomeRouter: WelcomeRoutingLogic {
     weak var viewController: WelcomeViewController?
     
     func routeToLogin() {
-        let nextViewController = UIViewController()
-        nextViewController.view.backgroundColor = .cyan
-        viewController?.present(nextViewController, animated: true)
+        let loginCPFViewController = LoginCPFSceneFactory.makeScene()
+        viewController?.show(
+            loginCPFViewController,
+            sender: viewController
+        )
     }
     
 }

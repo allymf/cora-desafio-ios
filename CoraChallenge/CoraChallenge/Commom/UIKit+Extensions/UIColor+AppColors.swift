@@ -13,5 +13,7 @@ extension UIColor {
 
 extension UIColor {
     static var mainPink = UIColor(rgb: 0xFE3E6D)
+    static var primaryGray = UIColor(rgb: 0x3B3B3B)
+    static var secondaryGray = UIColor(rgb: 0x6B7076)
 }
 
