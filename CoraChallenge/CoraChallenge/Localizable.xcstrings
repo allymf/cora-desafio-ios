@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "pt-BR",
   "strings" : {
-    "Key" : {
-      "extractionState" : "manual"
-    },
     "LoginCPF.InsertCPF" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22,6 +19,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Próximo"
+          }
+        }
+      }
+    },
+    "LoginCPF.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Login Cora"
           }
         }
       }

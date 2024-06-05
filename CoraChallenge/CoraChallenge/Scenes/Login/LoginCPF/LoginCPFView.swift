@@ -27,7 +27,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
             static var fontSize: CGFloat = 22
             static var height: CGFloat = 32
             static var topMargin: CGFloat = 32
-            static var margin: CGFloat = 18
+            static var margin: CGFloat = 20
         }
         
         enum NextButton {
@@ -59,7 +59,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         let label = UILabel()
         label.text = String(localized: "LoginCPF.Welcome")
         label.font = .avenir(size: Metrics.WelcomeLabel.fontSize)
-        label.textColor = .secondaryText
+        label.textColor = .secondaryGray
         return label
     }()
     
@@ -67,7 +67,7 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         let label = UILabel()
         label.text = String(localized: "LoginCPF.InsertCPF")
         label.font = .avenirBold(size: Metrics.InsertCPFLabel.fontSize)
-        label.textColor = .primaryText
+        label.textColor = .primaryGray
         return label
     }()
     
@@ -75,8 +75,8 @@ final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         let textField = UITextField()
         
         textField.font = .avenir(size: Metrics.CPFTextField.fontSize)
-        textField.textColor = .primaryText
-        textField.tintColor = .primaryText
+        textField.textColor = .primaryGray
+        textField.tintColor = .primaryGray
         textField.becomeFirstResponder()
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false

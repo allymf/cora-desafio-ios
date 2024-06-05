@@ -33,6 +33,11 @@ final class LoginCPFViewController: UIViewController {
         view.keyboardLayoutGuide.followsUndockedKeyboard = true
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = String(localized: "LoginCPF.Title")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         notificationCenter.addObserver(
