@@ -58,6 +58,12 @@
 		3F75B7322C10F18C0027524F /* StatementSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7312C10F18C0027524F /* StatementSceneFactory.swift */; };
 		3F75B7342C10F2C80027524F /* LoginPasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7332C10F2C80027524F /* LoginPasswordModels.swift */; };
 		3F871E3E2C1235D3008004CF /* StatementHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E3D2C1235D3008004CF /* StatementHeaderView.swift */; };
+		3F871E412C123B13008004CF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E402C123B13008004CF /* NetworkService.swift */; };
+		3F871E432C123BA0008004CF /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E422C123BA0008004CF /* RequestBuilder.swift */; };
+		3F871E452C123BBA008004CF /* URLSession+DataTaskResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E442C123BBA008004CF /* URLSession+DataTaskResult.swift */; };
+		3F871E472C123BDF008004CF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E462C123BDF008004CF /* HTTPMethod.swift */; };
+		3F871E492C123C01008004CF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E482C123C01008004CF /* Endpoint.swift */; };
+		3F871E4B2C123C1F008004CF /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E4A2C123C1F008004CF /* Decoding.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 		3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
@@ -142,6 +148,12 @@
 		3F75B7312C10F18C0027524F /* StatementSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementSceneFactory.swift; sourceTree = "<group>"; };
 		3F75B7332C10F2C80027524F /* LoginPasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordModels.swift; sourceTree = "<group>"; };
 		3F871E3D2C1235D3008004CF /* StatementHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementHeaderView.swift; sourceTree = "<group>"; };
+		3F871E402C123B13008004CF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3F871E422C123BA0008004CF /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		3F871E442C123BBA008004CF /* URLSession+DataTaskResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+DataTaskResult.swift"; sourceTree = "<group>"; };
+		3F871E462C123BDF008004CF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		3F871E482C123C01008004CF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3F871E4A2C123C1F008004CF /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -228,6 +240,7 @@
 		3F3D72EE2C0D56B700448F19 /* CoraChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				3F871E3F2C123A7E008004CF /* Network */,
 				3F4A2E3B2C0E0BDD00364913 /* Commom */,
 				3F4A2E472C0E12A600364913 /* Views */,
 				3F4A2E2D2C0E03C500364913 /* Scenes */,
@@ -360,6 +373,19 @@
 				3F75B7312C10F18C0027524F /* StatementSceneFactory.swift */,
 			);
 			path = Statement;
+			sourceTree = "<group>";
+		};
+		3F871E3F2C123A7E008004CF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3F871E402C123B13008004CF /* NetworkService.swift */,
+				3F871E422C123BA0008004CF /* RequestBuilder.swift */,
+				3F871E442C123BBA008004CF /* URLSession+DataTaskResult.swift */,
+				3F871E462C123BDF008004CF /* HTTPMethod.swift */,
+				3F871E482C123C01008004CF /* Endpoint.swift */,
+				3F871E4A2C123C1F008004CF /* Decoding.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		3FE6580B2C114F1000A2E1AC /* View */ = {
@@ -518,6 +544,7 @@
 				3F75B7222C10EF040027524F /* StatementView.swift in Sources */,
 				3F871E3E2C1235D3008004CF /* StatementHeaderView.swift in Sources */,
 				3F75B7322C10F18C0027524F /* StatementSceneFactory.swift in Sources */,
+				3F871E432C123BA0008004CF /* RequestBuilder.swift in Sources */,
 				3F75B7242C10EF190027524F /* StatementViewController.swift in Sources */,
 				3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */,
 				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
@@ -545,8 +572,10 @@
 				3F75B7282C10EFBA0027524F /* StatementModels.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
+				3F871E492C123C01008004CF /* Endpoint.swift in Sources */,
 				3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */,
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
+				3F871E4B2C123C1F008004CF /* Decoding.swift in Sources */,
 				3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
@@ -558,12 +587,15 @@
 				3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */,
 				3F4E7BA92C11FF13003B4E39 /* StatementItemView.swift in Sources */,
 				3FF97A062C0EA4810044D1D5 /* ViewInitializer.swift in Sources */,
+				3F871E472C123BDF008004CF /* HTTPMethod.swift in Sources */,
+				3F871E412C123B13008004CF /* NetworkService.swift in Sources */,
 				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
 				3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
 				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
 				3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */,
+				3F871E452C123BBA008004CF /* URLSession+DataTaskResult.swift in Sources */,
 				3F75B72C2C10F01A0027524F /* StatementPresenter.swift in Sources */,
 				3F4A2E362C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift in Sources */,
 				3F4A2E322C0E051700364913 /* WelcomeInteractor.swift in Sources */,
