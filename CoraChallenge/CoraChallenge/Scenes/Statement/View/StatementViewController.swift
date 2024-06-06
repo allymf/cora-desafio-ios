@@ -6,6 +6,16 @@ final class StatementViewController: UIViewController {
     private let interactor: StatementBusinessLogic & StatementDataStore
     let router: StatementRoutingLogic
     
+    private lazy var rightBarButtonItem = {
+        let icon = UIImage(named: "signOut")
+        return UIBarButtonItem(
+            image: icon,
+            style: .plain,
+            target: self,
+            action: #selector(didTapDownloadBarButtonItem)
+        )
+    }()
+    
     init(
         viewProtocol: StatementViewProtocol = StatementView(),
         interactor: StatementBusinessLogic & StatementDataStore,
@@ -32,17 +42,17 @@ final class StatementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = String(localized: "Statement.Title")
-        viewProtocol.setupTableView(with: self)
         
-        let downloadIcon = UIImage(named: "signOut")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: downloadIcon,
-            style: .plain,
-            target: self,
-            action: #selector(didTapDownloadBarButtonItem)
-        )
+        viewProtocol.setupTableView(with: self)
+        viewProtocol.actions = StatementModels.Action(didPullToRefresh: didPullToRefresh)
+        
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     @objc
     private func didTapDownloadBarButtonItem() {}
+    
+    @objc
+    private func didPullToRefresh() {}
+    
 }
