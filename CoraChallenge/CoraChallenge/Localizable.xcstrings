@@ -67,6 +67,39 @@
         }
       }
     },
+    "Statement.EverythingButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tudo"
+          }
+        }
+      }
+    },
+    "Statement.FutureButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Futuro"
+          }
+        }
+      }
+    },
+    "Statement.IncomeButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrada"
+          }
+        }
+      }
+    },
     "Statement.Title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -74,6 +107,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Extrato"
+          }
+        }
+      }
+    },
+    "Statement.WithdrawalButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saída"
           }
         }
       }
