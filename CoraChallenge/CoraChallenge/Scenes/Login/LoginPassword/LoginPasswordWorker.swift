@@ -16,9 +16,9 @@ protocol LoginPasswordWorkingLogic {
 
 final class LoginPasswordWorker: LoginPasswordWorkingLogic {
     
-    private let networkService: NetworkService
+    private let networkService: HTTPClient
     
-    init(networkService: NetworkService) {
+    init(networkService: HTTPClient = NetworkService()) {
         self.networkService = networkService
     }
     

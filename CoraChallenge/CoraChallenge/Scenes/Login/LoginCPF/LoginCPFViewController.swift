@@ -44,18 +44,6 @@ final class LoginCPFViewController: KeyboardAdjustableViewController {
 
 extension LoginCPFViewController {
     func didTapNextButton(_ cpfText: String?) {
-        // Temporary until cpf validation is implemented
-        let loginPasswordViewController = LoginPasswordSceneFactory.makeScene()
-        show(
-            loginPasswordViewController,
-            sender: self
-        )
+        interactor.didTapNextButton(request: .init(cpfText: cpfText))
     }
-}
-
-
-extension LoginCPFViewController {
-    
-    
-    
 }
