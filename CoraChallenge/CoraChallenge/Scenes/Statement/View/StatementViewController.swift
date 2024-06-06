@@ -33,6 +33,16 @@ final class StatementViewController: UIViewController {
         super.viewDidLoad()
         title = String(localized: "Statement.Title")
         viewProtocol.setupTableView(with: self)
+        
+        let downloadIcon = UIImage(named: "signOut")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: downloadIcon,
+            style: .plain,
+            target: self,
+            action: #selector(didTapDownloadBarButtonItem)
+        )
     }
     
+    @objc
+    private func didTapDownloadBarButtonItem() {}
 }
