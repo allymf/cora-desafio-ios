@@ -44,7 +44,6 @@ final class StatementItemView: CodedView {
     
     private lazy var valueLabel = {
         let label = UILabel()
-        label.text = "adsasdasd"
         label.font = .avenirBold(size: Metrics.ValueLabel.fontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -52,7 +51,6 @@ final class StatementItemView: CodedView {
     
     private lazy var descriptionLabel = {
         let label = UILabel()
-        label.text = "adsasdasd"
         label.font = .avenir(size: Metrics.DescriptionLabel.fontSize)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,7 +58,6 @@ final class StatementItemView: CodedView {
     
     private lazy var proponentLabel = {
         let label = UILabel()
-        label.text = "adsasdasd"
         label.font = .avenir(size: Metrics.ProponentLabel.fontSize)
         label.textColor = .secondaryGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -69,7 +66,6 @@ final class StatementItemView: CodedView {
     
     private let timeLabel = {
         let label = UILabel()
-        label.text = "09:30"
         label.textAlignment = .right
         label.font = .avenir(size: Metrics.ValueLabel.fontSize)
         label.textColor = .secondaryGray
@@ -98,15 +94,6 @@ final class StatementItemView: CodedView {
     
     override func configureAdditionalSettings() {
         backgroundColor = .white
-        setIncomeStyle()
-    }
-    
-    // temporary
-    public func setIncomeStyle() {
-        iconImageView.image = UIImage(named: "bankSlip")
-        iconImageView.tintColor = .incomeBlue
-        valueLabel.textColor = .incomeBlue
-        descriptionLabel.textColor = .incomeBlue
     }
     
 }
