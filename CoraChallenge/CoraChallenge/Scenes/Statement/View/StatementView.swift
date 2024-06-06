@@ -158,6 +158,12 @@ final class StatementView: CodedView, StatementViewProtocol {
         return tableView
     }()
     
+    private let item = {
+        let item = StatementItemView()
+        item.translatesAutoresizingMaskIntoConstraints = false
+        return item
+    }()
+    
     private var selectableButtons: [UIButton] {
         [
             everythingButton,
@@ -182,7 +188,8 @@ final class StatementView: CodedView, StatementViewProtocol {
         addSubviews(
             optionsStackView,
             selectedButtonView,
-            tableView
+            tableView,
+            item
         )
     }
     
@@ -190,6 +197,14 @@ final class StatementView: CodedView, StatementViewProtocol {
         constrainOptionsStackView()
         constrainTableView()
         constrainSelectedButtonView()
+        
+        NSLayoutConstraint.activate(
+            item.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            item.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            item.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            item.heightAnchor.constraint(equalToConstant: 120)
+        )
+        
     }
     
     override func configureAdditionalSettings() {
