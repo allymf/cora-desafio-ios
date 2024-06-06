@@ -57,6 +57,7 @@
 		3F75B7322C10F18C0027524F /* StatementSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7312C10F18C0027524F /* StatementSceneFactory.swift */; };
 		3F75B7342C10F2C80027524F /* LoginPasswordModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7332C10F2C80027524F /* LoginPasswordModels.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
+		3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
 		3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF979FF2C0E956A0044D1D5 /* CodedView.swift */; };
 		3FF97A022C0E9E5F0044D1D5 /* WelcomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF97A012C0E9E5F0044D1D5 /* WelcomeModels.swift */; };
@@ -138,6 +139,7 @@
 		3F75B7312C10F18C0027524F /* StatementSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementSceneFactory.swift; sourceTree = "<group>"; };
 		3F75B7332C10F2C80027524F /* LoginPasswordModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordModels.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
+		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3FF979FF2C0E956A0044D1D5 /* CodedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodedView.swift; sourceTree = "<group>"; };
 		3FF97A012C0E9E5F0044D1D5 /* WelcomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeModels.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				3F75B7212C10EF040027524F /* StatementView.swift */,
 				3F75B7232C10EF190027524F /* StatementViewController.swift */,
 				3F75B7252C10EF3A0027524F /* StatementViewController+DisplayLogic.swift */,
+				3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */,
 				3F75B7272C10EFBA0027524F /* StatementModels.swift */,
 				3F75B7292C10EFEB0027524F /* StatementInteractor.swift */,
 				3F75B72B2C10F01A0027524F /* StatementPresenter.swift */,
@@ -522,6 +525,7 @@
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
 				3F4A2E432C0E0DA600364913 /* UICollectionView+Reuser.swift in Sources */,
 				3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */,
+				3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */,
 				3FF97A022C0E9E5F0044D1D5 /* WelcomeModels.swift in Sources */,
 				3F75B7282C10EFBA0027524F /* StatementModels.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,

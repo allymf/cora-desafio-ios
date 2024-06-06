@@ -16,7 +16,7 @@ struct LoginPasswordSceneFactory {
         )
         
         presenter.displayer = viewController
-        router.viewController
+        router.viewController = viewController
         
         return viewController
     }

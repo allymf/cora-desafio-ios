@@ -32,6 +32,7 @@ final class StatementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = String(localized: "Statement.Title")
+        viewProtocol.setupTableView(with: self)
     }
     
 }
