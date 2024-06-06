@@ -1,6 +1,8 @@
 import UIKit
 
 protocol StatementViewProtocol: ViewInitializer {
+    var sectionHeaderHeight: CGFloat { get }
+    
     func setupTableView(with driver: UITableViewDataSource & UITableViewDelegate)
 }
 
@@ -16,6 +18,11 @@ final class StatementView: CodedView, StatementViewProtocol {
             static var width: CGFloat = 32
             static var height: CGFloat = 1
             static var margin: CGFloat = 20
+        }
+        
+        enum TableView {
+            static var sectionHeaderHeight: CGFloat = 32
+            static var cellHeight: CGFloat = 130
         }
         
         enum Button {
@@ -150,7 +157,13 @@ final class StatementView: CodedView, StatementViewProtocol {
     }()
     
     private let tableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(
+            frame: .zero,
+            style: .grouped
+        )
+        
+        tableView.contentInset = .zero
+        tableView.separatorStyle = .none
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -170,6 +183,8 @@ final class StatementView: CodedView, StatementViewProtocol {
     private var selectedButtonViewCenterXConstraint: NSLayoutConstraint?
     
     // MARK: - Public API
+    var sectionHeaderHeight: CGFloat { return Metrics.TableView.sectionHeaderHeight }
+    
     func setupTableView(with driver: UITableViewDataSource & UITableViewDelegate) {
         tableView.dataSource = driver
         tableView.delegate = driver
