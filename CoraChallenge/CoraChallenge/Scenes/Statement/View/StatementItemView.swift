@@ -30,6 +30,7 @@ final class StatementItemView: CodedView {
         
         enum TimeLabel {
             static var fontSize: CGFloat = 12
+            static var width: CGFloat = 60
         }
         
     }
@@ -170,7 +171,7 @@ private extension StatementItemView {
             ),
             timeLabel.centerYAnchor.constraint(equalTo: descriptionLabel.centerYAnchor),
             timeLabel.heightAnchor.constraint(equalToConstant: Metrics.smallLabelHeight),
-            timeLabel.widthAnchor.constraint(equalToConstant: 60)
+            timeLabel.widthAnchor.constraint(equalToConstant: Metrics.TimeLabel.width)
         )
     }
     
