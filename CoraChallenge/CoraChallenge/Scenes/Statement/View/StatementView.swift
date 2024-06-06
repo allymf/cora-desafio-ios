@@ -10,7 +10,6 @@ final class StatementView: CodedView, StatementViewProtocol {
         
         enum OptionsStackView {
             static var height: CGFloat = 64
-            static var numberOfItems: CGFloat = 4
         }
         
         enum SelectedButtonView {
