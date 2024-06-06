@@ -5,7 +5,7 @@ extension StatementViewController: UITableViewDataSource {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return 0
+        return 1
     }
     
     func tableView(
@@ -13,6 +13,10 @@ extension StatementViewController: UITableViewDataSource {
         cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return viewProtocol.sectionHeaderHeight
     }
 }
 
