@@ -1,10 +1,3 @@
-//
-//  CoraButton.swift
-//  CoraChallenge
-//
-//  Created by Alysson Moreira on 03/06/24.
-//
-
 import UIKit
 
 final class CoraButton: UIButton {
@@ -13,6 +6,7 @@ final class CoraButton: UIButton {
         let font: UIFont?
         let backgroundColor: UIColor
         let tintColor: UIColor
+        let disabledBackgroundColor: UIColor = .disabledButtonGray
     }
     
     enum Metrics {
@@ -20,10 +14,13 @@ final class CoraButton: UIButton {
         static var defaultFontSize: CGFloat = 14
         static var largeFontSize: CGFloat = 16
     }
+    
+    private let style: Style
 
     init(frame: CGRect = .zero, style: Style = .defaultPink) {
+        self.style = style
         super.init(frame: frame)
-        setup(with: style)
+        setupStyle()
         additionalSettings()
     }
     
@@ -31,7 +28,20 @@ final class CoraButton: UIButton {
         fatalError("This view is not intended for Interface Builder.")
     }
     
-    private func setup(with style: Style) {
+    override var isEnabled: Bool {
+    
+        didSet {
+            guard isEnabled else {
+                backgroundColor = style.disabledBackgroundColor
+                return
+            }
+            
+            backgroundColor = style.backgroundColor
+        }
+        
+    }
+    
+    private func setupStyle() {
         titleLabel?.font = style.font
         setTitleColor(
             style.tintColor,
