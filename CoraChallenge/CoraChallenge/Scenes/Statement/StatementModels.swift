@@ -1,3 +1,9 @@
 import Foundation
 
-enum StatementModels {}
+enum StatementModels {
+    
+    struct Action: StatementViewActions {
+        let didPullToRefresh: () -> Void
+    }
+    
+}

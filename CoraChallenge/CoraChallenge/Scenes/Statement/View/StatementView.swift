@@ -1,9 +1,17 @@
 import UIKit
 
+protocol StatementViewActions {
+    var didPullToRefresh: () -> Void { get }
+}
+
 protocol StatementViewProtocol: ViewInitializer {
     var sectionHeaderHeight: CGFloat { get }
+    var actions: StatementViewActions? { get set }
     
     func setupTableView(with driver: UITableViewDataSource & UITableViewDelegate)
+    
+    func reloadTableView()
+    func stopRefresh()
 }
 
 final class StatementView: CodedView, StatementViewProtocol {
@@ -156,7 +164,17 @@ final class StatementView: CodedView, StatementViewProtocol {
         return view
     }()
     
-    private let tableView = {
+    private lazy var refreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(
+            self,
+            action: #selector(didPullToRefresh),
+            for: .valueChanged
+        )
+        return refreshControl
+    }()
+    
+    private lazy var tableView = {
         let tableView = UITableView(
             frame: .zero,
             style: .grouped
@@ -164,6 +182,7 @@ final class StatementView: CodedView, StatementViewProtocol {
         
         tableView.contentInset = .zero
         tableView.separatorStyle = .none
+        tableView.refreshControl = refreshControl
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -184,12 +203,21 @@ final class StatementView: CodedView, StatementViewProtocol {
     
     // MARK: - Public API
     var sectionHeaderHeight: CGFloat { return Metrics.TableView.sectionHeaderHeight }
+    var actions: StatementViewActions?
     
     func setupTableView(with driver: UITableViewDataSource & UITableViewDelegate) {
         tableView.dataSource = driver
         tableView.delegate = driver
     }
     
+    func reloadTableView() {
+        stopRefresh()
+        tableView.reloadData()
+    }
+    
+    func stopRefresh() {
+        refreshControl.endRefreshing()
+    }
     
     // MARK: - CodedView Life Cycle
     override func addSubviews() {
@@ -209,55 +237,63 @@ final class StatementView: CodedView, StatementViewProtocol {
     override func configureAdditionalSettings() {
         backgroundColor = .white
     }
-    
+}
+
+// MARK: - Component Interactions
+private extension StatementView {
     @objc
-    private func didTapEverythingButton() {
+    func didTapEverythingButton() {
         performVisualUpdates(for: everythingButton)
     }
     
     @objc
-    private func didTapIncomeButton() {
+    func didTapIncomeButton() {
         performVisualUpdates(for: incomeButton)
     }
     
     @objc
-    private func didTapWithdrawalButton() {
+    func didTapWithdrawalButton() {
         performVisualUpdates(for: withdrawalButton)
     }
     
     @objc
-    private func didTapFutureButton() {
+    func didTapFutureButton() {
         performVisualUpdates(for: futureButton)
     }
     
-    private func performVisualUpdates(for selectedButton: UIButton) {
+    @objc
+    func didPullToRefresh() {
+        actions?.didPullToRefresh()
+    }
+    
+    func performVisualUpdates(for selectedButton: UIButton) {
         updateSelectedButtonConstraint(with: selectedButton)
         updateButtonsStyle(selectedButton: selectedButton)
     }
                            
-    private func updateButtonsStyle(selectedButton: UIButton) {
+    func updateButtonsStyle(selectedButton: UIButton) {
         for button in selectableButtons {
             setupDiselectedStyle(in: button)
         }
         setupSelectedStyle(in: selectedButton)
     }
     
-    private func setupSelectedStyle(in button: UIButton) {
+    func setupSelectedStyle(in button: UIButton) {
         button.setTitleColor(
             .mainPink,
             for: .normal
         )
     }
     
-    private func setupDiselectedStyle(in button: UIButton) {
+    func setupDiselectedStyle(in button: UIButton) {
         button.setTitleColor(
             .secondaryGray,
             for: .normal
         )
     }
-    
 }
 
+// MARK: - Constraint Related Methods
 private extension StatementView {
     func constrainOptionsStackView() {
         NSLayoutConstraint.activate(
