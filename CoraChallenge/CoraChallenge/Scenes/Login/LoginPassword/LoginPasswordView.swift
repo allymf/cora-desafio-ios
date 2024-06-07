@@ -81,6 +81,7 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         textField.tintColor = .primaryGray
         
         textField.becomeFirstResponder()
+        textField.delegate = self
         
         return textField
     }()
@@ -140,6 +141,7 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         configuration.baseBackgroundColor = .mainPink
         
         button.configuration = configuration
+        button.isEnabled = false
         
         button.addTarget(
             self,
@@ -296,5 +298,14 @@ private extension LoginPasswordView {
         ) {
             self.layoutIfNeeded()
         }
+    }
+}
+
+extension LoginPasswordView: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let passwordLength = textField.text?.count else { return }
+        let isPasswordLengthCorrect = passwordLength >= 6
+        
+        nextButton.isEnabled = isPasswordLengthCorrect
     }
 }
