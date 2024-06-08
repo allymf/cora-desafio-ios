@@ -1,16 +1,26 @@
 import Foundation
 
 protocol LoginCPFDisplayLogic: AnyObject {
-    func displayCPF(viewModel: LoginCPFModels.ViewModel.Success)
-    func displayCPFFailure(viewModel: LoginCPFModels.ViewModel.Failure)
+    func displayValidateCPF()
+    func displayValidateCPFFailure()
+    
+    func displayNextScene()
+    func displayNextSceneFailure(viewModel: LoginCPFModels.NextButton.ViewModel.Failure)
 }
 
 extension LoginCPFViewController: LoginCPFDisplayLogic {
-    func displayCPF(viewModel: LoginCPFModels.ViewModel.Success) {
+    func displayValidateCPF() {
+        viewProtocol.setNextButtonEnabled(true)
+    }
+    func displayValidateCPFFailure() {
+        viewProtocol.setNextButtonEnabled(false)
+    }
+    
+    func displayNextScene() {
         router.routeToLoginPassword()
     }
     
-    func displayCPFFailure(viewModel: LoginCPFModels.ViewModel.Failure){
+    func displayNextSceneFailure(viewModel: LoginCPFModels.NextButton.ViewModel.Failure){
         debugPrint(viewModel.error)
     }
     

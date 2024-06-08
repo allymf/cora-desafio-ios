@@ -1,20 +1,32 @@
 import Foundation
 
 protocol LoginCPFPresentationLogic {
-    func presentCPF(response: LoginCPFModels.Response.Success)
-    func presentCPFFailure(response: LoginCPFModels.Response.Failure)
+    
+    func presentValidateCPF()
+    func presentValidateCPFFailure()
+    
+    func presentNextScene()
+    func presentNextSceneFailure(response: LoginCPFModels.NextButton.Response.Failure)
 }
 
 final class LoginCPFPresenter: LoginCPFPresentationLogic {
     
     weak var displayer: LoginCPFDisplayLogic?
     
-    func presentCPF(response: LoginCPFModels.Response.Success) {
-        displayer?.displayCPF(viewModel: .init())
+    func presentValidateCPF() {
+        displayer?.displayValidateCPF()
     }
     
-    func presentCPFFailure(response: LoginCPFModels.Response.Failure) {
-        displayer?.displayCPFFailure(viewModel: .init(error: response.error))
+    func presentValidateCPFFailure() {
+        displayer?.displayValidateCPFFailure()
+    }
+    
+    func presentNextScene() {
+        displayer?.displayNextScene()
+    }
+    
+    func presentNextSceneFailure(response: LoginCPFModels.NextButton.Response.Failure) {
+        displayer?.displayNextSceneFailure(viewModel: .init(error: response.error))
     }
     
 }
