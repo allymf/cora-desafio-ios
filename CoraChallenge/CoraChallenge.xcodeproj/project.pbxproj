@@ -347,9 +347,7 @@
 		3F57CAB72C0F7F16001E0B76 /* LoginCPF */ = {
 			isa = PBXGroup;
 			children = (
-				3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */,
-				3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */,
-				3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */,
+				3FA1E05F2C13EEAB00E28AE6 /* Views */,
 				3F57CABE2C0F7FEB001E0B76 /* LoginCPFInteractor.swift */,
 				3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */,
 				3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */,
@@ -403,6 +401,16 @@
 				3F871E512C12415B008004CF /* LoginResponse.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		3FA1E05F2C13EEAB00E28AE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */,
+				3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */,
+				3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		3FE6580B2C114F1000A2E1AC /* View */ = {
