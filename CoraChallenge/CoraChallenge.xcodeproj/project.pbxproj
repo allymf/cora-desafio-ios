@@ -66,6 +66,7 @@
 		3F871E522C12415B008004CF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E512C12415B008004CF /* LoginResponse.swift */; };
 		3FA1E05A2C13EBB400E28AE6 /* LoginPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0592C13EBB400E28AE6 /* LoginPasswordInteractor.swift */; };
 		3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */; };
+		3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 		3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
@@ -158,6 +159,7 @@
 		3F871E512C12415B008004CF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		3FA1E0592C13EBB400E28AE6 /* LoginPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordInteractor.swift; sourceTree = "<group>"; };
 		3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+SugarSyntax.swift"; sourceTree = "<group>"; };
+		3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidator.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */,
 				3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */,
 				3F027F1A2C1002720054F570 /* LoginCPFModels.swift */,
+				3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */,
 			);
 			path = LoginCPF;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
+				3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */,
 				3F027F112C0FFC9D0054F570 /* LoginPasswordViewController.swift in Sources */,
 				3F75B7262C10EF3A0027524F /* StatementViewController+DisplayLogic.swift in Sources */,
 				3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */,
