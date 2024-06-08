@@ -20,6 +20,10 @@ struct CPFValidator: CPFValidating {
             return false
         }
         
+        guard validateForRepeatingNumbers(allDigits: allDigits) else {
+            return false
+        }
+        
         let identificationDigits = Array(allDigits.prefix(9))
         
         guard let lastVerifyingDigit = allDigits.popLast(),
@@ -44,6 +48,10 @@ struct CPFValidator: CPFValidating {
     
     private func extractCPFDigits(from string: String) -> [Int] {
         return Array(string.unmaskedCPF).compactMap { $0.wholeNumberValue }
+    }
+    
+    private func validateForRepeatingNumbers(allDigits: [Int]) -> Bool {
+        return !allDigits.dropFirst().allSatisfy { $0 == allDigits.first }
     }
     
     private func validate(
@@ -82,7 +90,8 @@ struct CPFValidator: CPFValidating {
             validationSum += digit * multiplier
         }
         let remainder = (validationSum * 10) % 11
-        return remainder == verifyingDigit
+        let remainderLastDigit = remainder >= 10 ? remainder % 10 : remainder
+        return remainderLastDigit == verifyingDigit
     }
     
 }

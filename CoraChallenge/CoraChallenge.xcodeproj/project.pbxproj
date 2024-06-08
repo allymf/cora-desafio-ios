@@ -68,6 +68,7 @@
 		3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */; };
 		3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */; };
 		3FA1E0612C13EF0300E28AE6 /* CPFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0602C13EF0300E28AE6 /* CPFTextField.swift */; };
+		3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 		3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
@@ -162,6 +163,7 @@
 		3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+SugarSyntax.swift"; sourceTree = "<group>"; };
 		3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidator.swift; sourceTree = "<group>"; };
 		3FA1E0602C13EF0300E28AE6 /* CPFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFTextField.swift; sourceTree = "<group>"; };
+		3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidatorTests.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -416,6 +418,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3FA1E0622C13F19E00E28AE6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3FA1E0632C13F1A700E28AE6 /* LoginCPF */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3FA1E0632C13F1A700E28AE6 /* LoginCPF */ = {
+			isa = PBXGroup;
+			children = (
+				3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */,
+			);
+			path = LoginCPF;
+			sourceTree = "<group>";
+		};
 		3FE6580B2C114F1000A2E1AC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +450,7 @@
 		3FF97A072C0EA7430044D1D5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3FA1E0622C13F19E00E28AE6 /* Login */,
 				3FF97A082C0EA75E0044D1D5 /* WelcomeInteractorTests.swift */,
 				3FF97A0A2C0EA9410044D1D5 /* WelcomePresenterTests.swift */,
 			);
@@ -638,6 +657,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */,
 				3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
