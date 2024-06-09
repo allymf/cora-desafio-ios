@@ -29,7 +29,11 @@ final class LoginCPFViewController: KeyboardAdjustableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = String(localized: "LoginCPF.Title")
-        viewProtocol.actions = LoginCPFModels.Actions(didTapNextButton: didTapNextButton)
+        viewProtocol.actions = LoginCPFModels.Actions(
+            didTapNextButton: didTapNextButton,
+            cpfTextDidChange: cpfTextDidChange
+        )
+        viewProtocol.setCPFTextFieldDelegate(self)
     }
     
     override func keyboardIsShowing(keyboardHeight: CGFloat) {
@@ -44,6 +48,36 @@ final class LoginCPFViewController: KeyboardAdjustableViewController {
 
 extension LoginCPFViewController {
     func didTapNextButton(_ cpfText: String?) {
-        interactor.didTapNextButton(request: .init(cpfText: cpfText))
+        interactor.didTapNextButton()
     }
+    
+    func cpfTextDidChange(_ cpfText: String?) {
+        interactor.validateCPF(request: .init(cpfText: cpfText))
+    }
+}
+
+extension LoginCPFViewController: UITextFieldDelegate {
+    public func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        
+        guard range.length == 0 else { return true }
+        
+        switch range.location {
+        case 3,7:
+            textField.text?.append(".")
+        case 11:
+            textField.text?.append("-")
+        default:
+            break
+        }
+        
+        let newTextLength = (textField.text ?? "").count
+        guard newTextLength <= 13 else { return false }
+        
+        return true
+    }
+    
 }

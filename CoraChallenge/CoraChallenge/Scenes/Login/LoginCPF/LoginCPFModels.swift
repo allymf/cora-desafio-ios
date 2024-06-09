@@ -4,23 +4,26 @@ enum LoginCPFModels {
     
     struct Actions: LoginCPFViewActions {
         let didTapNextButton: (String?) -> Void
+        let cpfTextDidChange: (String?) -> Void
     }
     
-    struct Request {
-        let cpfText: String?
-    }
-    
-    enum Response {
-        struct Success {}
-        struct Failure {
-            let error: SceneError
+    enum ValidateCPF {
+        struct Request {
+            let cpfText: String?
         }
     }
     
-    enum ViewModel {
-        struct Success {}
-        struct Failure {
-            let error: SceneError
+    enum NextButton {
+        enum Response {
+            struct Failure {
+                let error: SceneError
+            }
+        }
+        
+        enum ViewModel {
+            struct Failure {
+                let error: SceneError
+            }
         }
     }
     

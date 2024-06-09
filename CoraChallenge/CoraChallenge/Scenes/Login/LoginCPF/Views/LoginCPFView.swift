@@ -2,11 +2,14 @@ import UIKit
 
 public protocol LoginCPFViewActions {
     var didTapNextButton: (_ cpfText: String?) -> Void { get }
+    var cpfTextDidChange: (String?) -> Void { get }
 }
 
 public protocol LoginCPFViewProtocol: ViewInitializer, KeyboardAdjustableViewProtocol {
     var actions: LoginCPFViewActions? { get set }
-}
+    
+    func setCPFTextFieldDelegate(_ delegate: UITextFieldDelegate)
+    func setNextButtonEnabled(_ enabled: Bool)}
 
 public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
 
@@ -74,14 +77,22 @@ public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         return label
     }()
     
-    private let cpfTextfield = {
-        let textField = UITextField()
+    private lazy var cpfTextfield = {
+        let textField = CPFTextField()
         
         textField.font = .avenir(size: Metrics.CPFTextField.fontSize)
         textField.textColor = .primaryGray
         textField.tintColor = .primaryGray
         textField.becomeFirstResponder()
         textField.keyboardType = .numberPad
+        textField.autocorrectionType = .no
+        
+        textField.addTarget(
+            self,
+            action: #selector(cpfTextFieldDidChange),
+            for: .editingChanged
+        )
+        
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         return textField
@@ -109,6 +120,8 @@ public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
         
         button.configuration = configuration
         
+        button.isEnabled = false
+        
         button.addTarget(
             self,
             action: #selector(didTapNextButton),
@@ -124,6 +137,14 @@ public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     
     // MARK: - Public API
     public var actions: LoginCPFViewActions?
+    
+    public func setCPFTextFieldDelegate(_ delegate: UITextFieldDelegate) {
+        cpfTextfield.delegate = delegate
+    }
+    
+    public func setNextButtonEnabled(_ enabled: Bool) {
+        nextButton.isEnabled = enabled
+    }
     
     public func updateNextButtonBottomConstraint(keyboardHeight: CGFloat) {
         let newBottomConstant = (keyboardHeight - safeAreaInsets.bottom) + Metrics.NextButton.margin
@@ -229,4 +250,10 @@ public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     private func didTapNextButton() {
         actions?.didTapNextButton(cpfTextfield.text)
     }
+    
+    @objc
+    private func cpfTextFieldDidChange(_ textField: UITextField) {
+        actions?.cpfTextDidChange(cpfTextfield.text)
+    }
+    
 }
