@@ -28,6 +28,7 @@ final class LoginPasswordViewController: KeyboardAdjustableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = String()
         title = String(localized: "LoginCPF.Title")
         viewProtocol.actions = LoginPasswordModels.Actions(didTapNextButton: didTapNextButton)
     }

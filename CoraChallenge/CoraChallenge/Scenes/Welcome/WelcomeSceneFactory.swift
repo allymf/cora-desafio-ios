@@ -16,6 +16,6 @@ public struct WelcomeSceneFactory {
     
     static func makeSceneInNavigationController() -> UINavigationController {
         let viewController = makeScene()
-        return UINavigationController(rootViewController: viewController)
+        return CoraNavigationController(rootViewController: viewController)
     }
 }
