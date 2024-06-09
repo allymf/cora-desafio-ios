@@ -43,6 +43,7 @@
 		3F57CAC12C0F8019001E0B76 /* LoginCPFPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */; };
 		3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */; };
 		3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */; };
+		3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F618FA02C15401C0032B117 /* LoginCPFInteractorTests.swift */; };
 		3F75B71C2C10E5FB0027524F /* KeyboardAdjustableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */; };
 		3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */; };
 		3F75B7222C10EF040027524F /* StatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7212C10EF040027524F /* StatementView.swift */; };
@@ -139,6 +140,7 @@
 		3F57CAC02C0F8019001E0B76 /* LoginCPFPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFPresenter.swift; sourceTree = "<group>"; };
 		3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFRouter.swift; sourceTree = "<group>"; };
 		3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFSceneFactory.swift; sourceTree = "<group>"; };
+		3F618FA02C15401C0032B117 /* LoginCPFInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFInteractorTests.swift; sourceTree = "<group>"; };
 		3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustableViewController.swift; sourceTree = "<group>"; };
 		3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustableViewProtocol.swift; sourceTree = "<group>"; };
 		3F75B7212C10EF040027524F /* StatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementView.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 			children = (
 				3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */,
 				3FA1E0662C1404B900E28AE6 /* LoginCPFPresenterTests.swift */,
+				3F618FA02C15401C0032B117 /* LoginCPFInteractorTests.swift */,
 			);
 			path = LoginCPF;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
+				3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */,
 				3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
