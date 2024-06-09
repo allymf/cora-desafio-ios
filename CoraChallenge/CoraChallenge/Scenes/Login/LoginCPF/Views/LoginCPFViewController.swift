@@ -29,6 +29,7 @@ final class LoginCPFViewController: KeyboardAdjustableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = String(localized: "LoginCPF.Title")
+        navigationItem.backButtonTitle = String()
         viewProtocol.actions = LoginCPFModels.Actions(
             didTapNextButton: didTapNextButton,
             cpfTextDidChange: cpfTextDidChange

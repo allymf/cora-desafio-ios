@@ -31,6 +31,26 @@ final class WelcomeViewController: UIViewController {
         self.view = viewProtocol.concreteView
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.backButtonTitle = String()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(
+            true,
+            animated: false
+        )
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(
+            false,
+            animated: false
+        )
+    }
+    
 }
 
 extension WelcomeViewController {
