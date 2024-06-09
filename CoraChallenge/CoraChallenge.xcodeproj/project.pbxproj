@@ -69,6 +69,7 @@
 		3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */; };
 		3FA1E0612C13EF0300E28AE6 /* CPFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0602C13EF0300E28AE6 /* CPFTextField.swift */; };
 		3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */; };
+		3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0662C1404B900E28AE6 /* LoginCPFPresenterTests.swift */; };
 		3FB552D92C0E577200F7BC8C /* UIFont+Avenir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */; };
 		3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
@@ -164,6 +165,7 @@
 		3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidator.swift; sourceTree = "<group>"; };
 		3FA1E0602C13EF0300E28AE6 /* CPFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFTextField.swift; sourceTree = "<group>"; };
 		3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidatorTests.swift; sourceTree = "<group>"; };
+		3FA1E0662C1404B900E28AE6 /* LoginCPFPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFPresenterTests.swift; sourceTree = "<group>"; };
 		3FB552D82C0E577200F7BC8C /* UIFont+Avenir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Avenir.swift"; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA1E0642C13F1C200E28AE6 /* CPFValidatorTests.swift */,
+				3FA1E0662C1404B900E28AE6 /* LoginCPFPresenterTests.swift */,
 			);
 			path = LoginCPF;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
+				3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,7 +830,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZV2H3J92NA;
+				DEVELOPMENT_TEAM = LF3U834HDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoraChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -838,7 +842,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Alysson.CoraChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = BR.Alysson.CoraChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -853,7 +857,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZV2H3J92NA;
+				DEVELOPMENT_TEAM = LF3U834HDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoraChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -865,7 +869,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Alysson.CoraChallenge;
+				PRODUCT_BUNDLE_IDENTIFIER = BR.Alysson.CoraChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
