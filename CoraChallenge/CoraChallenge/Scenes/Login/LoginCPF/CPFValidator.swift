@@ -1,13 +1,5 @@
 import Foundation
 
-extension String {
-    var unmaskedCPF: String {
-        var cpf = self
-        cpf.removeAll { $0 == "." || $0 == "-" || $0 == " " }
-        return cpf
-    }
-}
-
 protocol CPFValidating {
     func validate(cpf: String) -> Bool
 }
@@ -24,12 +16,12 @@ struct CPFValidator: CPFValidating {
             return false
         }
         
-        let identificationDigits = Array(allDigits.prefix(9))
-        
         guard let lastVerifyingDigit = allDigits.popLast(),
               let firstVerifyingDigit = allDigits.popLast() else {
             return false
         }
+        
+        let identificationDigits = allDigits
         
         guard validate(
             firstVerifyingDigit: firstVerifyingDigit,

@@ -1,14 +1,9 @@
 import Foundation
 
-protocol LoginParametersProtocol {
-    var cpf: String { get }
-    var password: String { get }
-}
-
 protocol LoginPasswordWorkingLogic {
     
     func login(
-        loginParameters: LoginParametersProtocol,
+        loginParameters: LoginPasswordModels.LoginParameters,
         completionHandler: @escaping (Result<LoginResponse, NetworkLayerError>) -> Void
     )
     func cancelCurrentTask()
@@ -23,7 +18,7 @@ final class LoginPasswordWorker: LoginPasswordWorkingLogic {
     }
     
     func login(
-        loginParameters: LoginParametersProtocol,
+        loginParameters: LoginPasswordModels.LoginParameters,
         completionHandler: @escaping (Result<LoginResponse, NetworkLayerError>) -> Void
     ) {
         let endpoint = LoginEndpoint.login(

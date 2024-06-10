@@ -42,11 +42,7 @@ final class LoginPasswordViewController: KeyboardAdjustableViewController {
     }
     
     private func didTapNextButton(_ passwordText: String?) {
-        // Temporary until api requests are implemented
-        show(
-            StatementSceneFactory.makeScene(),
-            sender: self
-        )
+        interactor.didTapNextButton(request: .init(password: passwordText))
     }
     
 }

@@ -2,7 +2,32 @@ import Foundation
 
 enum LoginPasswordModels {
     
-    struct LoginParameters: LoginParametersProtocol {
+    enum NextButton {
+        struct Request {
+            let password: String?
+        }
+        
+        enum Response {
+            struct Failure {
+                let error: Error
+            }
+        }
+        
+        enum ViewModel {
+            struct Failure {
+                let error: Error
+            }
+        }
+    }
+    
+    enum SceneErrors: Error {
+        case passwordIsNil
+        case tokenIsNil
+        case unableToStoreToken
+        
+    }
+    
+    struct LoginParameters: Equatable {
         let cpf: String
         let password: String
     }

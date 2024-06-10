@@ -32,7 +32,7 @@ final class LoginCPFInteractor: LoginCPFBusinessLogic, LoginCPFDataStore {
             presenter.presentValidateCPFFailure()
             return
         }
-        self.cpfText = cpfText
+        self.cpfText = cpfText.unmaskedCPF
         presenter.presentValidateCPF()
     }
     

@@ -36,6 +36,11 @@
 		3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */; };
 		3F4A2E492C0E12BE00364913 /* CoraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E482C0E12BE00364913 /* CoraButton.swift */; };
 		3F4E7BA92C11FF13003B4E39 /* StatementItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4E7BA82C11FF13003B4E39 /* StatementItemView.swift */; };
+		3F5264A82C178730007B68DC /* String+UnmaskedCPF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */; };
+		3F5264AB2C178761007B68DC /* StringUnmaskedCPFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */; };
+		3F5264AF2C178CF2007B68DC /* LoginPasswordInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */; };
+		3F5264B12C178D07007B68DC /* LoginPasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */; };
+		3F5264B32C178E45007B68DC /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B22C178E45007B68DC /* StubError.swift */; };
 		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
 		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
 		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
@@ -138,6 +143,11 @@
 		3F4A2E442C0E0EAF00364913 /* UITableView+Reuser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reuser.swift"; sourceTree = "<group>"; };
 		3F4A2E482C0E12BE00364913 /* CoraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraButton.swift; sourceTree = "<group>"; };
 		3F4E7BA82C11FF13003B4E39 /* StatementItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemView.swift; sourceTree = "<group>"; };
+		3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+UnmaskedCPF.swift"; sourceTree = "<group>"; };
+		3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUnmaskedCPFTests.swift; sourceTree = "<group>"; };
+		3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordInteractorTests.swift; sourceTree = "<group>"; };
+		3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordPresenterTests.swift; sourceTree = "<group>"; };
+		3F5264B22C178E45007B68DC /* StubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubError.swift; sourceTree = "<group>"; };
 		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
 		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
@@ -178,6 +188,8 @@
 		3FCD67FC2C167DC300B23E96 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		3FCD67FF2C1681D500B23E96 /* TokenStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageTests.swift; sourceTree = "<group>"; };
 		3FCD68012C16897C00B23E96 /* KeychainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerTests.swift; sourceTree = "<group>"; };
+		3FCD68042C16938500B23E96 /* NetworkConfigurations-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "NetworkConfigurations-Debug.xcconfig"; sourceTree = "<group>"; };
+		3FCD68052C1694FC00B23E96 /* NetworkConfigurations-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "NetworkConfigurations-Release.xcconfig"; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraNavigationController.swift; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -217,16 +229,14 @@
 		3F027F092C0FFB030054F570 /* LoginPassword */ = {
 			isa = PBXGroup;
 			children = (
+				3FCD68032C168DDC00B23E96 /* Views */,
 				3F871E4E2C124003008004CF /* Service */,
-				3F027F102C0FFC9D0054F570 /* LoginPasswordViewController.swift */,
-				3F027F122C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift */,
-				3F027F162C0FFDDF0054F570 /* LoginPasswordView.swift */,
+				3FA1E0592C13EBB400E28AE6 /* LoginPasswordInteractor.swift */,
 				3F027F0C2C0FFB2D0054F570 /* LoginPasswordPresenter.swift */,
 				3F027F0E2C0FFB390054F570 /* LoginPasswordRouter.swift */,
 				3F027F142C0FFD710054F570 /* LoginPasswordWorker.swift */,
 				3F027F182C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift */,
 				3F75B7332C10F2C80027524F /* LoginPasswordModels.swift */,
-				3FA1E0592C13EBB400E28AE6 /* LoginPasswordInteractor.swift */,
 			);
 			path = LoginPassword;
 			sourceTree = "<group>";
@@ -284,6 +294,7 @@
 				3FCD67FE2C1681BC00B23E96 /* Keychain */,
 				3FF97A072C0EA7430044D1D5 /* Scenes */,
 				3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */,
+				3F5264B22C178E45007B68DC /* StubError.swift */,
 			);
 			path = CoraChallengeTests;
 			sourceTree = "<group>";
@@ -332,6 +343,7 @@
 				3F4A2E462C0E0FD800364913 /* Identifiable */,
 				3FF979FF2C0E956A0044D1D5 /* CodedView.swift */,
 				3FF97A052C0EA4810044D1D5 /* ViewInitializer.swift */,
+				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -354,6 +366,23 @@
 				3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3F5264A92C17874E007B68DC /* Commom */ = {
+			isa = PBXGroup;
+			children = (
+				3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */,
+			);
+			path = Commom;
+			sourceTree = "<group>";
+		};
+		3F5264AD2C178CCE007B68DC /* LoginPassword */ = {
+			isa = PBXGroup;
+			children = (
+				3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */,
+				3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */,
+			);
+			path = LoginPassword;
 			sourceTree = "<group>";
 		};
 		3F57CAB62C0F7F02001E0B76 /* Login */ = {
@@ -405,6 +434,7 @@
 		3F871E3F2C123A7E008004CF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3FCD68062C1695E300B23E96 /* Configurations */,
 				3F871E402C123B13008004CF /* NetworkService.swift */,
 				3F871E422C123BA0008004CF /* RequestBuilder.swift */,
 				3F871E442C123BBA008004CF /* URLSession+DataTaskResult.swift */,
@@ -439,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA1E0632C13F1A700E28AE6 /* LoginCPF */,
+				3F5264AD2C178CCE007B68DC /* LoginPassword */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -471,6 +502,25 @@
 			path = Keychain;
 			sourceTree = "<group>";
 		};
+		3FCD68032C168DDC00B23E96 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F027F102C0FFC9D0054F570 /* LoginPasswordViewController.swift */,
+				3F027F122C0FFCB50054F570 /* LoginPasswordViewController+DisplayLogic.swift */,
+				3F027F162C0FFDDF0054F570 /* LoginPasswordView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3FCD68062C1695E300B23E96 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				3FCD68042C16938500B23E96 /* NetworkConfigurations-Debug.xcconfig */,
+				3FCD68052C1694FC00B23E96 /* NetworkConfigurations-Release.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		3FE6580B2C114F1000A2E1AC /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +537,7 @@
 		3FF97A072C0EA7430044D1D5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				3F5264A92C17874E007B68DC /* Commom */,
 				3FA1E0622C13F19E00E28AE6 /* Login */,
 				3FF97A082C0EA75E0044D1D5 /* WelcomeInteractorTests.swift */,
 				3FF97A0A2C0EA9410044D1D5 /* WelcomePresenterTests.swift */,
@@ -677,6 +728,7 @@
 				3F75B7262C10EF3A0027524F /* StatementViewController+DisplayLogic.swift in Sources */,
 				3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */,
 				3F4E7BA92C11FF13003B4E39 /* StatementItemView.swift in Sources */,
+				3F5264A82C178730007B68DC /* String+UnmaskedCPF.swift in Sources */,
 				3FF97A062C0EA4810044D1D5 /* ViewInitializer.swift in Sources */,
 				3F871E472C123BDF008004CF /* HTTPMethod.swift in Sources */,
 				3F871E412C123B13008004CF /* NetworkService.swift in Sources */,
@@ -703,8 +755,12 @@
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
 				3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */,
 				3FCD68002C1681D500B23E96 /* TokenStorageTests.swift in Sources */,
+				3F5264B32C178E45007B68DC /* StubError.swift in Sources */,
 				3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */,
+				3F5264AF2C178CF2007B68DC /* LoginPasswordInteractorTests.swift in Sources */,
+				3F5264B12C178D07007B68DC /* LoginPasswordPresenterTests.swift in Sources */,
 				3FCD68022C16897C00B23E96 /* KeychainManagerTests.swift in Sources */,
+				3F5264AB2C178761007B68DC /* StringUnmaskedCPFTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +802,7 @@
 /* Begin XCBuildConfiguration section */
 		3F3D73142C0D56B900448F19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCD68042C16938500B23E96 /* NetworkConfigurations-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -809,6 +866,7 @@
 		};
 		3F3D73152C0D56B900448F19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCD68052C1694FC00B23E96 /* NetworkConfigurations-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

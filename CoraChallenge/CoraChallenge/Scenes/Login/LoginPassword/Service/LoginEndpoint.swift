@@ -6,11 +6,11 @@ enum LoginEndpoint: Endpoint {
         password: String
     )
     
-    var baseURL: String { "https://api.challenge.stage.cora.com.br" }
+    var path: String { "/challenge/auth" }
     
-    var path: String { "challenge/auth" }
+    var urlParameters: [String : String]? { return nil}
     
-    var parameters: [String : String]? {
+    var bodyParameters: [String : String]? {
         switch self {
         case let .login(cpf, password):
             return  [

@@ -3,6 +3,9 @@ https://www.toptal.com/developers/gitignore/api/swift,objective-c,macos,xcode
 # Edit at 
 https://www.toptal.com/developers/gitignore?templates=swift,objective-c,macos,xcode
 
+NetworkConfigurations-Debug.xcconfig
+NetworkConfigurations-Release.xcconfig
+
 ### macOS ###
 # General
 .DS_Store
