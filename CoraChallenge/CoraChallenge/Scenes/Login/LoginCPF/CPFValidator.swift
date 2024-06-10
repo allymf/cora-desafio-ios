@@ -16,12 +16,12 @@ struct CPFValidator: CPFValidating {
             return false
         }
         
-        let identificationDigits = Array(allDigits.prefix(9))
-        
         guard let lastVerifyingDigit = allDigits.popLast(),
               let firstVerifyingDigit = allDigits.popLast() else {
             return false
         }
+        
+        let identificationDigits = allDigits
         
         guard validate(
             firstVerifyingDigit: firstVerifyingDigit,

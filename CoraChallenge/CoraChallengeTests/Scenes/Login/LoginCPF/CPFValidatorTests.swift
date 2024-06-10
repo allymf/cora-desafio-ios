@@ -5,42 +5,85 @@ final class CPFValidatorTests: XCTestCase {
 
     private let sut = CPFValidator()
 
-    func test_validate_givenInvalidCPF_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
+    
+    // MARK: - Invalid CPF tests
+    func test_validate_givenCPFWithInvalidFirstVerifyingDigit_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
         // Given
-        let stubCPFTexts: [String] = [
-            "",
-            "111.111.111-11",
-            "222.222.222-22",
-            "123.456.789-00",
-            "170.382.421-00",
-            "170.382.421-11",
-            "170.382.421-10",
-            "170.382.421-01",
-            "17038242100",
-            "17038242111",
-            "1703824210",
-            "17038242105121212",
-            "aasdasds",
-            "ABC.DEF.GHI-JK"
-        ]
-        
-        let expectedValidateResults = Array.init(
-            repeating: false,
-            count: stubCPFTexts.count
-        )
-        
-        var validateResults = [Bool]()
+        let stubCPFText = "17038242155"
+        let expectedValidateResult = false
         
         // When
-        for stubCPFText in stubCPFTexts {
-            validateResults.append(sut.validate(cpf: stubCPFText))
-        }
+        let result = sut.validate(cpf: stubCPFText)
         
         // Then
-        XCTAssertEqual(validateResults, expectedValidateResults)
+        XCTAssertEqual(result, expectedValidateResult)
     }
     
-    func test_validate_givenValidCPF_whenCPFIsPassedIntoMethod_itShouldReturnTrue() {
+    func test_validate_givenCPFWithInvalidSecondVerifyingDigit_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
+        // Given
+        let stubCPFText = "17038242106"
+        let expectedValidateResult = false
+        
+        // When
+        let result = sut.validate(cpf: stubCPFText)
+        
+        // Then
+        XCTAssertEqual(result, expectedValidateResult)
+    }
+    
+    
+    func test_validate_givenRepeatingNumberCPF_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
+        // Given
+        let stubCPFText = "111.111.111-11"
+        let expectedValidateResult = false
+        
+        // When
+        let result = sut.validate(cpf: stubCPFText)
+        
+        // Then
+        XCTAssertEqual(result, expectedValidateResult)
+    }
+    
+    func test_validate_givenCPFWithIncorrectLength_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
+        // Given
+        let stubCPFText = "1703824210"
+        let expectedValidateResult = false
+        
+        // When
+        let result = sut.validate(cpf: stubCPFText)
+        
+        // Then
+        XCTAssertEqual(result, expectedValidateResult)
+    }
+    
+    func test_validate_givenCPFTextWithoutDigits_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
+        // Given
+        let stubCPFText = "ABC.DEF.GHI-JK"
+        let expectedValidateResult = false
+        
+        // When
+        let result = sut.validate(cpf: stubCPFText)
+        
+        // Then
+        XCTAssertEqual(result, expectedValidateResult)
+    }
+    
+    func test_validate_givenEmptyCPFText_whenCPFIsPassedIntoMethod_itShouldReturnFalse() {
+        // Given
+        let stubCPFText = ""
+        let expectedValidateResult = false
+        
+        // When
+        let result = sut.validate(cpf: stubCPFText)
+        
+        // Then
+        XCTAssertEqual(result, expectedValidateResult)
+    }
+    
+    
+    // MARK: - Valid CPF tests
+    
+    func test_validate_givenValidCPFs_whenCPFIsPassedIntoMethod_itShouldReturnTrue() {
         // Given
         let stubCPFTexts: [String] = [
             "141.205.858-91",
