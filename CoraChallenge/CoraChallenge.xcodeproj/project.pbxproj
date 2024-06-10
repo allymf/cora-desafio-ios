@@ -75,6 +75,7 @@
 		3FCD67FA2C1668AB00B23E96 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD67F92C1668AB00B23E96 /* KeychainManager.swift */; };
 		3FCD67FD2C167DC300B23E96 /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD67FC2C167DC300B23E96 /* TokenStorage.swift */; };
 		3FCD68002C1681D500B23E96 /* TokenStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD67FF2C1681D500B23E96 /* TokenStorageTests.swift */; };
+		3FCD68022C16897C00B23E96 /* KeychainManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD68012C16897C00B23E96 /* KeychainManagerTests.swift */; };
 		3FE6580A2C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */; };
 		3FEE72BB2C15513B0096045E /* CoraNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */; };
 		3FF979FE2C0E913E0044D1D5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */; };
@@ -176,6 +177,7 @@
 		3FCD67F92C1668AB00B23E96 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		3FCD67FC2C167DC300B23E96 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		3FCD67FF2C1681D500B23E96 /* TokenStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageTests.swift; sourceTree = "<group>"; };
+		3FCD68012C16897C00B23E96 /* KeychainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerTests.swift; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraNavigationController.swift; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				3FCD67FF2C1681D500B23E96 /* TokenStorageTests.swift */,
+				3FCD68012C16897C00B23E96 /* KeychainManagerTests.swift */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */,
 				3FCD68002C1681D500B23E96 /* TokenStorageTests.swift in Sources */,
 				3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */,
+				3FCD68022C16897C00B23E96 /* KeychainManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
