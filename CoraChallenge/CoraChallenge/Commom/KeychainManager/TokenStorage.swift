@@ -1,12 +1,9 @@
 import Foundation
 
 protocol TokenStoring {
-    func save(
-        token: String,
-        forService service: String
-    ) throws
+    func save(token: String) throws
     
-    func fetchToken(forService service: String) -> String?
+    func fetchToken() -> String?
 }
 
 struct TokenStorage: TokenStoring {
@@ -19,10 +16,7 @@ struct TokenStorage: TokenStoring {
         self.keychainManager = keychainManager
     }
     
-    func save(
-        token: String,
-        forService service: String
-    ) throws {
+    func save(token: String) throws {
         guard let data = token.data(using: .utf8) else {
             throw KeychainManager.KeychainError.invalidData
         }
@@ -30,18 +24,18 @@ struct TokenStorage: TokenStoring {
         do {
             try keychainManager.save(
                 data: data,
-                service: service
+                service: TokenStorage.service
             )
         } catch KeychainManager.KeychainError.duplicateEntry {
             try keychainManager.update(
                 data: data,
-                forService: service
+                forService: TokenStorage.service
             )
         }
     }
     
-    func fetchToken(forService service: String) -> String? {
-        guard let data = keychainManager.fetchData(fromService: service) else {
+    func fetchToken() -> String? {
+        guard let data = keychainManager.fetchData(fromService: TokenStorage.service) else {
             return nil
         }
         return String(

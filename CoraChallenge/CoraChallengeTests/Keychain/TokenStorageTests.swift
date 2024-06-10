@@ -12,23 +12,19 @@ final class TokenStorageTests: XCTestCase {
     func test_save_givenKeychainManagerWillNotThrowError_whenMethodIsCalled_itShouldPassCorrectParametersToKeychainManager() throws {
         // Given
         let stubToken = UUID().uuidString
-        let stubService = UUID().uuidString
         let expectedData = try XCTUnwrap(stubToken.data(using: .utf8))
         
         let expectedSaveParametersPassed: [KeychainManagingSpy.SaveParameters] = [
             .init(
                 data: expectedData,
-                service: stubService
+                service: TokenStorage.service
             )
         ]
         
         keychainManagingSpy.saveErrorToThrow = nil
         
         // When
-        try sut.save(
-            token: stubToken,
-            forService: stubService
-        )
+        try sut.save(token: stubToken)
         
         // Then
         XCTAssertEqual(keychainManagingSpy.saveParametersPassed, expectedSaveParametersPassed)
@@ -38,20 +34,19 @@ final class TokenStorageTests: XCTestCase {
     func test_save_givenKeychainManagerSaveThrowsDuplicateErrorAndUpdateSucceeds_whenMethodIsCalled_itShouldPassCorrectParametersToKeychainManager() throws {
         // Given
         let stubToken = UUID().uuidString
-        let stubService = UUID().uuidString
         let expectedData = try XCTUnwrap(stubToken.data(using: .utf8))
         
         let expectedSaveParametersPassed: [KeychainManagingSpy.SaveParameters] = [
             .init(
                 data: expectedData,
-                service: stubService
+                service: TokenStorage.service
             )
         ]
         
         let expectedUpdateParametersPassed: [KeychainManagingSpy.UpdateParameters] = [
             .init(
                 data: expectedData,
-                service: stubService
+                service: TokenStorage.service
             )
         ]
         
@@ -59,10 +54,7 @@ final class TokenStorageTests: XCTestCase {
         keychainManagingSpy.updateErrorToThrow = nil
         
         // When
-        try sut.save(
-            token: stubToken,
-            forService: stubService
-        )
+        try sut.save(token: stubToken)
         
         // Then
         XCTAssertEqual(keychainManagingSpy.saveParametersPassed, expectedSaveParametersPassed)
@@ -77,12 +69,12 @@ final class TokenStorageTests: XCTestCase {
         let stubService = UUID().uuidString
         let expectedResult = UUID().uuidString
         let stubFetchResult = expectedResult.data(using: .utf8)
-        let expectedFetchDataParametersPassed = [stubService]
+        let expectedFetchDataParametersPassed = [TokenStorage.service]
         
         keychainManagingSpy.fetchDataResult = stubFetchResult
         
         // When
-        let result = sut.fetchToken(forService: stubService)
+        let result = sut.fetchToken()
         
         // Then
         XCTAssertEqual(keychainManagingSpy.fetchDataParametersPassed, expectedFetchDataParametersPassed)
@@ -98,7 +90,7 @@ final class TokenStorageTests: XCTestCase {
         keychainManagingSpy.fetchDataResult = nil
         
         // When
-        let result = sut.fetchToken(forService: stubService)
+        let result = sut.fetchToken()
         
         // Then
         XCTAssertEqual(keychainManagingSpy.fetchDataParametersPassed, expectedFetchDataParametersPassed)
