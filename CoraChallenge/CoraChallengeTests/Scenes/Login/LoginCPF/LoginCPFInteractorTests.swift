@@ -48,12 +48,13 @@ final class LoginCPFInteractorTests: XCTestCase {
     
     func test_validate_givenCPFTextHasValueAndCPFValidatorReturnsTrue_whenCPFTextIsPassedToMethod_itShouldStoreCPFTextValueAndCallCorrectMethodFromPresenter() {
         // Given
-        let expectedCPFText = UUID().uuidString
-        let stubRequest = LoginCPFModels.ValidateCPF.Request(cpfText: expectedCPFText)
+        let stubCPFText = "123.456.789-00"
+        let stubRequest = LoginCPFModels.ValidateCPF.Request(cpfText: stubCPFText)
+        let expectedCPFText = stubCPFText.unmaskedCPF
         
         cpfValidatorFake.validateReturnValue = true
         
-        let expectedValidateParametersPassed = [expectedCPFText]
+        let expectedValidateParametersPassed = [stubCPFText]
         let expectedPresentValidateCPFCalls = 1
         
         // When

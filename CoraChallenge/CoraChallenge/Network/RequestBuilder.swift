@@ -21,7 +21,6 @@ public struct RequestBuilder: RequestBuilding {
     }
     
     private let infoDictionary: [String: Any]?
-    private let jsonSerializer: JSONSerializing.Type
     
     private var apiKey: String? {
         infoDictionary?["API_KEY"] as? String
@@ -31,12 +30,8 @@ public struct RequestBuilder: RequestBuilding {
         infoDictionary?["API_BASE_URL"] as? String
     }
     
-    public init(
-        infoDictionary: [String: Any]? = Bundle.main.infoDictionary,
-        jsonSerializer: JSONSerializing.Type = JSONSerialization.self
-    ) {
+    public init(infoDictionary: [String: Any]? = Bundle.main.infoDictionary) {
         self.infoDictionary = infoDictionary
-        self.jsonSerializer = jsonSerializer
     }
     
     public func buildRequest(for endpoint: Endpoint) throws -> URLRequest {
@@ -85,7 +80,6 @@ public struct RequestBuilder: RequestBuilding {
         urlComponents?.queryItems = urlQueryItems
         
         return urlComponents?.query?.data(using: .utf8)
-        
     }
     
 }

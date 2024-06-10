@@ -66,7 +66,6 @@ final class TokenStorageTests: XCTestCase {
     // MARK: - Fetch tests
     func test_fetchToken_givenKeychainWillReturnValueToFetchRequest_whenParametersArePassed_itShouldPassCorrectParametersToKeychainManagerAndReturnCorrectValue() {
         // Given
-        let stubService = UUID().uuidString
         let expectedResult = UUID().uuidString
         let stubFetchResult = expectedResult.data(using: .utf8)
         let expectedFetchDataParametersPassed = [TokenStorage.service]
@@ -83,9 +82,7 @@ final class TokenStorageTests: XCTestCase {
     
     func test_fetchToken_givenKeychainWillNotReturnValueToFetchRequest_whenParametersArePassed_itShouldPassCorrectParametersToKeychainManagerAndReturnNil() {
         // Given
-        let stubService = UUID().uuidString
-        let stubFetchResult = UUID().uuidString.data(using: .utf8)
-        let expectedFetchDataParametersPassed = [stubService]
+        let expectedFetchDataParametersPassed = [TokenStorage.service]
         
         keychainManagingSpy.fetchDataResult = nil
         

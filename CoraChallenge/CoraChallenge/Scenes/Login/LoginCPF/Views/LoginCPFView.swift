@@ -9,7 +9,8 @@ public protocol LoginCPFViewProtocol: ViewInitializer, KeyboardAdjustableViewPro
     var actions: LoginCPFViewActions? { get set }
     
     func setCPFTextFieldDelegate(_ delegate: UITextFieldDelegate)
-    func setNextButtonEnabled(_ enabled: Bool)}
+    func setNextButtonEnabled(_ enabled: Bool)
+}
 
 public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
 
