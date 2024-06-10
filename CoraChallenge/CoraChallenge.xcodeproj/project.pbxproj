@@ -40,6 +40,8 @@
 		3F5264AF2C178CF2007B68DC /* LoginPasswordInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */; };
 		3F5264B12C178D07007B68DC /* LoginPasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */; };
 		3F5264B32C178E45007B68DC /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B22C178E45007B68DC /* StubError.swift */; };
+		3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B62C179E83007B68DC /* StatementEndpoint.swift */; };
+		3F5264B92C179F6D007B68DC /* StatementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B82C179F6D007B68DC /* StatementResponse.swift */; };
 		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
 		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
 		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
@@ -146,6 +148,8 @@
 		3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordInteractorTests.swift; sourceTree = "<group>"; };
 		3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordPresenterTests.swift; sourceTree = "<group>"; };
 		3F5264B22C178E45007B68DC /* StubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubError.swift; sourceTree = "<group>"; };
+		3F5264B62C179E83007B68DC /* StatementEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementEndpoint.swift; sourceTree = "<group>"; };
+		3F5264B82C179F6D007B68DC /* StatementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementResponse.swift; sourceTree = "<group>"; };
 		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
 		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
@@ -392,6 +396,15 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		3F5264B52C179E6B007B68DC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3F5264B62C179E83007B68DC /* StatementEndpoint.swift */,
+				3F5264B82C179F6D007B68DC /* StatementResponse.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3F57CAB62C0F7F02001E0B76 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +440,7 @@
 		3F75B7202C10EEE00027524F /* Statement */ = {
 			isa = PBXGroup;
 			children = (
+				3F5264B52C179E6B007B68DC /* Service */,
 				3FE6580B2C114F1000A2E1AC /* View */,
 				3F75B7272C10EFBA0027524F /* StatementModels.swift */,
 				3F75B7292C10EFEB0027524F /* StatementInteractor.swift */,
@@ -707,6 +721,7 @@
 				3FCD67FA2C1668AB00B23E96 /* KeychainManager.swift in Sources */,
 				3F75B72E2C10F0640027524F /* StatementWorker.swift in Sources */,
 				3F57CABF2C0F7FEB001E0B76 /* LoginCPFInteractor.swift in Sources */,
+				3F5264B92C179F6D007B68DC /* StatementResponse.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
 				3FCD67FD2C167DC300B23E96 /* TokenStorage.swift in Sources */,
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
@@ -718,6 +733,7 @@
 				3F75B7282C10EFBA0027524F /* StatementModels.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
+				3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */,
 				3F871E492C123C01008004CF /* Endpoint.swift in Sources */,
 				3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */,
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
