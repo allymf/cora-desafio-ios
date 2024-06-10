@@ -178,6 +178,8 @@
 		3FCD67FC2C167DC300B23E96 /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		3FCD67FF2C1681D500B23E96 /* TokenStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageTests.swift; sourceTree = "<group>"; };
 		3FCD68012C16897C00B23E96 /* KeychainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerTests.swift; sourceTree = "<group>"; };
+		3FCD68042C16938500B23E96 /* NetworkConfigurations-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "NetworkConfigurations-Debug.xcconfig"; sourceTree = "<group>"; };
+		3FCD68052C1694FC00B23E96 /* NetworkConfigurations-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "NetworkConfigurations-Release.xcconfig"; sourceTree = "<group>"; };
 		3FE658092C114E4A00A2E1AC /* StatementViewController+TableViewDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewController+TableViewDriver.swift"; sourceTree = "<group>"; };
 		3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraNavigationController.swift; sourceTree = "<group>"; };
 		3FF979FD2C0E913E0044D1D5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -403,6 +405,7 @@
 		3F871E3F2C123A7E008004CF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3FCD68062C1695E300B23E96 /* Configurations */,
 				3F871E402C123B13008004CF /* NetworkService.swift */,
 				3F871E422C123BA0008004CF /* RequestBuilder.swift */,
 				3F871E442C123BBA008004CF /* URLSession+DataTaskResult.swift */,
@@ -477,6 +480,15 @@
 				3F027F162C0FFDDF0054F570 /* LoginPasswordView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3FCD68062C1695E300B23E96 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				3FCD68042C16938500B23E96 /* NetworkConfigurations-Debug.xcconfig */,
+				3FCD68052C1694FC00B23E96 /* NetworkConfigurations-Release.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		3FE6580B2C114F1000A2E1AC /* View */ = {
@@ -754,6 +766,7 @@
 /* Begin XCBuildConfiguration section */
 		3F3D73142C0D56B900448F19 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCD68042C16938500B23E96 /* NetworkConfigurations-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -817,6 +830,7 @@
 		};
 		3F3D73152C0D56B900448F19 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FCD68052C1694FC00B23E96 /* NetworkConfigurations-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
