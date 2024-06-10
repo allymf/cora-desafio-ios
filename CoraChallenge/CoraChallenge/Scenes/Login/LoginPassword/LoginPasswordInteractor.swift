@@ -1,20 +1,14 @@
 import Foundation
 
-protocol LoginPasswordDataStore {
-    var cpfText: String { get }
-}
-
 protocol LoginPasswordBusinessLogic {
     func didTapNextButton(request: LoginPasswordModels.NextButton.Request)
 }
     
-final class LoginPasswordInteractor: LoginPasswordBusinessLogic, LoginPasswordDataStore {
+final class LoginPasswordInteractor: LoginPasswordBusinessLogic {
     private let presenter: LoginPasswordPresentationLogic
     private let worker: LoginPasswordWorkingLogic
     private let tokenStorage: TokenStoring
-    
-    // MARK: - DataStore
-    private(set) var cpfText: String
+    private let cpfText: String
     
     init(
         presenter: LoginPasswordPresentationLogic,

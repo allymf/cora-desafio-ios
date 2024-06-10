@@ -27,7 +27,7 @@ enum LoginPasswordModels {
         
     }
     
-    struct LoginParameters: LoginParametersProtocol {
+    struct LoginParameters: Equatable {
         let cpf: String
         let password: String
     }
