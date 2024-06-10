@@ -21,7 +21,6 @@
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
 		3F3D72FC2C0D56B800448F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72FA2C0D56B800448F19 /* LaunchScreen.storyboard */; };
-		3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */; };
 		3F3D73112C0D56B900448F19 /* CoraChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73102C0D56B900448F19 /* CoraChallengeUITests.swift */; };
 		3F3D73132C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */; };
 		3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E2E2C0E04F200364913 /* WelcomeViewController.swift */; };
@@ -127,7 +126,6 @@
 		3F3D72FB2C0D56B800448F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F3D72FD2C0D56B800448F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F3D73022C0D56B900448F19 /* CoraChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeTests.swift; sourceTree = "<group>"; };
 		3F3D730C2C0D56B900448F19 /* CoraChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D73102C0D56B900448F19 /* CoraChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITests.swift; sourceTree = "<group>"; };
 		3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -291,9 +289,9 @@
 		3F3D73052C0D56B900448F19 /* CoraChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				3F5264A92C17874E007B68DC /* Commom */,
 				3FCD67FE2C1681BC00B23E96 /* Keychain */,
 				3FF97A072C0EA7430044D1D5 /* Scenes */,
-				3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */,
 				3F5264B22C178E45007B68DC /* StubError.swift */,
 			);
 			path = CoraChallengeTests;
@@ -383,6 +381,15 @@
 				3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */,
 			);
 			path = LoginPassword;
+			sourceTree = "<group>";
+		};
+		3F5264B42C179A34007B68DC /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				3FF97A0A2C0EA9410044D1D5 /* WelcomePresenterTests.swift */,
+				3FF97A082C0EA75E0044D1D5 /* WelcomeInteractorTests.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		3F57CAB62C0F7F02001E0B76 /* Login */ = {
@@ -537,10 +544,8 @@
 		3FF97A072C0EA7430044D1D5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3F5264A92C17874E007B68DC /* Commom */,
+				3F5264B42C179A34007B68DC /* Welcome */,
 				3FA1E0622C13F19E00E28AE6 /* Login */,
-				3FF97A082C0EA75E0044D1D5 /* WelcomeInteractorTests.swift */,
-				3FF97A0A2C0EA9410044D1D5 /* WelcomePresenterTests.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -750,7 +755,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */,
-				3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
 				3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */,
