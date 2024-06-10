@@ -18,7 +18,9 @@ enum StatementModels {
         
         enum ViewModel {
             
-            struct Success {}
+            struct Success {
+                let sceneViewModel: StatementViewModel
+            }
             
             struct Failure {
                 let error: Error
@@ -26,6 +28,35 @@ enum StatementModels {
             
         }
         
+    }
+    
+    struct StatementViewModel {
+        struct Section {
+            let title: String
+            let date: Date
+            let items: [Item]
+        }
+        
+        struct Item {
+            let description: String
+            let label: String
+            let entry: Entry
+            let currencyAmount: String
+            let name: String
+            let hourText: String
+            let status: Status
+        }
+        
+        enum Entry {
+            case debit
+            case credit
+        }
+        
+        enum Status: String {
+            case complete
+        }
+        
+        let sections: [Section]
     }
     
     struct Action: StatementViewActions {
