@@ -30,7 +30,8 @@ final class LoginPasswordInteractor: LoginPasswordBusinessLogic, LoginPasswordDa
     
     func didTapNextButton(request: LoginPasswordModels.NextButton.Request) {
         guard let password = request.password else {
-            // fail
+            let error: LoginPasswordModels.SceneErrors = .passwordIsNil
+            presenter.presentNextSceneFailure(response: .init(error: error))
             return
         }
         
@@ -42,26 +43,25 @@ final class LoginPasswordInteractor: LoginPasswordBusinessLogic, LoginPasswordDa
             guard let self else { return }
             switch result {
             case let .success(response):
-                guard self.storeToken(response.token) else {
-                    // Fail
-                    return
-                }
-                // success
+                handleTokenStorage(response.token)
             case let .failure(error):
-                // fail
+                self.presenter.presentNextSceneFailure(response: .init(error: error))
                 break
             }
         }
     }
     
-    
-    private func storeToken(_ token: String?) -> Bool {
-        guard let token = token else { return false }
+    private func handleTokenStorage(_ token: String?) {
+        guard let token = token else {
+            let error: LoginPasswordModels.SceneErrors = .tokenIsNil
+            return presenter.presentNextSceneFailure(response: .init(error: error))
+        }
+        
         do {
             try tokenStorage.save(token: token)
-            return true
+            presenter.presentNextScene()
         } catch {
-            return false
+            presenter.presentNextSceneFailure(response: .init(error: error))
         }
     }
     
