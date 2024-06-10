@@ -6,6 +6,25 @@ enum LoginPasswordModels {
         struct Request {
             let password: String?
         }
+        
+        enum Response {
+            struct Failure {
+                let error: Error
+            }
+        }
+        
+        enum ViewModel {
+            struct Failure {
+                let error: Error
+            }
+        }
+    }
+    
+    enum SceneErrors: Error {
+        case passwordIsNil
+        case tokenIsNil
+        case unableToStoreToken
+        
     }
     
     struct LoginParameters: LoginParametersProtocol {
