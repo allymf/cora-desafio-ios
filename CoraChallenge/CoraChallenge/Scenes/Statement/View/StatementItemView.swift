@@ -96,6 +96,14 @@ final class StatementItemView: CodedView {
         backgroundColor = .white
     }
     
+    // MARK: - Public API
+    func setup(with viewModel: StatementModels.StatementViewModel.Item) {
+        valueLabel.text = viewModel.currencyAmount
+        
+        
+        timeLabel.text = viewModel.hourText
+    }
+    
 }
 
 private extension StatementItemView {

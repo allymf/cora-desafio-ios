@@ -54,7 +54,7 @@ enum StatementModels {
         }
         
         enum Status: String {
-            case complete
+            case completed
             case none
         }
         

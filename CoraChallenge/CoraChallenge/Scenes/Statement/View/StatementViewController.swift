@@ -6,6 +6,8 @@ final class StatementViewController: UIViewController {
     private let interactor: StatementBusinessLogic & StatementDataStore
     let router: StatementRoutingLogic
     
+    var viewModel: StatementModels.StatementViewModel?
+    
     private lazy var rightBarButtonItem = {
         let icon = UIImage(named: "signOut")
         return UIBarButtonItem(
@@ -49,10 +51,17 @@ final class StatementViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.loadStatement()
+    }
+    
     @objc
     private func didTapDownloadBarButtonItem() {}
     
     @objc
-    private func didPullToRefresh() {}
+    private func didPullToRefresh() {
+        interactor.loadStatement()
+    }
     
 }

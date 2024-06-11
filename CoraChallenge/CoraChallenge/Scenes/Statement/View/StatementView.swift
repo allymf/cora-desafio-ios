@@ -184,6 +184,8 @@ final class StatementView: CodedView, StatementViewProtocol {
         tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
         
+        tableView.register(GenericTableViewCell<StatementItemView>.self)
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         return tableView
