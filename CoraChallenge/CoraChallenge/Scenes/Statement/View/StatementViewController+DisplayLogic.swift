@@ -18,6 +18,13 @@ extension StatementViewController: StatementDisplayLogic {
     }
     
     func displayLoadStatementFailure(viewModel: StatementModels.LoadStatement.ViewModel.Failure) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.present(
+                self.makeErrorAlert(),
+                animated: true
+            )
+        }
         debugPrint(viewModel.error.localizedDescription)
     }
     

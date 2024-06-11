@@ -1,6 +1,6 @@
 import UIKit
 
-open class KeyboardAdjustableViewController: UIViewController {
+open class KeyboardAdjustableViewController: CoraViewController {
     
     private let notificationCenter: NotificationCenter
     
