@@ -6,7 +6,7 @@ enum StatementModels {
         
         enum Response {
             
-            struct Success {
+            struct Success: Equatable {
                 let response: StatementResponse
             }
             
@@ -18,7 +18,7 @@ enum StatementModels {
         
         enum ViewModel {
             
-            struct Success {
+            struct Success: Equatable {
                 let sceneViewModel: StatementViewModel
             }
             
@@ -30,14 +30,14 @@ enum StatementModels {
         
     }
     
-    struct StatementViewModel {
-        struct Section {
+    struct StatementViewModel: Equatable {
+        struct Section: Equatable {
             let title: String
             let date: Date
             let items: [Item]
         }
         
-        struct Item {
+        struct Item: Equatable {
             let description: String
             let label: String
             let entry: Entry

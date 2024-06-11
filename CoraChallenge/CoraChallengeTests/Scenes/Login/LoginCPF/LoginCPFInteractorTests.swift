@@ -103,6 +103,7 @@ final class LoginCPFInteractorTests: XCTestCase {
     
 }
 
+// MARK: - Test Doubles
 extension LoginCPFInteractorTests {
     
     final class PresentationLogicSpy: LoginCPFPresentationLogic {

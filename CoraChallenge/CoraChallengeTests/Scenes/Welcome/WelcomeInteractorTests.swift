@@ -20,6 +20,7 @@ final class WelcomeInteractorTests: XCTestCase {
     
 }
 
+// MARK: - Test Doubles
 extension WelcomeInteractorTests {
     private final class PresentationLogicSpy: WelcomePresentationLogic {
         

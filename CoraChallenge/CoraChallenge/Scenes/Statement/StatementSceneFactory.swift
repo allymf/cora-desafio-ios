@@ -8,7 +8,7 @@ struct StatementSceneFactory {
             presenter: presenter,
             worker: worker
         )
-        let router = StatementRouter(dataStore: interactor)
+        let router = StatementRouter()
         
         let viewController = StatementViewController(
             interactor: interactor,

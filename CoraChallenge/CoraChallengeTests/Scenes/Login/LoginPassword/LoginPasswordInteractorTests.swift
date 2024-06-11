@@ -156,6 +156,7 @@ final class LoginPasswordInteractorTests: XCTestCase {
     
 }
 
+// MARK: - Test Doubles
 extension LoginPasswordInteractorTests {
     
     final class PresentationLogicSpy: LoginPasswordPresentationLogic {

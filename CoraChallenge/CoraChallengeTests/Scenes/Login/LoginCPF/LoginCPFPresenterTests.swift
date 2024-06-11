@@ -63,6 +63,7 @@ final class LoginCPFPresenterTests: XCTestCase {
     
 }
 
+// MARK: - Test Doubles
 extension LoginCPFPresenterTests {
     
     final class DisplayLogicSpy: LoginCPFDisplayLogic {

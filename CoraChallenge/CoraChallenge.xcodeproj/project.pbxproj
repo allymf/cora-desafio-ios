@@ -19,6 +19,7 @@
 		3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */; };
 		3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */; };
 		3F1FB1152C189207003F2D94 /* StatementPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */; };
+		3F1FB1172C189CD6003F2D94 /* IntCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
@@ -129,6 +130,7 @@
 		3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
 		3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPresenterTests.swift; sourceTree = "<group>"; };
+		3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntCurrencyTests.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */,
+				3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1FB1172C189CD6003F2D94 /* IntCurrencyTests.swift in Sources */,
 				3F1FB1152C189207003F2D94 /* StatementPresenterTests.swift in Sources */,
 				3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */,
 				3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */,

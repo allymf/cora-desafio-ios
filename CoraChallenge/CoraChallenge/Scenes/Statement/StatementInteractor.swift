@@ -4,9 +4,7 @@ protocol StatementBusinessLogic {
     func loadStatement()
 }
 
-protocol StatementDataStore {}
-
-final class StatementInteractor: StatementBusinessLogic, StatementDataStore {
+final class StatementInteractor: StatementBusinessLogic {
     
     private let presenter: StatementPresentationLogic
     private let worker: StatementWorkingLogic

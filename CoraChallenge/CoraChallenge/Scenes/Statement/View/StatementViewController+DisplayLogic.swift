@@ -22,7 +22,7 @@ extension StatementViewController: StatementDisplayLogic {
     }
     
     func displayLogout() {
-        // Route to Welcome
+        router.routeToWelcome()
     }
     
 }

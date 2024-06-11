@@ -97,6 +97,7 @@ final class TokenStorageTests: XCTestCase {
     
 }
 
+// MARK: - Test Doubles
 extension TokenStorageTests {
     
     final class KeychainManagingSpy: KeychainManaging {

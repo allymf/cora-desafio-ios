@@ -1,13 +1,13 @@
 import Foundation
 
-struct StatementResponse: Decodable {
+struct StatementResponse: Decodable, Equatable {
     
-    struct Section: Decodable{
+    struct Section: Decodable, Equatable {
         let items: [Item]?
         let date: String?
     }
     
-    struct Item: Decodable {
+    struct Item: Decodable, Equatable {
         let id: String?
         let description: String?
         let label: String?
