@@ -1,12 +1,13 @@
 import UIKit
 
 final class StatementItemView: CodedView {
-
+    
     // MARK: - Metrics
     enum Metrics {
         
-        static var margin: CGFloat = 16
-        static var smallLabelHeight: CGFloat = 20
+        static var margin: CGFloat = 24
+        static var topMargin: CGFloat = 2
+        static var smallLabelHeight: CGFloat = 18
         
         enum IconImageView {
             static var dimension: CGFloat = 24
@@ -17,7 +18,7 @@ final class StatementItemView: CodedView {
         
         enum ValueLabel {
             static var fontSize: CGFloat = 16
-            static var height: CGFloat = 24
+            static var height: CGFloat = 20
         }
         
         enum DescriptionLabel {
@@ -38,6 +39,7 @@ final class StatementItemView: CodedView {
     // MARK: - Subviews
     private let iconImageView = {
         let imageView = UIImageView()
+        imageView.tintColor = .primaryGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -96,6 +98,41 @@ final class StatementItemView: CodedView {
         backgroundColor = .white
     }
     
+    // MARK: - Public API
+    func setup(with viewModel: StatementModels.StatementViewModel.Item) {
+        valueLabel.text = viewModel.currencyAmount
+        descriptionLabel.text = viewModel.label
+        proponentLabel.text = viewModel.name
+        timeLabel.text = viewModel.hourText
+        
+        let icon = getIcon(for: viewModel.entry)
+        iconImageView.image = icon
+        
+        let tintColor = getTintColor(for: viewModel.entry)
+        valueLabel.textColor = tintColor
+        descriptionLabel.textColor = tintColor
+    }
+    
+    private func getIcon(for entryType: StatementModels.StatementViewModel.Entry) -> UIImage {
+        switch entryType {
+        case .credit:
+            return UIImage(named: "deposit") ?? UIImage()
+        case .debit:
+            return UIImage(named: "transference") ?? UIImage()
+        case .none:
+            return UIImage()
+        }
+    }
+    
+    private func getTintColor(for entryType: StatementModels.StatementViewModel.Entry) -> UIColor {
+        switch entryType {
+        case .credit:
+            return .incomeBlue
+        default:
+            return .primaryGray
+        }
+    }
+    
 }
 
 private extension StatementItemView {
@@ -134,7 +171,10 @@ private extension StatementItemView {
     
     func constrainDescriptionLabel() {
         NSLayoutConstraint.activate(
-            descriptionLabel.topAnchor.constraint(equalTo: valueLabel.bottomAnchor),
+            descriptionLabel.topAnchor.constraint(
+                equalTo: valueLabel.bottomAnchor,
+                constant: Metrics.topMargin
+            ),
             descriptionLabel.leadingAnchor.constraint(equalTo: valueLabel.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: valueLabel.trailingAnchor),
             descriptionLabel.heightAnchor.constraint(equalToConstant: Metrics.smallLabelHeight)
@@ -143,7 +183,10 @@ private extension StatementItemView {
     
     func constrainProponentLabel() {
         NSLayoutConstraint.activate(
-            proponentLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
+            proponentLabel.topAnchor.constraint(
+                equalTo: descriptionLabel.bottomAnchor,
+                constant: Metrics.topMargin
+            ),
             proponentLabel.leadingAnchor.constraint(equalTo: valueLabel.leadingAnchor),
             proponentLabel.trailingAnchor.constraint(equalTo: valueLabel.trailingAnchor),
             proponentLabel.heightAnchor.constraint(equalToConstant: Metrics.smallLabelHeight)

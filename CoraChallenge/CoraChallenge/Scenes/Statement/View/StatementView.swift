@@ -8,6 +8,8 @@ protocol StatementViewProtocol: ViewInitializer {
     var sectionHeaderHeight: CGFloat { get }
     var actions: StatementViewActions? { get set }
     
+    var cellHeight: CGFloat { get }
+    
     func setupTableView(with driver: UITableViewDataSource & UITableViewDelegate)
     
     func reloadTableView()
@@ -15,11 +17,11 @@ protocol StatementViewProtocol: ViewInitializer {
 }
 
 final class StatementView: CodedView, StatementViewProtocol {
-
+    
     enum Metrics {
         
         enum OptionsStackView {
-            static var height: CGFloat = 64
+            static var height: CGFloat = 56
         }
         
         enum SelectedButtonView {
@@ -30,7 +32,7 @@ final class StatementView: CodedView, StatementViewProtocol {
         
         enum TableView {
             static var sectionHeaderHeight: CGFloat = 32
-            static var cellHeight: CGFloat = 130
+            static var cellHeight: CGFloat = 100
         }
         
         enum Button {
@@ -113,7 +115,7 @@ final class StatementView: CodedView, StatementViewProtocol {
         )
         button.titleLabel?.font = .avenir(size: Metrics.Button.fontSize)
         button.addTarget(
-            self, 
+            self,
             action: #selector(didTapWithdrawalButton),
             for: .touchUpInside
         )
@@ -180,9 +182,15 @@ final class StatementView: CodedView, StatementViewProtocol {
             style: .grouped
         )
         
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = Metrics.TableView.cellHeight
         tableView.contentInset = .zero
+        tableView.sectionHeaderTopPadding = .zero
+        tableView.sectionFooterHeight = .zero
         tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
+        
+        tableView.register(GenericTableViewCell<StatementItemView>.self)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -204,6 +212,10 @@ final class StatementView: CodedView, StatementViewProtocol {
     // MARK: - Public API
     var sectionHeaderHeight: CGFloat { return Metrics.TableView.sectionHeaderHeight }
     var actions: StatementViewActions?
+    
+    var cellHeight: CGFloat {
+        Metrics.TableView.cellHeight
+    }
     
     func setupTableView(with driver: UITableViewDataSource & UITableViewDelegate) {
         tableView.dataSource = driver

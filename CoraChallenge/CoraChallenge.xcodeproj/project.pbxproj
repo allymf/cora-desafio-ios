@@ -17,11 +17,18 @@
 		3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F1A2C1002720054F570 /* LoginCPFModels.swift */; };
 		3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */; };
 		3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */; };
+		3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */; };
+		3F1FB1152C189207003F2D94 /* StatementPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */; };
+		3F1FB1172C189CD6003F2D94 /* IntCurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */; };
+		3F1FB1192C18A0E5003F2D94 /* StatementViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1182C18A0E5003F2D94 /* StatementViewModelMapperTests.swift */; };
+		3F1FB11B2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11A2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift */; };
+		3F1FB11E2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */; };
+		3F1FB1202C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */; };
+		3F1FB1222C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
 		3F3D72FC2C0D56B800448F19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72FA2C0D56B800448F19 /* LaunchScreen.storyboard */; };
-		3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */; };
 		3F3D73112C0D56B900448F19 /* CoraChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73102C0D56B900448F19 /* CoraChallengeUITests.swift */; };
 		3F3D73132C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */; };
 		3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A2E2E2C0E04F200364913 /* WelcomeViewController.swift */; };
@@ -41,6 +48,12 @@
 		3F5264AF2C178CF2007B68DC /* LoginPasswordInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */; };
 		3F5264B12C178D07007B68DC /* LoginPasswordPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */; };
 		3F5264B32C178E45007B68DC /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B22C178E45007B68DC /* StubError.swift */; };
+		3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B62C179E83007B68DC /* StatementEndpoint.swift */; };
+		3F5264B92C179F6D007B68DC /* StatementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B82C179F6D007B68DC /* StatementResponse.swift */; };
+		3F5264DB2C17DD21007B68DC /* StatementViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */; };
+		3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */; };
+		3F5264DF2C17E94A007B68DC /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */; };
+		3F5264E12C17F2C2007B68DC /* Array+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */; };
 		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
 		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
 		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
@@ -120,6 +133,14 @@
 		3F027F1A2C1002720054F570 /* LoginCPFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFModels.swift; sourceTree = "<group>"; };
 		3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoraButton+Styles.swift"; sourceTree = "<group>"; };
 		3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
+		3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPresenterTests.swift; sourceTree = "<group>"; };
+		3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntCurrencyTests.swift; sourceTree = "<group>"; };
+		3F1FB1182C18A0E5003F2D94 /* StatementViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelMapperTests.swift; sourceTree = "<group>"; };
+		3F1FB11A2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementResponse+Fixtures.swift"; sourceTree = "<group>"; };
+		3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewModel+Fixtures.swift"; sourceTree = "<group>"; };
+		3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitalizedFirstCharacter.swift"; sourceTree = "<group>"; };
+		3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCapitalizedFirstCharacter.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +148,6 @@
 		3F3D72FB2C0D56B800448F19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F3D72FD2C0D56B800448F19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F3D73022C0D56B900448F19 /* CoraChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeTests.swift; sourceTree = "<group>"; };
 		3F3D730C2C0D56B900448F19 /* CoraChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoraChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D73102C0D56B900448F19 /* CoraChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITests.swift; sourceTree = "<group>"; };
 		3F3D73122C0D56B900448F19 /* CoraChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -148,6 +168,12 @@
 		3F5264AE2C178CF2007B68DC /* LoginPasswordInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordInteractorTests.swift; sourceTree = "<group>"; };
 		3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordPresenterTests.swift; sourceTree = "<group>"; };
 		3F5264B22C178E45007B68DC /* StubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubError.swift; sourceTree = "<group>"; };
+		3F5264B62C179E83007B68DC /* StatementEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementEndpoint.swift; sourceTree = "<group>"; };
+		3F5264B82C179F6D007B68DC /* StatementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementResponse.swift; sourceTree = "<group>"; };
+		3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelMapper.swift; sourceTree = "<group>"; };
+		3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Currency.swift"; sourceTree = "<group>"; };
+		3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
+		3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeSubscript.swift"; sourceTree = "<group>"; };
 		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
 		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
@@ -252,6 +278,37 @@
 			path = "UIKit+Extensions";
 			sourceTree = "<group>";
 		};
+		3F1FB1112C1891C5003F2D94 /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FB11C2C18A39B003F2D94 /* Fixtures */,
+				3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */,
+				3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */,
+				3F1FB1182C18A0E5003F2D94 /* StatementViewModelMapperTests.swift */,
+			);
+			path = Statement;
+			sourceTree = "<group>";
+		};
+		3F1FB11C2C18A39B003F2D94 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FB11A2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift */,
+				3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		3F1FB1232C18FACB003F2D94 /* Foundation+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */,
+				3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */,
+				3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */,
+				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
+			);
+			path = "Foundation+Extensions";
+			sourceTree = "<group>";
+		};
 		3F3D72E32C0D56B700448F19 = {
 			isa = PBXGroup;
 			children = (
@@ -291,9 +348,9 @@
 		3F3D73052C0D56B900448F19 /* CoraChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
+				3F5264A92C17874E007B68DC /* Commom */,
 				3FCD67FE2C1681BC00B23E96 /* Keychain */,
 				3FF97A072C0EA7430044D1D5 /* Scenes */,
-				3F3D73062C0D56B900448F19 /* CoraChallengeTests.swift */,
 				3F5264B22C178E45007B68DC /* StubError.swift */,
 			);
 			path = CoraChallengeTests;
@@ -336,6 +393,7 @@
 		3F4A2E3B2C0E0BDD00364913 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				3F1FB1232C18FACB003F2D94 /* Foundation+Extensions */,
 				3FCD67FB2C167DA100B23E96 /* KeychainManager */,
 				3F4A2E472C0E12A600364913 /* Views */,
 				3F75B71F2C10EB950027524F /* KeyboardAdjustable */,
@@ -343,7 +401,6 @@
 				3F4A2E462C0E0FD800364913 /* Identifiable */,
 				3FF979FF2C0E956A0044D1D5 /* CodedView.swift */,
 				3FF97A052C0EA4810044D1D5 /* ViewInitializer.swift */,
-				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -364,6 +421,7 @@
 				3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */,
 				3F4A2E482C0E12BE00364913 /* CoraButton.swift */,
 				3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */,
+				3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -372,6 +430,8 @@
 			isa = PBXGroup;
 			children = (
 				3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */,
+				3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */,
+				3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -383,6 +443,24 @@
 				3F5264B02C178D07007B68DC /* LoginPasswordPresenterTests.swift */,
 			);
 			path = LoginPassword;
+			sourceTree = "<group>";
+		};
+		3F5264B42C179A34007B68DC /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				3FF97A0A2C0EA9410044D1D5 /* WelcomePresenterTests.swift */,
+				3FF97A082C0EA75E0044D1D5 /* WelcomeInteractorTests.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		3F5264B52C179E6B007B68DC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3F5264B62C179E83007B68DC /* StatementEndpoint.swift */,
+				3F5264B82C179F6D007B68DC /* StatementResponse.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		3F57CAB62C0F7F02001E0B76 /* Login */ = {
@@ -420,6 +498,7 @@
 		3F75B7202C10EEE00027524F /* Statement */ = {
 			isa = PBXGroup;
 			children = (
+				3F5264B52C179E6B007B68DC /* Service */,
 				3FE6580B2C114F1000A2E1AC /* View */,
 				3F75B7272C10EFBA0027524F /* StatementModels.swift */,
 				3F75B7292C10EFEB0027524F /* StatementInteractor.swift */,
@@ -427,6 +506,7 @@
 				3F75B72D2C10F0640027524F /* StatementWorker.swift */,
 				3F75B72F2C10F0DA0027524F /* StatementRouter.swift */,
 				3F75B7312C10F18C0027524F /* StatementSceneFactory.swift */,
+				3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */,
 			);
 			path = Statement;
 			sourceTree = "<group>";
@@ -537,10 +617,9 @@
 		3FF97A072C0EA7430044D1D5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3F5264A92C17874E007B68DC /* Commom */,
+				3F5264B42C179A34007B68DC /* Welcome */,
 				3FA1E0622C13F19E00E28AE6 /* Login */,
-				3FF97A082C0EA75E0044D1D5 /* WelcomeInteractorTests.swift */,
-				3FF97A0A2C0EA9410044D1D5 /* WelcomePresenterTests.swift */,
+				3F1FB1112C1891C5003F2D94 /* Statement */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -702,6 +781,7 @@
 				3FCD67FA2C1668AB00B23E96 /* KeychainManager.swift in Sources */,
 				3F75B72E2C10F0640027524F /* StatementWorker.swift in Sources */,
 				3F57CABF2C0F7FEB001E0B76 /* LoginCPFInteractor.swift in Sources */,
+				3F5264B92C179F6D007B68DC /* StatementResponse.swift in Sources */,
 				3F4A2E382C0E076400364913 /* WelcomeSceneFactory.swift in Sources */,
 				3FCD67FD2C167DC300B23E96 /* TokenStorage.swift in Sources */,
 				3F4A2E3F2C0E0C8100364913 /* Identifiable.swift in Sources */,
@@ -711,16 +791,20 @@
 				3FA1E0612C13EF0300E28AE6 /* CPFTextField.swift in Sources */,
 				3FF97A022C0E9E5F0044D1D5 /* WelcomeModels.swift in Sources */,
 				3F75B7282C10EFBA0027524F /* StatementModels.swift in Sources */,
+				3F5264E12C17F2C2007B68DC /* Array+SafeSubscript.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
+				3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */,
 				3F871E492C123C01008004CF /* Endpoint.swift in Sources */,
 				3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */,
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
 				3F871E4B2C123C1F008004CF /* Decoding.swift in Sources */,
 				3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */,
+				3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
+				3F5264DF2C17E94A007B68DC /* GenericTableViewCell.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
 				3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */,
@@ -730,11 +814,13 @@
 				3F4E7BA92C11FF13003B4E39 /* StatementItemView.swift in Sources */,
 				3F5264A82C178730007B68DC /* String+UnmaskedCPF.swift in Sources */,
 				3FF97A062C0EA4810044D1D5 /* ViewInitializer.swift in Sources */,
+				3F5264DB2C17DD21007B68DC /* StatementViewModelMapper.swift in Sources */,
 				3F871E472C123BDF008004CF /* HTTPMethod.swift in Sources */,
 				3F871E412C123B13008004CF /* NetworkService.swift in Sources */,
 				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
 				3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
+				3F1FB1202C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
 				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
 				3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */,
@@ -749,15 +835,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1FB1172C189CD6003F2D94 /* IntCurrencyTests.swift in Sources */,
+				3F1FB1152C189207003F2D94 /* StatementPresenterTests.swift in Sources */,
+				3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */,
 				3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */,
-				3F3D73072C0D56B900448F19 /* CoraChallengeTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
 				3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */,
+				3F1FB11E2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift in Sources */,
 				3FCD68002C1681D500B23E96 /* TokenStorageTests.swift in Sources */,
+				3F1FB11B2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift in Sources */,
 				3F5264B32C178E45007B68DC /* StubError.swift in Sources */,
 				3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */,
 				3F5264AF2C178CF2007B68DC /* LoginPasswordInteractorTests.swift in Sources */,
+				3F1FB1192C18A0E5003F2D94 /* StatementViewModelMapperTests.swift in Sources */,
+				3F1FB1222C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift in Sources */,
 				3F5264B12C178D07007B68DC /* LoginPasswordPresenterTests.swift in Sources */,
 				3FCD68022C16897C00B23E96 /* KeychainManagerTests.swift in Sources */,
 				3F5264AB2C178761007B68DC /* StringUnmaskedCPFTests.swift in Sources */,

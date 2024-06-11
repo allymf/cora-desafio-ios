@@ -3,8 +3,10 @@ import UIKit
 final class StatementViewController: UIViewController {
     
     let viewProtocol: StatementViewProtocol
-    private let interactor: StatementBusinessLogic & StatementDataStore
+    private let interactor: StatementBusinessLogic
     let router: StatementRoutingLogic
+    
+    var viewModel: StatementModels.StatementViewModel?
     
     private lazy var rightBarButtonItem = {
         let icon = UIImage(named: "signOut")
@@ -18,7 +20,7 @@ final class StatementViewController: UIViewController {
     
     init(
         viewProtocol: StatementViewProtocol = StatementView(),
-        interactor: StatementBusinessLogic & StatementDataStore,
+        interactor: StatementBusinessLogic,
         router: StatementRoutingLogic
     ) {
         self.viewProtocol = viewProtocol
@@ -49,10 +51,17 @@ final class StatementViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.loadStatement()
+    }
+    
     @objc
     private func didTapDownloadBarButtonItem() {}
     
     @objc
-    private func didPullToRefresh() {}
+    private func didPullToRefresh() {
+        interactor.loadStatement()
+    }
     
 }

@@ -29,6 +29,7 @@ final class WelcomePresenterTests: XCTestCase {
     
 }
 
+// MARK: - Test Doubles
 extension WelcomePresenterTests {
     private final class DisplayerSpy: WelcomeDisplayLogic {
         

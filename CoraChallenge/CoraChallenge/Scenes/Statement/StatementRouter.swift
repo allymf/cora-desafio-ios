@@ -1,14 +1,15 @@
 import UIKit
 
-protocol StatementRoutingLogic {}
+protocol StatementRoutingLogic {
+    func routeToWelcome()
+}
 
 final class StatementRouter: StatementRoutingLogic {
     
     weak var viewController: UIViewController?
-    private let dataStore: StatementDataStore
     
-    init(dataStore: StatementDataStore) {
-        self.dataStore = dataStore
+    func routeToWelcome() {
+        viewController?.navigationController?.popToRootViewController(animated: true)
     }
     
 }

@@ -39,10 +39,15 @@ public struct RequestBuilder: RequestBuilding {
         
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.value
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue(apiKey, forHTTPHeaderField: "apikey")
         
-        request.httpBody = makeBodyParamters(for: endpoint)
+        setupHeaderField(
+            in: &request,
+            for: endpoint
+        )
+        
+        request.httpBody = makeBodyParameters(for: endpoint)
         
         return request
     }
@@ -73,13 +78,22 @@ public struct RequestBuilder: RequestBuilding {
         }
     }
     
-    private func makeBodyParamters(for endpoint: Endpoint) -> Data? {
+    private func makeBodyParameters(for endpoint: Endpoint) -> Data? {
         let urlQueryItems = makeQueryItems(from: endpoint.bodyParameters)
         
         var urlComponents = URLComponents(string: String())
         urlComponents?.queryItems = urlQueryItems
         
         return urlComponents?.query?.data(using: .utf8)
+    }
+    
+    private func setupHeaderField(in request: inout URLRequest, for endpoint: Endpoint) {
+        endpoint.headerParameters?.forEach { item in
+            request.setValue(
+                item.value,
+                forHTTPHeaderField: item.key
+            )
+        }
     }
     
 }
