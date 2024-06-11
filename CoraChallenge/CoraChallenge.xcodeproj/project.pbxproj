@@ -43,6 +43,7 @@
 		3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B62C179E83007B68DC /* StatementEndpoint.swift */; };
 		3F5264B92C179F6D007B68DC /* StatementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B82C179F6D007B68DC /* StatementResponse.swift */; };
 		3F5264DB2C17DD21007B68DC /* StatementViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */; };
+		3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */; };
 		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
 		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
 		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
@@ -152,6 +153,7 @@
 		3F5264B62C179E83007B68DC /* StatementEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementEndpoint.swift; sourceTree = "<group>"; };
 		3F5264B82C179F6D007B68DC /* StatementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementResponse.swift; sourceTree = "<group>"; };
 		3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelMapper.swift; sourceTree = "<group>"; };
+		3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Currency.swift"; sourceTree = "<group>"; };
 		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
 		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				3FF979FF2C0E956A0044D1D5 /* CodedView.swift */,
 				3FF97A052C0EA4810044D1D5 /* ViewInitializer.swift */,
 				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
+				3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -742,6 +745,7 @@
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
 				3F871E4B2C123C1F008004CF /* Decoding.swift in Sources */,
 				3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */,
+				3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
