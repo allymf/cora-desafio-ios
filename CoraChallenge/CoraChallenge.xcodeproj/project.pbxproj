@@ -23,6 +23,8 @@
 		3F1FB1192C18A0E5003F2D94 /* StatementViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1182C18A0E5003F2D94 /* StatementViewModelMapperTests.swift */; };
 		3F1FB11B2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11A2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift */; };
 		3F1FB11E2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */; };
+		3F1FB1202C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */; };
+		3F1FB1222C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
@@ -137,6 +139,8 @@
 		3F1FB1182C18A0E5003F2D94 /* StatementViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelMapperTests.swift; sourceTree = "<group>"; };
 		3F1FB11A2C18A2CE003F2D94 /* StatementResponse+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementResponse+Fixtures.swift"; sourceTree = "<group>"; };
 		3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewModel+Fixtures.swift"; sourceTree = "<group>"; };
+		3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitalizedFirstCharacter.swift"; sourceTree = "<group>"; };
+		3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCapitalizedFirstCharacter.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +298,17 @@
 			path = Fixtures;
 			sourceTree = "<group>";
 		};
+		3F1FB1232C18FACB003F2D94 /* Foundation+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */,
+				3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */,
+				3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */,
+				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
+			);
+			path = "Foundation+Extensions";
+			sourceTree = "<group>";
+		};
 		3F3D72E32C0D56B700448F19 = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +393,7 @@
 		3F4A2E3B2C0E0BDD00364913 /* Commom */ = {
 			isa = PBXGroup;
 			children = (
+				3F1FB1232C18FACB003F2D94 /* Foundation+Extensions */,
 				3FCD67FB2C167DA100B23E96 /* KeychainManager */,
 				3F4A2E472C0E12A600364913 /* Views */,
 				3F75B71F2C10EB950027524F /* KeyboardAdjustable */,
@@ -385,9 +401,6 @@
 				3F4A2E462C0E0FD800364913 /* Identifiable */,
 				3FF979FF2C0E956A0044D1D5 /* CodedView.swift */,
 				3FF97A052C0EA4810044D1D5 /* ViewInitializer.swift */,
-				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
-				3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */,
-				3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -418,6 +431,7 @@
 			children = (
 				3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */,
 				3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */,
+				3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -806,6 +820,7 @@
 				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
 				3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
+				3F1FB1202C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
 				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
 				3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */,
@@ -834,6 +849,7 @@
 				3FA1E0672C1404B900E28AE6 /* LoginCPFPresenterTests.swift in Sources */,
 				3F5264AF2C178CF2007B68DC /* LoginPasswordInteractorTests.swift in Sources */,
 				3F1FB1192C18A0E5003F2D94 /* StatementViewModelMapperTests.swift in Sources */,
+				3F1FB1222C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift in Sources */,
 				3F5264B12C178D07007B68DC /* LoginPasswordPresenterTests.swift in Sources */,
 				3FCD68022C16897C00B23E96 /* KeychainManagerTests.swift in Sources */,
 				3F5264AB2C178761007B68DC /* StringUnmaskedCPFTests.swift in Sources */,

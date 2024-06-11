@@ -25,17 +25,23 @@ final class StatementViewModelMapperTests: XCTestCase {
         let expectedDate = try XCTUnwrap(dateFormatter.date(from: stubDateText))
         
         let stubSections: [StatementResponse.Section] = [
-            .fixture(items: [], date: stubDateText),
-            .fixture(items: [], date: stubDateText)
+            .fixture(
+                items: [],
+                date: stubDateText
+            ),
+            .fixture(
+                items: [],
+                date: stubDateText
+            )
         ]
         
         let expectedResult: [StatementModels.StatementViewModel.Section] = [
             .fixture(
-                title: "Terça-Feira - 11 de Junho",
+                title: "Terça-feira - 11 de Junho",
                 date: expectedDate
             ),
             .fixture(
-                title: "Terça-Feira - 11 de Junho",
+                title: "Terça-feira - 11 de Junho",
                 date: expectedDate
             )
         ]
@@ -137,7 +143,7 @@ final class StatementViewModelMapperTests: XCTestCase {
         let titleLeadingDateFormat = String(localized: "Statement.Section.TitleLeadingDateFormat")
         
         dateFormatter.dateFormat = titleLeadingDateFormat
-        let expectedLeadingTitle = dateFormatter.string(from: expectedDate).capitalized
+        let expectedLeadingTitle = dateFormatter.string(from: expectedDate).capitalizedFirstCharacter
         
         dateFormatter.dateFormat = String(localized: "Statement.Section.TitleTrailingDateFormat")
         

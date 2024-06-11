@@ -97,7 +97,7 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         }
         
         dateFormatter.dateFormat = sectionTitleLeadingDateFormat
-        return dateFormatter.string(from: date).capitalized
+        return dateFormatter.string(from: date).capitalizedFirstCharacter
     }
     
     func makeItems(with decodables: [StatementResponse.Item]?) -> [StatementModels.StatementViewModel.Item] {
