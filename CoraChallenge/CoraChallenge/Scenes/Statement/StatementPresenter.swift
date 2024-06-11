@@ -12,8 +12,16 @@ protocol StatementPresentationLogic {
 final class StatementPresenter: StatementPresentationLogic {
     
     weak var displayer: StatementDisplayLogic?
+    private let statementViewModelMapper: StatementViewModelMapping
     
-    func presentLoadStatement(response: StatementModels.LoadStatement.Response.Success) {}
+    init(statementViewModelMapper: StatementViewModelMapping = StatementViewModelMapper()) {
+        self.statementViewModelMapper = statementViewModelMapper
+    }
+    
+    func presentLoadStatement(response: StatementModels.LoadStatement.Response.Success) {
+        let statementViewModel = statementViewModelMapper.makeViewModel(with: response.response)
+        displayer?.displayLoadStatement(viewModel: .init(sceneViewModel: statementViewModel))
+    }
     
     func presentLoadStatementFailure(response: StatementModels.LoadStatement.Response.Failure) {
         displayer?.displayLoadStatementFailure(viewModel: .init(error: response.error))

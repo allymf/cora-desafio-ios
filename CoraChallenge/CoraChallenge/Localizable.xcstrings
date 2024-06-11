@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "pt-BR",
   "strings" : {
+    "CurrencyPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "R$ --,--"
+          }
+        }
+      }
+    },
     "LoginCPF.InsertCPF" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -96,6 +107,72 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entrada"
+          }
+        }
+      }
+    },
+    "Statement.Item.DateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yyyy-MM-dd'T'HH:mm:ssZ"
+          }
+        }
+      }
+    },
+    "Statement.Item.HourFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HH:MM"
+          }
+        }
+      }
+    },
+    "Statement.Section.DateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yyyy-mm-dd"
+          }
+        }
+      }
+    },
+    "Statement.Section.TitleFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ de %@"
+          }
+        }
+      }
+    },
+    "Statement.Section.TitleLeadingDateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EEEE '-' d"
+          }
+        }
+      }
+    },
+    "Statement.Section.TitleTrailingDateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MMMM"
           }
         }
       }

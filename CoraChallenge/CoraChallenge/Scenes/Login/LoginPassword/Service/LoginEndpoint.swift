@@ -8,7 +8,7 @@ enum LoginEndpoint: Endpoint {
     
     var path: String { "/challenge/auth" }
     
-    var urlParameters: [String : String]? { return nil}
+    var urlParameters: [String : String]? { nil}
     
     var bodyParameters: [String : String]? {
         switch self {
@@ -19,6 +19,8 @@ enum LoginEndpoint: Endpoint {
             ]
         }
     }
+    
+    var headerParameters: [String: String]? { nil }
     
     var method: HTTPMethod { .post }
 }

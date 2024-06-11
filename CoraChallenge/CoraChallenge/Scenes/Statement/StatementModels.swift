@@ -47,13 +47,15 @@ enum StatementModels {
             let status: Status
         }
         
-        enum Entry {
+        enum Entry: String {
             case debit
             case credit
+            case none
         }
         
         enum Status: String {
             case complete
+            case none
         }
         
         let sections: [Section]
