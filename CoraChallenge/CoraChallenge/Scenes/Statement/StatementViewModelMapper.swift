@@ -20,6 +20,8 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         return numberFormatter
     }()
     
+    private let calendar: Calendar
+    
     private let sectionDateFormat = String(localized: "Statement.Section.DateFormat")
     
     private let sectionTitleLeadingDateFormat = String(localized: "Statement.Section.TitleLeadingDateFormat")
@@ -29,11 +31,15 @@ final class StatementViewModelMapper: StatementViewModelMapping {
     private let itemDateFormat = String(localized: "Statement.Item.DateFormat")
     private let itemHourFormat = String(localized: "Statement.Item.HourFormat")
     
+    init(calendar: Calendar = .current) {
+        self.calendar = calendar
+    }
+    
     func makeViewModel(with decodable: StatementResponse) -> StatementModels.StatementViewModel {
         return .init(sections: makeSections(with: decodable.results))
     }
     
-    private func makeSections(with decodables: [StatementResponse.Section]?) -> [StatementModels.StatementViewModel.Section] {
+    func makeSections(with decodables: [StatementResponse.Section]?) -> [StatementModels.StatementViewModel.Section] {
         var sections = [StatementModels.StatementViewModel.Section]()
         guard let decodables else { return sections }
         
@@ -44,19 +50,15 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         return sections
     }
     
-    private func makeSection(with decodable: StatementResponse.Section) -> StatementModels.StatementViewModel.Section {
+    func makeSection(with decodable: StatementResponse.Section) -> StatementModels.StatementViewModel.Section {
         dateFormatter.dateFormat = sectionDateFormat
         let dateText = decodable.date ?? ""
         let date = dateFormatter.date(from: dateText) ?? Date()
         
-        dateFormatter.dateFormat = sectionTitleLeadingDateFormat
-        let titleLeadingText = dateFormatter.string(from: date).capitalized.replacingOccurrences(
-            of: String(localized: "DayNameTrailing"),
-            with: ""
-        )
+        let titleLeadingText = titleLeading(for: date)
         
         dateFormatter.dateFormat = sectionTitleTrailingDateFormat
-        let titleTrailingText = dateFormatter.string(from: date)
+        let titleTrailingText = dateFormatter.string(from: date).capitalized
         
         let title = String(
             format: titleFormatText,
@@ -71,7 +73,20 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         )
     }
     
-    private func makeItems(with decodables: [StatementResponse.Item]?) -> [StatementModels.StatementViewModel.Item] {
+    func titleLeading(for date: Date) -> String {
+        guard !calendar.isDateInToday(date) else {
+            return String(localized: "Today")
+        }
+        
+        guard !calendar.isDateInYesterday(date) else {
+            return String(localized: "Yesterday")
+        }
+        
+        dateFormatter.dateFormat = sectionTitleLeadingDateFormat
+        return dateFormatter.string(from: date).capitalized
+    }
+    
+    func makeItems(with decodables: [StatementResponse.Item]?) -> [StatementModels.StatementViewModel.Item] {
         var items = [StatementModels.StatementViewModel.Item]()
         guard let decodables else { return items }
         
@@ -82,7 +97,7 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         return items
     }
     
-    private func makeItem(with decodable: StatementResponse.Item) -> StatementModels.StatementViewModel.Item {
+    func makeItem(with decodable: StatementResponse.Item) -> StatementModels.StatementViewModel.Item {
         let currencyAmount: Double = decodable.amount?.currency ?? 0.0
         let formattedCurrencyAmount = numberFormatter.string(from: NSNumber(value: currencyAmount)) ?? String(localized: "CurrencyPlaceholder")
         
@@ -100,7 +115,7 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         )
     }
     
-    private func formatItemHourText(from decodable: StatementResponse.Item) -> String {
+    func formatItemHourText(from decodable: StatementResponse.Item) -> String {
         dateFormatter.dateFormat = itemDateFormat
         let date = dateFormatter.date(from: decodable.dateEvent ?? "") ?? Date()
         dateFormatter.dateFormat = itemHourFormat

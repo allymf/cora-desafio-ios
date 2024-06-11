@@ -12,17 +12,6 @@
         }
       }
     },
-    "DayNameTrailing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "-Feira"
-          }
-        }
-      }
-    },
     "LoginCPF.InsertCPF" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -210,6 +199,17 @@
         }
       }
     },
+    "Today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoje"
+          }
+        }
+      }
+    },
     "WelcomeScene.Login.Title" : {
       "localizations" : {
         "pt-BR" : {
@@ -248,6 +248,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conta Digital PJ Poderosamente simples"
+          }
+        }
+      }
+    },
+    "Yesterday" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ontem"
           }
         }
       }
