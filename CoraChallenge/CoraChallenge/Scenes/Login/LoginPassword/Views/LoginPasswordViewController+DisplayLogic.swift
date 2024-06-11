@@ -14,6 +14,10 @@ extension LoginPasswordViewController: LoginPasswordDisplayLogic {
     }
     
     func displayNextSceneFailure(viewModel: LoginPasswordModels.NextButton.ViewModel.Failure) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewProtocol.stopLoading()
+        }
+        
         debugPrint("Error: ", viewModel.error.localizedDescription)
     }
     

@@ -33,6 +33,11 @@ final class LoginPasswordViewController: KeyboardAdjustableViewController {
         viewProtocol.actions = LoginPasswordModels.Actions(didTapNextButton: didTapNextButton)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewProtocol.stopLoading()
+    }
+    
     override func keyboardIsShowing(keyboardHeight: CGFloat) {
         viewProtocol.updateNextButtonBottomConstraint(keyboardHeight: keyboardHeight)
     }
