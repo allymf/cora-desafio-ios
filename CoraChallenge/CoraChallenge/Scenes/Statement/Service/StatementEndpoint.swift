@@ -4,7 +4,7 @@ enum StatementEndpoint: Endpoint {
     
     case statement(token: String)
     
-    var path: String { "challenge/list" }
+    var path: String { "/challenge/list" }
     
     var urlParameters: [String : String]? { nil }
     
