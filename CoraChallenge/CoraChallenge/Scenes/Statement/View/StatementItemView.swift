@@ -5,8 +5,9 @@ final class StatementItemView: CodedView {
     // MARK: - Metrics
     enum Metrics {
         
-        static var margin: CGFloat = 16
-        static var smallLabelHeight: CGFloat = 20
+        static var margin: CGFloat = 24
+        static var topMargin: CGFloat = 2
+        static var smallLabelHeight: CGFloat = 18
         
         enum IconImageView {
             static var dimension: CGFloat = 24
@@ -17,7 +18,7 @@ final class StatementItemView: CodedView {
         
         enum ValueLabel {
             static var fontSize: CGFloat = 16
-            static var height: CGFloat = 24
+            static var height: CGFloat = 20
         }
         
         enum DescriptionLabel {
@@ -38,6 +39,7 @@ final class StatementItemView: CodedView {
     // MARK: - Subviews
     private let iconImageView = {
         let imageView = UIImageView()
+        imageView.tintColor = .primaryGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -107,7 +109,6 @@ final class StatementItemView: CodedView {
         iconImageView.image = icon
         
         let tintColor = getTintColor(for: viewModel.entry)
-        iconImageView.tintColor = tintColor
         valueLabel.textColor = tintColor
         descriptionLabel.textColor = tintColor
     }
@@ -170,7 +171,10 @@ private extension StatementItemView {
     
     func constrainDescriptionLabel() {
         NSLayoutConstraint.activate(
-            descriptionLabel.topAnchor.constraint(equalTo: valueLabel.bottomAnchor),
+            descriptionLabel.topAnchor.constraint(
+                equalTo: valueLabel.bottomAnchor,
+                constant: Metrics.topMargin
+            ),
             descriptionLabel.leadingAnchor.constraint(equalTo: valueLabel.leadingAnchor),
             descriptionLabel.trailingAnchor.constraint(equalTo: valueLabel.trailingAnchor),
             descriptionLabel.heightAnchor.constraint(equalToConstant: Metrics.smallLabelHeight)
@@ -179,13 +183,12 @@ private extension StatementItemView {
     
     func constrainProponentLabel() {
         NSLayoutConstraint.activate(
-            proponentLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
+            proponentLabel.topAnchor.constraint(
+                equalTo: descriptionLabel.bottomAnchor,
+                constant: Metrics.topMargin
+            ),
             proponentLabel.leadingAnchor.constraint(equalTo: valueLabel.leadingAnchor),
             proponentLabel.trailingAnchor.constraint(equalTo: valueLabel.trailingAnchor),
-            proponentLabel.bottomAnchor.constraint(
-                greaterThanOrEqualTo: bottomAnchor,
-                constant: -Metrics.margin
-            ),
             proponentLabel.heightAnchor.constraint(equalToConstant: Metrics.smallLabelHeight)
         )
     }    
