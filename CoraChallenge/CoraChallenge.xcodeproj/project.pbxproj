@@ -44,6 +44,7 @@
 		3F5264B92C179F6D007B68DC /* StatementResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264B82C179F6D007B68DC /* StatementResponse.swift */; };
 		3F5264DB2C17DD21007B68DC /* StatementViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */; };
 		3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */; };
+		3F5264DF2C17E94A007B68DC /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */; };
 		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
 		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
 		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
@@ -154,6 +155,7 @@
 		3F5264B82C179F6D007B68DC /* StatementResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementResponse.swift; sourceTree = "<group>"; };
 		3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelMapper.swift; sourceTree = "<group>"; };
 		3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Currency.swift"; sourceTree = "<group>"; };
+		3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
 		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
 		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */,
 				3F4A2E482C0E12BE00364913 /* CoraButton.swift */,
 				3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */,
+				3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
 				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
+				3F5264DF2C17E94A007B68DC /* GenericTableViewCell.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
 				3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */,
