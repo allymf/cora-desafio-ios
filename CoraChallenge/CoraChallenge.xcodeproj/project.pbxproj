@@ -45,6 +45,7 @@
 		3F5264DB2C17DD21007B68DC /* StatementViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */; };
 		3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */; };
 		3F5264DF2C17E94A007B68DC /* GenericTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */; };
+		3F5264E12C17F2C2007B68DC /* Array+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */; };
 		3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */; };
 		3F57CABB2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */; };
 		3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */; };
@@ -156,6 +157,7 @@
 		3F5264DA2C17DD21007B68DC /* StatementViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementViewModelMapper.swift; sourceTree = "<group>"; };
 		3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Currency.swift"; sourceTree = "<group>"; };
 		3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
+		3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeSubscript.swift"; sourceTree = "<group>"; };
 		3F57CAB82C0F7F57001E0B76 /* LoginCPFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFViewController.swift; sourceTree = "<group>"; };
 		3F57CABA2C0F7F8F001E0B76 /* LoginCPFViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginCPFViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
 		3F57CABC2C0F7FCC001E0B76 /* LoginCPFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFView.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				3FF97A052C0EA4810044D1D5 /* ViewInitializer.swift */,
 				3F5264A72C178730007B68DC /* String+UnmaskedCPF.swift */,
 				3F5264DC2C17E7AF007B68DC /* Int+Currency.swift */,
+				3F5264E02C17F2C2007B68DC /* Array+SafeSubscript.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				3FA1E0612C13EF0300E28AE6 /* CPFTextField.swift in Sources */,
 				3FF97A022C0E9E5F0044D1D5 /* WelcomeModels.swift in Sources */,
 				3F75B7282C10EFBA0027524F /* StatementModels.swift in Sources */,
+				3F5264E12C17F2C2007B68DC /* Array+SafeSubscript.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
 				3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */,

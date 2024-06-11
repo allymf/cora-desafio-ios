@@ -1,11 +1,17 @@
 import UIKit
 
 extension StatementViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel?.sections.count ?? 0
+    }
+
     func tableView(
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        return viewModel?.sections.count ?? 0
+        let section = viewModel?.sections[safeIndex: section]
+        return section?.items.count ?? 0
     }
     
     func tableView(
@@ -17,7 +23,10 @@ extension StatementViewController: UITableViewDataSource {
             for: indexPath
         )
         
-        cell.customView
+        let section = viewModel?.sections[safeIndex: indexPath.section]
+        guard let viewModel = section?.items[safeIndex: indexPath.item] else { return cell }
+        
+        cell.customView.setup(with: viewModel)
         
         return cell
     }
@@ -38,6 +47,21 @@ extension StatementViewController: UITableViewDataSource {
         headerView.title = title
         return headerView
     }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return nil
+    }
 }
 
-extension StatementViewController: UITableViewDelegate {}
+extension StatementViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewProtocol.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .zero
+    }
+    
+    
+}

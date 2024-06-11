@@ -1,7 +1,7 @@
 import UIKit
 
 final class StatementItemView: CodedView {
-
+    
     // MARK: - Metrics
     enum Metrics {
         
@@ -99,9 +99,37 @@ final class StatementItemView: CodedView {
     // MARK: - Public API
     func setup(with viewModel: StatementModels.StatementViewModel.Item) {
         valueLabel.text = viewModel.currencyAmount
-        
-        
+        descriptionLabel.text = viewModel.label
+        proponentLabel.text = viewModel.name
         timeLabel.text = viewModel.hourText
+        
+        let icon = getIcon(for: viewModel.entry)
+        iconImageView.image = icon
+        
+        let tintColor = getTintColor(for: viewModel.entry)
+        iconImageView.tintColor = tintColor
+        valueLabel.textColor = tintColor
+        descriptionLabel.textColor = tintColor
+    }
+    
+    private func getIcon(for entryType: StatementModels.StatementViewModel.Entry) -> UIImage {
+        switch entryType {
+        case .credit:
+            return UIImage(named: "deposit") ?? UIImage()
+        case .debit:
+            return UIImage(named: "transference") ?? UIImage()
+        case .none:
+            return UIImage()
+        }
+    }
+    
+    private func getTintColor(for entryType: StatementModels.StatementViewModel.Entry) -> UIColor {
+        switch entryType {
+        case .credit:
+            return .incomeBlue
+        default:
+            return .primaryGray
+        }
     }
     
 }
@@ -154,6 +182,10 @@ private extension StatementItemView {
             proponentLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor),
             proponentLabel.leadingAnchor.constraint(equalTo: valueLabel.leadingAnchor),
             proponentLabel.trailingAnchor.constraint(equalTo: valueLabel.trailingAnchor),
+            proponentLabel.bottomAnchor.constraint(
+                greaterThanOrEqualTo: bottomAnchor,
+                constant: -Metrics.margin
+            ),
             proponentLabel.heightAnchor.constraint(equalToConstant: Metrics.smallLabelHeight)
         )
     }    
