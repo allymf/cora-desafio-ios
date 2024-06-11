@@ -17,6 +17,8 @@
 		3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F1A2C1002720054F570 /* LoginCPFModels.swift */; };
 		3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */; };
 		3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */; };
+		3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */; };
+		3F1FB1152C189207003F2D94 /* StatementPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
@@ -125,6 +127,8 @@
 		3F027F1A2C1002720054F570 /* LoginCPFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFModels.swift; sourceTree = "<group>"; };
 		3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoraButton+Styles.swift"; sourceTree = "<group>"; };
 		3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
+		3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementPresenterTests.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -260,6 +264,15 @@
 				3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */,
 			);
 			path = "UIKit+Extensions";
+			sourceTree = "<group>";
+		};
+		3F1FB1112C1891C5003F2D94 /* Statement */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */,
+				3F1FB1142C189207003F2D94 /* StatementPresenterTests.swift */,
+			);
+			path = Statement;
 			sourceTree = "<group>";
 		};
 		3F3D72E32C0D56B700448F19 = {
@@ -572,6 +585,7 @@
 			children = (
 				3F5264B42C179A34007B68DC /* Welcome */,
 				3FA1E0622C13F19E00E28AE6 /* Login */,
+				3F1FB1112C1891C5003F2D94 /* Statement */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -786,6 +800,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1FB1152C189207003F2D94 /* StatementPresenterTests.swift in Sources */,
+				3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */,
 				3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
