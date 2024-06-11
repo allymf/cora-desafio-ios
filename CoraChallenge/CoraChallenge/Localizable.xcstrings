@@ -12,6 +12,17 @@
         }
       }
     },
+    "DayNameTrailing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-Feira"
+          }
+        }
+      }
+    },
     "LoginCPF.InsertCPF" : {
       "extractionState" : "manual",
       "localizations" : {

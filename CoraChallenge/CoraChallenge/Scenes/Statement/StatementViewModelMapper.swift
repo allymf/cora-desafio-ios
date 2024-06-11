@@ -50,7 +50,10 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         let date = dateFormatter.date(from: dateText) ?? Date()
         
         dateFormatter.dateFormat = sectionTitleLeadingDateFormat
-        let titleLeadingText = dateFormatter.string(from: date)
+        let titleLeadingText = dateFormatter.string(from: date).capitalized.replacingOccurrences(
+            of: String(localized: "DayNameTrailing"),
+            with: ""
+        )
         
         dateFormatter.dateFormat = sectionTitleTrailingDateFormat
         let titleTrailingText = dateFormatter.string(from: date)
