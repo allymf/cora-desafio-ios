@@ -18,5 +18,9 @@ extension UIColor {
     static var terciaryGray = UIColor(rgb: 0xF0F4F8)
     static var disabledButtonGray = UIColor(rgb: 0xC7CBCF)
     static var incomeBlue = UIColor(rgb: 0x1A93DA)
+    static var translucentGray = UIColor(
+        rgb: 0x3B3B3B,
+        alpha: 0.5
+    )
 }
 

@@ -25,6 +25,8 @@
 		3F1FB11E2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */; };
 		3F1FB1202C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */; };
 		3F1FB1222C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */; };
+		3F1FB1252C18FCD6003F2D94 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1242C18FCD6003F2D94 /* LoadingView.swift */; };
+		3F1FB1272C1911A9003F2D94 /* CoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1262C1911A9003F2D94 /* CoraViewController.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
@@ -141,6 +143,8 @@
 		3F1FB11D2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementViewModel+Fixtures.swift"; sourceTree = "<group>"; };
 		3F1FB11F2C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CapitalizedFirstCharacter.swift"; sourceTree = "<group>"; };
 		3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCapitalizedFirstCharacter.swift; sourceTree = "<group>"; };
+		3F1FB1242C18FCD6003F2D94 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		3F1FB1262C1911A9003F2D94 /* CoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraViewController.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -419,9 +423,11 @@
 			isa = PBXGroup;
 			children = (
 				3FEE72BA2C15513B0096045E /* CoraNavigationController.swift */,
+				3F1FB1262C1911A9003F2D94 /* CoraViewController.swift */,
 				3F4A2E482C0E12BE00364913 /* CoraButton.swift */,
 				3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */,
 				3F5264DE2C17E94A007B68DC /* GenericTableViewCell.swift */,
+				3F1FB1242C18FCD6003F2D94 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -760,6 +766,7 @@
 				3F75B7322C10F18C0027524F /* StatementSceneFactory.swift in Sources */,
 				3F871E432C123BA0008004CF /* RequestBuilder.swift in Sources */,
 				3F75B7242C10EF190027524F /* StatementViewController.swift in Sources */,
+				3F1FB1252C18FCD6003F2D94 /* LoadingView.swift in Sources */,
 				3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */,
 				3FEE72BB2C15513B0096045E /* CoraNavigationController.swift in Sources */,
 				3F871E502C124015008004CF /* LoginEndpoint.swift in Sources */,
@@ -794,6 +801,7 @@
 				3F5264E12C17F2C2007B68DC /* Array+SafeSubscript.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
+				3F1FB1272C1911A9003F2D94 /* CoraViewController.swift in Sources */,
 				3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */,
 				3F871E492C123C01008004CF /* Endpoint.swift in Sources */,
 				3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */,

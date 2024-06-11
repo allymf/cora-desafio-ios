@@ -6,6 +6,8 @@ protocol LoginPasswordActions {
 
 protocol LoginPasswordViewProtocol: ViewInitializer, KeyboardAdjustableViewProtocol {
     var actions: LoginPasswordActions? { get set }
+    
+    func stopLoading()
 }
 
 final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
@@ -154,6 +156,12 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         return button
     }()
     
+    private let loadingView = {
+        let loadingView = LoadingView()
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        return loadingView
+    }()
+    
     private var nextButtonBottomConstraint: NSLayoutConstraint?
 
     public override func layoutSubviews() {
@@ -195,6 +203,11 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         backgroundColor = .white
     }
     
+    // MARK: - Public API
+    func stopLoading() {
+        loadingView.removeFromSuperview()
+    }
+    
     // MARK: - Button Tap Methods
     @objc
     private func didTapPasswordToggleButton() {
@@ -202,6 +215,8 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
     }
     
     @objc func didTapNextButton() {
+        addSubview(loadingView)
+        constrainLoadingView()
         let passwordText = passwordTextField.text
         actions?.didTapNextButton(passwordText)
     }
@@ -290,7 +305,16 @@ private extension LoginPasswordView {
         )
     }
     
-    private func updateNextButtonBottomConstraint(constant: CGFloat) {
+    func constrainLoadingView() {
+        NSLayoutConstraint.activate(
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        )
+    }
+    
+    func updateNextButtonBottomConstraint(constant: CGFloat) {
         nextButtonBottomConstraint?.constant = -constant
         
         UIView.animate(

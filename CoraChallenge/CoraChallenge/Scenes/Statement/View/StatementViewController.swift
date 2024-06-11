@@ -1,6 +1,6 @@
 import UIKit
 
-final class StatementViewController: UIViewController {
+final class StatementViewController: CoraViewController {
     
     let viewProtocol: StatementViewProtocol
     private let interactor: StatementBusinessLogic
