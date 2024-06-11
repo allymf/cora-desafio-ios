@@ -128,7 +128,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HH:MM"
+            "value" : "HH:mm"
           }
         }
       }
@@ -139,7 +139,7 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yyyy-mm-dd"
+            "value" : "yyyy-MM-dd"
           }
         }
       }
@@ -161,7 +161,18 @@
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "EEEE '-' d"
+            "value" : "EEEE '-' dd"
+          }
+        }
+      }
+    },
+    "Statement.Section.TitleLeadingShortDateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dd"
           }
         }
       }
@@ -199,13 +210,13 @@
         }
       }
     },
-    "Today" : {
+    "TodayTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hoje"
+            "value" : "Hoje - "
           }
         }
       }
@@ -252,13 +263,13 @@
         }
       }
     },
-    "Yesterday" : {
+    "YesterdayTitle" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ontem"
+            "value" : "Ontem -"
           }
         }
       }

@@ -96,19 +96,3 @@ extension StatementPresenterTests {
     }
     
 }
-
-// MARK: - Test Helpers
-extension StatementModels.StatementViewModel {
-    static func fixture() -> StatementModels.StatementViewModel {
-        return .init(sections: [])
-    }
-}
-
-extension StatementResponse {
-    static func fixture() -> StatementResponse {
-        return .init(
-            results: nil,
-            itemsTotal: nil
-        )
-    }
-}

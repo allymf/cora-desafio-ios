@@ -4,12 +4,20 @@ protocol StatementViewModelMapping {
     func makeViewModel(with decodable: StatementResponse) -> StatementModels.StatementViewModel
 }
 
+protocol DayIdentifying {
+    func isDateInToday(_ date: Date) -> Bool
+    func isDateInYesterday(_ date: Date) -> Bool
+}
+
+extension Calendar: DayIdentifying {}
+
 final class StatementViewModelMapper: StatementViewModelMapping {
     
     private let locale = Locale(identifier: "pt-BR")
     private lazy var dateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = locale
+        dateFormatter.timeZone = timeZone
         return dateFormatter
     }()
     
@@ -20,7 +28,8 @@ final class StatementViewModelMapper: StatementViewModelMapping {
         return numberFormatter
     }()
     
-    private let calendar: Calendar
+    private let calendar: DayIdentifying
+    private let timeZone: TimeZone
     
     private let sectionDateFormat = String(localized: "Statement.Section.DateFormat")
     
@@ -31,8 +40,12 @@ final class StatementViewModelMapper: StatementViewModelMapping {
     private let itemDateFormat = String(localized: "Statement.Item.DateFormat")
     private let itemHourFormat = String(localized: "Statement.Item.HourFormat")
     
-    init(calendar: Calendar = .current) {
+    init(
+        calendar: DayIdentifying = Calendar.current,
+        timeZone: TimeZone = .current
+    ) {
         self.calendar = calendar
+        self.timeZone = timeZone
     }
     
     func makeViewModel(with decodable: StatementResponse) -> StatementModels.StatementViewModel {
@@ -74,12 +87,13 @@ final class StatementViewModelMapper: StatementViewModelMapping {
     }
     
     func titleLeading(for date: Date) -> String {
+        dateFormatter.dateFormat = String(localized: "Statement.Section.TitleLeadingShortDateFormat")
         guard !calendar.isDateInToday(date) else {
-            return String(localized: "Today")
+            return String(localized: "TodayTitle") + dateFormatter.string(from: date)
         }
         
         guard !calendar.isDateInYesterday(date) else {
-            return String(localized: "Yesterday")
+            return String(localized: "YesterdayTitle") + dateFormatter.string(from: date)
         }
         
         dateFormatter.dateFormat = sectionTitleLeadingDateFormat
