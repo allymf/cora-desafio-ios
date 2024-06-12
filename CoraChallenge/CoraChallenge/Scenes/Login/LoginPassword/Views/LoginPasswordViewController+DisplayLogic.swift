@@ -17,10 +17,7 @@ extension LoginPasswordViewController: LoginPasswordDisplayLogic {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             self.viewProtocol.stopLoading()
-            self.present(
-                self.makeErrorAlert(),
-                animated: true
-            )
+            self.presentDefaultErrorAlert()
         }
         
         

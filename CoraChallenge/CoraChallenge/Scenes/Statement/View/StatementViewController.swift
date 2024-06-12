@@ -3,7 +3,7 @@ import UIKit
 final class StatementViewController: CoraViewController {
     
     let viewProtocol: StatementViewProtocol
-    private let interactor: StatementBusinessLogic
+    let interactor: StatementBusinessLogic
     let router: StatementRoutingLogic
     
     var viewModel: StatementModels.StatementViewModel?

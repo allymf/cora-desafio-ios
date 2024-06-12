@@ -2,6 +2,7 @@ import UIKit
 
 protocol StatementRoutingLogic {
     func routeToWelcome()
+    func routeToStatementDetails(id: String)
 }
 
 final class StatementRouter: StatementRoutingLogic {
@@ -10,6 +11,14 @@ final class StatementRouter: StatementRoutingLogic {
     
     func routeToWelcome() {
         viewController?.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func routeToStatementDetails(id: String) {
+        let statementDetailsViewController = StatementDetailsSceneFactory.makeScene(id: id)
+        viewController?.show(
+            statementDetailsViewController,
+            sender: viewController
+        )
     }
     
 }

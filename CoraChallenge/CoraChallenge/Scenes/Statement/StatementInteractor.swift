@@ -1,7 +1,12 @@
 import Foundation
 
+protocol StatementDataStore {
+    var response: StatementResponse? { get }
+}
+
 protocol StatementBusinessLogic {
     func loadStatement()
+    func didSelectItem(request: StatementModels.SelectItem.Request)
 }
 
 final class StatementInteractor: StatementBusinessLogic {
@@ -9,6 +14,8 @@ final class StatementInteractor: StatementBusinessLogic {
     private let presenter: StatementPresentationLogic
     private let worker: StatementWorkingLogic
     private let tokenStorage: TokenStoring
+    
+    private(set) var response: StatementResponse?
     
     init(
         presenter: StatementPresentationLogic,
@@ -35,6 +42,17 @@ final class StatementInteractor: StatementBusinessLogic {
             }
         }
         
+    }
+    
+    func didSelectItem(request: StatementModels.SelectItem.Request) {
+        guard let section = response?.results?[safeIndex: request.indexPath.section],
+              let item = section.items?[safeIndex: request.indexPath.item],
+              let selectedItemId = item.id else {
+            let error: StatementModels.SceneErrors = .itemUnavailable
+            presenter.presentSelectedItemFailure(response: .init(error: error))
+            return
+        }
+        presenter.presentSelectedItem(response: .init(id: selectedItemId))
     }
     
 }

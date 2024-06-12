@@ -23,5 +23,12 @@ open class CoraViewController: UIViewController {
         return alert
     }
     
+    func presentDefaultErrorAlert() {
+        present(
+            makeErrorAlert(),
+            animated: true
+        )
+    }
+    
 }
 

@@ -5,6 +5,9 @@ protocol StatementPresentationLogic {
     func presentLoadStatement(response: StatementModels.LoadStatement.Response.Success)
     func presentLoadStatementFailure(response: StatementModels.LoadStatement.Response.Failure)
     
+    func presentSelectedItem(response: StatementModels.SelectItem.Response.Success)
+    func presentSelectedItemFailure(response: StatementModels.SelectItem.Response.Failure)
+    
     func presentLogout()
     
 }
@@ -25,6 +28,14 @@ final class StatementPresenter: StatementPresentationLogic {
     
     func presentLoadStatementFailure(response: StatementModels.LoadStatement.Response.Failure) {
         displayer?.displayLoadStatementFailure(viewModel: .init(error: response.error))
+    }
+    
+    func presentSelectedItem(response: StatementModels.SelectItem.Response.Success) {
+        displayer?.displaySelectedItem(viewModel: .init(id: response.id))
+    }
+    
+    func presentSelectedItemFailure(response: StatementModels.SelectItem.Response.Failure) {
+        displayer?.displaySelectedItemFailure(viewModel: .init(error: response.error))
     }
     
     func presentLogout() {

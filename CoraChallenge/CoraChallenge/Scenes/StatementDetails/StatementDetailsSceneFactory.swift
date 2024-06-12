@@ -1,9 +1,12 @@
 import Foundation
 
 struct StatementDetailsSceneFactory {
-    static func makeScene() -> StatementDetailsViewController {
+    static func makeScene(id: String) -> StatementDetailsViewController {
         let presenter = StatementDetailsPresenter()
-        let interactor = StatementDetailsInteractor(presenter: presenter)
+        let interactor = StatementDetailsInteractor(
+            presenter: presenter,
+            itemId: id
+        )
         let router = StatementDetailsRouter()
         
         let viewController = StatementDetailsViewController(
