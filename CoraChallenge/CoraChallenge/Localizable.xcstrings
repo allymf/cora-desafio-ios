@@ -243,6 +243,72 @@
         }
       }
     },
+    "StatementDetails.DateTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data"
+          }
+        }
+      }
+    },
+    "StatementDetails.DescriptionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrição"
+          }
+        }
+      }
+    },
+    "StatementDetails.FromTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De"
+          }
+        }
+      }
+    },
+    "StatementDetails.ShareButton.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartilhar comprovante "
+          }
+        }
+      }
+    },
+    "StatementDetails.ToTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para"
+          }
+        }
+      }
+    },
+    "StatementDetails.ValueTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valor"
+          }
+        }
+      }
+    },
     "TodayTitle" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -74,6 +74,7 @@
 		3F57CAC32C0F8043001E0B76 /* LoginCPFRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */; };
 		3F57CAC52C0F8068001E0B76 /* LoginCPFSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */; };
 		3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F618FA02C15401C0032B117 /* LoginCPFInteractorTests.swift */; };
+		3F6B56B42C193E8F00BC62E2 /* StatementAttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6B56B32C193E8F00BC62E2 /* StatementAttributeView.swift */; };
 		3F75B71C2C10E5FB0027524F /* KeyboardAdjustableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */; };
 		3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */; };
 		3F75B7222C10EF040027524F /* StatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F75B7212C10EF040027524F /* StatementView.swift */; };
@@ -95,6 +96,7 @@
 		3F871E4B2C123C1F008004CF /* Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E4A2C123C1F008004CF /* Decoding.swift */; };
 		3F871E502C124015008004CF /* LoginEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E4F2C124015008004CF /* LoginEndpoint.swift */; };
 		3F871E522C12415B008004CF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F871E512C12415B008004CF /* LoginResponse.swift */; };
+		3F92BA9B2C19323B000A26AD /* StatementItemActorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92BA9A2C19323B000A26AD /* StatementItemActorView.swift */; };
 		3FA1E05A2C13EBB400E28AE6 /* LoginPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E0592C13EBB400E28AE6 /* LoginPasswordInteractor.swift */; };
 		3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */; };
 		3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */; };
@@ -206,6 +208,7 @@
 		3F57CAC22C0F8043001E0B76 /* LoginCPFRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFRouter.swift; sourceTree = "<group>"; };
 		3F57CAC42C0F8068001E0B76 /* LoginCPFSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFSceneFactory.swift; sourceTree = "<group>"; };
 		3F618FA02C15401C0032B117 /* LoginCPFInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFInteractorTests.swift; sourceTree = "<group>"; };
+		3F6B56B32C193E8F00BC62E2 /* StatementAttributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementAttributeView.swift; sourceTree = "<group>"; };
 		3F75B71B2C10E5FB0027524F /* KeyboardAdjustableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustableViewController.swift; sourceTree = "<group>"; };
 		3F75B71D2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdjustableViewProtocol.swift; sourceTree = "<group>"; };
 		3F75B7212C10EF040027524F /* StatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementView.swift; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 		3F871E4A2C123C1F008004CF /* Decoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoding.swift; sourceTree = "<group>"; };
 		3F871E4F2C124015008004CF /* LoginEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEndpoint.swift; sourceTree = "<group>"; };
 		3F871E512C12415B008004CF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		3F92BA9A2C19323B000A26AD /* StatementItemActorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemActorView.swift; sourceTree = "<group>"; };
 		3FA1E0592C13EBB400E28AE6 /* LoginPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordInteractor.swift; sourceTree = "<group>"; };
 		3FA1E05B2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+SugarSyntax.swift"; sourceTree = "<group>"; };
 		3FA1E05D2C13EE6100E28AE6 /* CPFValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFValidator.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				3F1FB1292C1916D4003F2D94 /* StatementDetailsViewController.swift */,
 				3F1FB12B2C1916F3003F2D94 /* StatementDetailsView.swift */,
 				3F1FB12D2C191746003F2D94 /* StatementDetailsViewController+DisplayLogic.swift */,
+				3F92BA9A2C19323B000A26AD /* StatementItemActorView.swift */,
+				3F6B56B32C193E8F00BC62E2 /* StatementAttributeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -886,7 +892,9 @@
 				3F5264DB2C17DD21007B68DC /* StatementViewModelMapper.swift in Sources */,
 				3F871E472C123BDF008004CF /* HTTPMethod.swift in Sources */,
 				3F871E412C123B13008004CF /* NetworkService.swift in Sources */,
+				3F92BA9B2C19323B000A26AD /* StatementItemActorView.swift in Sources */,
 				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
+				3F6B56B42C193E8F00BC62E2 /* StatementAttributeView.swift in Sources */,
 				3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */,
 				3F1FB1322C19179E003F2D94 /* StatementDetailsEndpoint.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
