@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 enum StatementDetailsModels {
     
@@ -46,6 +46,10 @@ enum StatementDetailsModels {
         let senderViewModel: ActorViewModel
         let receiverViewModel: ActorViewModel
         let description: String
+    }
+    
+    struct Actions: StatementDetailsViewActions {
+        let didTapShareButton: (UIImage) -> Void
     }
     
 }

@@ -31,7 +31,13 @@ final class StatementDetailsViewController: CoraViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewProtocol.actions = StatementDetailsModels.Actions(didTapShareButton: didTapShareButton)
         interactor.didLoad()
     }
 
+    @objc
+    private func didTapShareButton(_ receiptImage: UIImage) {
+        router.routeToShareReceipt(receiptImage: receiptImage)
+    }
+    
 }
