@@ -1,7 +1,7 @@
 import UIKit
 
 protocol StatementDetailsViewActions {
-    var didTapShareButton: () -> Void { get }
+    var didTapShareButton: (UIImage) -> Void { get }
 }
 
 protocol StatementDetailsViewProtocol: ViewInitializer {
@@ -190,7 +190,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         receiverView.bankName = viewModel.receiverViewModel.bankName
         receiverView.bankInformation = viewModel.receiverViewModel.accountInformation
         
-        descriptionLabel.text = String(localized: "StatementDetails.DescriptionTitle")
+        descriptionTitleLabel.text = String(localized: "StatementDetails.DescriptionTitle")
         descriptionLabel.text = viewModel.description
         
         shareButton.isEnabled = true
@@ -236,11 +236,13 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     override func configureAdditionalSettings() {
         backgroundColor = .white
+        contentView.backgroundColor = .white
     }
     
     @objc
     private func didTapShareButton() {
-        actions?.didTapShareButton()
+        let receiptImage = contentView.asImage
+        actions?.didTapShareButton(receiptImage)
     }
     
 }

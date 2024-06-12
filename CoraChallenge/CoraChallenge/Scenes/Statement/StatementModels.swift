@@ -37,20 +37,12 @@ enum StatementModels {
         }
         
         enum Response {
-            struct Success {
-                let id: String
-            }
-            
             struct Failure {
                 let error: Error
             }
         }
         
         enum ViewModel {
-            struct Success {
-                let id: String
-            }
-            
             struct Failure {
                 let error: Error
             }
