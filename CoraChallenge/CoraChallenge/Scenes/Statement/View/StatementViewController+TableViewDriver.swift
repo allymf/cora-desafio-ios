@@ -63,5 +63,10 @@ extension StatementViewController: UITableViewDelegate {
         return .zero
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Temporary
+        let vc = StatementDetailsSceneFactory.makeScene()
+        show(vc, sender: self)
+    }
     
 }

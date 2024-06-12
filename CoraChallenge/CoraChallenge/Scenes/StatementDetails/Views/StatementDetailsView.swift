@@ -1,6 +1,12 @@
 import UIKit
 
-protocol StatementDetailsViewProtocol: ViewInitializer {}
+protocol StatementDetailsViewActions {
+    var didTapShareButton: () -> Void { get }
+}
+
+protocol StatementDetailsViewProtocol: ViewInitializer {
+    var actions: StatementDetailsViewActions? { get set }
+}
 
 final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
@@ -10,11 +16,34 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         static let bigFontSize: CGFloat = 16
         static let smallFontSize: CGFloat = 14
         
+        static let interLabelSpacing: CGFloat = 4
+        
+        enum IconImageView {
+            static let dimension: CGFloat = 24
+        }
+        
+        enum TitleLabel {
+            static let margin: CGFloat = 8
+            static let height: CGFloat = 24
+        }
+        
+        enum AttributeView {
+            static let height: CGFloat = 48
+        }
+        
+        enum ActorView {
+            static let height: CGFloat = 112
+        }
+        
+        enum DescriptionTitleLabel {
+            static let height: CGFloat = 20
+        }
+        
         enum ShareButton {
             static let fontSize: CGFloat = 16
             static let height: CGFloat = 64
             static let imagePadding: CGFloat = 10
-            static let imagePaddingMultiplier: CGFloat = 0.65
+            static let imagePaddingMultiplier: CGFloat = 0.3
         }
         
     }
@@ -37,7 +66,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let iconImageView = {
         let imageView = UIImageView()
-        
+        imageView.image = UIImage(named: "transference")
         imageView.tintColor = .primaryGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -55,160 +84,31 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         return label
     }()
     
-    private let valueTitleLabel = {
-        let label = UILabel()
-        label.text = "Valor"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
+    private let valueAttributeView = {
+        let attributeView = StatementAttributeView()
+        attributeView.translatesAutoresizingMaskIntoConstraints = false
+        return attributeView
     }()
     
-    private let valueLabel = {
-        let label = UILabel()
-        label.text = "R$ 154,00"
-        
-        label.font = .avenirBold(size: Metrics.bigFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
+    private let dateAttributeView = {
+        let attributeView = StatementAttributeView()
+        attributeView.translatesAutoresizingMaskIntoConstraints = false
+        return attributeView
     }()
     
-    private let dateTitleLabel = {
-        let label = UILabel()
-        label.text = "Data"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
+    
+    private let senderView = {
+        let actorView = StatementItemActorView()
+        actorView.translatesAutoresizingMaskIntoConstraints = false
+        return actorView
     }()
     
-    private let dateLabel = {
-        let label = UILabel()
-        label.text = "Hoje - 12/10/2019"
-        
-        label.font = .avenirBold(size: Metrics.bigFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
+    private let receiverView = {
+        let actorView = StatementItemActorView()
+        actorView.translatesAutoresizingMaskIntoConstraints = false
+        return actorView
     }()
     
-    private let fromLabel = {
-        let label = UILabel()
-        label.text = "De"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let senderNameLabel = {
-        let label = UILabel()
-        label.text = "Dev"
-        
-        label.font = .avenirBold(size: Metrics.bigFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let senderDocumentLabel = {
-        let label = UILabel()
-        label.text = "CPF 132.456.789-10"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .secondaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let senderBankNameLabel = {
-        let label = UILabel()
-        label.text = "Banco Cora"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .secondaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let senderBankInformationLabel = {
-        let label = UILabel()
-        label.text = "Agencia 1 conta 123123"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .secondaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let toLabel = {
-        let label = UILabel()
-        label.text = "Para"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let receiverNameLabel = {
-        let label = UILabel()
-        label.text = "Designer"
-        
-        label.font = .avenirBold(size: Metrics.bigFontSize)
-        label.textColor = .primaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let receiverDocumentLabel = {
-        let label = UILabel()
-        label.text = "CPF 132.456.789-10"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .secondaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let receiverBankNameLabel = {
-        let label = UILabel()
-        label.text = "Banco Cora"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .secondaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-    
-    private let receiverBankInformationLabel = {
-        let label = UILabel()
-        label.text = "Agencia 1 conta 123123"
-        
-        label.font = .avenir(size: Metrics.smallFontSize)
-        label.textColor = .secondaryGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
-    }()
-
     private let descriptionTitleLabel = {
         let label = UILabel()
         label.text = "Descrição"
@@ -222,12 +122,12 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let descriptionLabel = {
         let label = UILabel()
-        label.text = "Como Quiabo cru"
+        label.text = "Como Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\n"
         label.numberOfLines = .zero
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .secondaryGray
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
@@ -265,6 +165,8 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         return button
     }()
 
+    var actions: StatementDetailsViewActions?
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         shareButton.configuration?.imagePadding = shareButton.frame.width * Metrics.ShareButton.imagePaddingMultiplier
@@ -277,19 +179,46 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
             shareButton
         )
         scrollView.addSubview(contentView)
+        contentView.addSubviews(
+            iconImageView,
+            titleLabel,
+            valueAttributeView,
+            dateAttributeView,
+            senderView,
+            receiverView,
+            descriptionTitleLabel,
+            descriptionLabel
+        )
     }
 
     override func constrainSubviews() {
         constrainShareButton()
         constrainScrollView()
         constrainContentView()
+        constrainIconImageView()
+        constrainTitleLabel()
+        constrainValueAttributeView()
+        constrainDateAttributeView()
+        constrainSenderView()
+        constrainReceiverView()
+        constrainDescriptionTitleLabel()
+        constrainDescriptionLabel()
     }
     
     override func configureAdditionalSettings() {
         backgroundColor = .white
     }
     
-    private func constrainScrollView() {
+    @objc
+    private func didTapShareButton() {
+        actions?.didTapShareButton()
+    }
+    
+}
+
+// MARK: - Layout Methods
+private extension StatementDetailsView {
+    func constrainScrollView() {
         NSLayoutConstraint.activate(
             scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -301,7 +230,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         )
     }
     
-    private func constrainContentView() {
+    func constrainContentView() {
         NSLayoutConstraint.activate(
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -311,7 +240,150 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         )
     }
     
-    private func constrainShareButton() {
+    func constrainIconImageView() {
+        NSLayoutConstraint.activate(
+            iconImageView.topAnchor.constraint(
+                equalTo: contentView.topAnchor,
+                constant: Metrics.margin
+            ),
+            iconImageView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            iconImageView.widthAnchor.constraint(equalToConstant: Metrics.IconImageView.dimension),
+            iconImageView.heightAnchor.constraint(equalToConstant: Metrics.IconImageView.dimension)
+        )
+    }
+    
+    func constrainTitleLabel() {
+        NSLayoutConstraint.activate(
+            titleLabel.topAnchor.constraint(equalTo: iconImageView.topAnchor),
+            titleLabel.leadingAnchor.constraint(
+                equalTo: iconImageView.trailingAnchor,
+                constant: Metrics.TitleLabel.margin
+            ),
+            titleLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            titleLabel.heightAnchor.constraint(equalToConstant: Metrics.TitleLabel.height)
+        )
+    }
+    
+    func constrainValueAttributeView() {
+        NSLayoutConstraint.activate(
+            valueAttributeView.topAnchor.constraint(
+                equalTo: titleLabel.bottomAnchor,
+                constant: Metrics.margin
+            ),
+            valueAttributeView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            valueAttributeView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            valueAttributeView.heightAnchor.constraint(equalToConstant: Metrics.AttributeView.height)
+        )
+        
+    }
+    
+    func constrainDateAttributeView() {
+        NSLayoutConstraint.activate(
+            dateAttributeView.topAnchor.constraint(
+                equalTo: valueAttributeView.bottomAnchor,
+                constant: Metrics.margin
+            ),
+            dateAttributeView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            dateAttributeView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            dateAttributeView.heightAnchor.constraint(equalToConstant: Metrics.AttributeView.height)
+        )
+    }
+    
+    func constrainSenderView() {
+        NSLayoutConstraint.activate(
+            senderView.topAnchor.constraint(
+                equalTo: dateAttributeView.bottomAnchor,
+                constant: Metrics.margin
+            ),
+            senderView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            senderView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            senderView.heightAnchor.constraint(equalToConstant: Metrics.ActorView.height)
+        )
+    }
+    
+    func constrainReceiverView() {
+        NSLayoutConstraint.activate(
+            receiverView.topAnchor.constraint(
+                equalTo: senderView.bottomAnchor,
+                constant: Metrics.margin
+            ),
+            receiverView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            receiverView.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            
+            receiverView.heightAnchor.constraint(equalToConstant: Metrics.ActorView.height)
+        )
+    }
+    
+    func constrainDescriptionTitleLabel() {
+        NSLayoutConstraint.activate(
+            descriptionTitleLabel.topAnchor.constraint(
+                equalTo: receiverView.bottomAnchor,
+                constant: Metrics.margin
+            ),
+            descriptionTitleLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            descriptionTitleLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            descriptionTitleLabel.heightAnchor.constraint(equalToConstant: Metrics.DescriptionTitleLabel.height)
+        )
+    }
+    
+    func constrainDescriptionLabel() {
+        NSLayoutConstraint.activate(
+            descriptionLabel.topAnchor.constraint(
+                equalTo: descriptionTitleLabel.bottomAnchor,
+                constant: Metrics.interLabelSpacing
+            ),
+            descriptionLabel.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Metrics.margin
+            ),
+            descriptionLabel.trailingAnchor.constraint(
+                equalTo: contentView.trailingAnchor,
+                constant: -Metrics.margin
+            ),
+            descriptionLabel.bottomAnchor.constraint(
+                equalTo: contentView.bottomAnchor,
+                constant: -Metrics.margin
+            )
+        )
+    }
+        
+    func constrainShareButton() {
         NSLayoutConstraint.activate(
             shareButton.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,
@@ -325,11 +397,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
                 equalTo: safeAreaLayoutGuide.bottomAnchor,
                 constant: -Metrics.margin
             ),
-            shareButton.heightAnchor.constraint(equalToConstant: -Metrics.margin)
+            shareButton.heightAnchor.constraint(equalToConstant: Metrics.ShareButton.height)
         )
     }
-    
-    @objc
-    private func didTapShareButton() {}
-    
 }
