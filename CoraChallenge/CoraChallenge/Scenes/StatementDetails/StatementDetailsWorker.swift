@@ -1,13 +1,10 @@
 import Foundation
 
-struct StatementDetailsParameters: Equatable {
-    let id: String
-    let token: String
-}
+
 
 protocol StatementDetailsWorkingLogic {
     func getStatementDetails(
-        parameters: StatementDetailsParameters,
+        parameters: StatementDetailsModels.StatementDetailsParameters,
         completionHandler: @escaping (Result<StatementDetailsResponse, NetworkLayerError>) -> Void
     )
     
@@ -24,7 +21,7 @@ final class StatementDetailsWorker: StatementDetailsWorkingLogic {
     }
     
     func getStatementDetails(
-        parameters: StatementDetailsParameters,
+        parameters: StatementDetailsModels.StatementDetailsParameters,
         completionHandler: @escaping (Result<StatementDetailsResponse, NetworkLayerError>) -> Void
     ) {
         let endPoint = StatementDetailsEndpoint.statementItemDetails(

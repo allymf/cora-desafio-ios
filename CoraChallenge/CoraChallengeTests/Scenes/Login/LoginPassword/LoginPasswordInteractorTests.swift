@@ -204,13 +204,6 @@ extension LoginPasswordInteractorTests {
             throw saveErrorToThrow
         }
         
-        private(set) var fetchTokenCalls = 0
-        var fetchTokenValueToReturn: String?
-        func fetchToken() -> String? {
-            fetchTokenCalls += 1
-            return fetchTokenValueToReturn
-        }
-        
         
     }
     

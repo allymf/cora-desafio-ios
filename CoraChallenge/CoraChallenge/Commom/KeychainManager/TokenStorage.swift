@@ -2,11 +2,13 @@ import Foundation
 
 protocol TokenStoring {
     func save(token: String) throws
-    
+}
+
+protocol TokenFetching {
     func fetchToken() -> String?
 }
 
-struct TokenStorage: TokenStoring {
+struct TokenStorage: TokenStoring, TokenFetching {
     
     static let service = "token"
     

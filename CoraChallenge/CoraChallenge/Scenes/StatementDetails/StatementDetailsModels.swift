@@ -52,4 +52,9 @@ enum StatementDetailsModels {
         let didTapShareButton: (UIImage) -> Void
     }
     
+    struct StatementDetailsParameters: Equatable {
+        let id: String
+        let token: String
+    }
+    
 }

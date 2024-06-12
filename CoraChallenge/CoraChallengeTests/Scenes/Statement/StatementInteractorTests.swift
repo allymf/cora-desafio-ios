@@ -5,18 +5,18 @@ final class StatementInteractorTests: XCTestCase {
     
     private let presentationLogicSpy = PresentationLogicSpy()
     private let workingLogicSpy = WorkingLogicStub()
-    private let tokenStoringStub = TokenStorageStub()
+    private let tokenFetchingStub = TokenFetchingStub()
     private lazy var sut = {
         return StatementInteractor(
             presenter: presentationLogicSpy,
             worker: workingLogicSpy,
-            tokenStorage: tokenStoringStub
+            tokenStorage: tokenFetchingStub
         )
     }()
     
     func test_loadStatement_givenTokenStorageWillNotReturnToken_whenMethodIsCalled_itShouldCallCorrectMethodFromPresenter() {
         // Given
-        tokenStoringStub.fetchTokenValueToReturn = nil
+        tokenFetchingStub.fetchTokenValueToReturn = nil
         
         let expectedFetchTokenCalls = 1
         let expectedPresentLogoutCalls = 1
@@ -25,14 +25,14 @@ final class StatementInteractorTests: XCTestCase {
         sut.loadStatement()
         
         // Then
-        XCTAssertEqual(tokenStoringStub.fetchTokenCalls, expectedFetchTokenCalls)
+        XCTAssertEqual(tokenFetchingStub.fetchTokenCalls, expectedFetchTokenCalls)
         XCTAssertEqual(presentationLogicSpy.presentLogoutCalls, expectedPresentLogoutCalls)
     }
     
     func test_loadStatement_givenTokenStorageWillReturnTokenAndWorkerWillPassFailure_whenMethodIsCalled_itShouldPassCorrectErrorToPresenter() {
         // Given
         let expectedToken = UUID().uuidString
-        tokenStoringStub.fetchTokenValueToReturn = expectedToken
+        tokenFetchingStub.fetchTokenValueToReturn = expectedToken
         
         let expectedErrorPassed: NetworkLayerError = .noData
         
@@ -46,7 +46,7 @@ final class StatementInteractorTests: XCTestCase {
         sut.loadStatement()
         
         // Then
-        XCTAssertEqual(tokenStoringStub.fetchTokenCalls, expectedFetchTokenCalls)
+        XCTAssertEqual(tokenFetchingStub.fetchTokenCalls, expectedFetchTokenCalls)
         XCTAssertEqual(workingLogicSpy.getStatementParametersPassed, expectedGetStatementParametersPassed)
         XCTAssertEqual(presentationLogicSpy.presentLoadStatementFailureParametersPassed.count, expectedPresentLoadStatementFailureParametersPassed)
         XCTAssertEqual(presentationLogicSpy.presentLoadStatementFailureParametersPassed.first?.error.localizedDescription, expectedErrorPassed.localizedDescription)
@@ -55,7 +55,7 @@ final class StatementInteractorTests: XCTestCase {
     func test_loadStatement_givenTokenStorageWillReturnTokenAndWorkerWillPassSuccess_whenMethodIsCalled_itShouldPassCorrectResponseToPresenter() {
         // Given
         let expectedToken = UUID().uuidString
-        tokenStoringStub.fetchTokenValueToReturn = expectedToken
+        tokenFetchingStub.fetchTokenValueToReturn = expectedToken
         
         let stubResponse: StatementResponse = .fixture()
         workingLogicSpy.getStatementValueToStub = .success(stubResponse)
@@ -68,7 +68,7 @@ final class StatementInteractorTests: XCTestCase {
         sut.loadStatement()
         
         // Then
-        XCTAssertEqual(tokenStoringStub.fetchTokenCalls, expectedFetchTokenCalls)
+        XCTAssertEqual(tokenFetchingStub.fetchTokenCalls, expectedFetchTokenCalls)
         XCTAssertEqual(workingLogicSpy.getStatementParametersPassed, expectedGetStatementParametersPassed)
         XCTAssertEqual(presentationLogicSpy.presentLoadStatementParametersPassed, expectedPresentLoadStatementParametersPassed)
     }
@@ -123,9 +123,7 @@ extension StatementInteractorTests {
         
     }
     
-    final class TokenStorageStub: TokenStoring {
-        
-        func save(token: String) throws {}
+    final class TokenFetchingStub: TokenFetching {
         
         private(set) var fetchTokenCalls = 0
         var fetchTokenValueToReturn: String?

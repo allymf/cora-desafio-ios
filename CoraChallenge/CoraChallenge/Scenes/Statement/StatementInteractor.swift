@@ -13,7 +13,7 @@ final class StatementInteractor: StatementBusinessLogic, StatementDataStore {
     
     private let presenter: StatementPresentationLogic
     private let worker: StatementWorkingLogic
-    private let tokenStorage: TokenStoring
+    private let tokenStorage: TokenFetching
     
     private var response: StatementResponse?
     private(set) var selectedId: String?
@@ -21,7 +21,7 @@ final class StatementInteractor: StatementBusinessLogic, StatementDataStore {
     init(
         presenter: StatementPresentationLogic,
         worker: StatementWorkingLogic = StatementWorker(),
-        tokenStorage: TokenStoring = TokenStorage()
+        tokenStorage: TokenFetching = TokenStorage()
     ) {
         self.presenter = presenter
         self.worker = worker

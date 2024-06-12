@@ -8,13 +8,13 @@ final class StatementDetailsInteractor: StatementDetailsBusinessLogic {
     
     private let presenter: StatementDetailsPresentationLogic
     private let worker: StatementDetailsWorkingLogic
-    private let tokenStorage: TokenStoring
+    private let tokenStorage: TokenFetching
     private let itemId: String
     
     init(
         presenter: StatementDetailsPresentationLogic,
         worker: StatementDetailsWorkingLogic = StatementDetailsWorker(),
-        tokenStorage: TokenStoring = TokenStorage(),
+        tokenStorage: TokenFetching = TokenStorage(),
         itemId: String
     ) {
         self.presenter = presenter
@@ -30,7 +30,7 @@ final class StatementDetailsInteractor: StatementDetailsBusinessLogic {
             return
         }
         
-        let parameters = StatementDetailsParameters(
+        let parameters = StatementDetailsModels.StatementDetailsParameters(
             id: itemId,
             token: token
         )
