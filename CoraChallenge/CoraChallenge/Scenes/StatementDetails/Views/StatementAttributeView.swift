@@ -1,10 +1,3 @@
-//
-//  StatementAttributeView.swift
-//  CoraChallenge
-//
-//  Created by Alysson Moreira on 11/06/24.
-//
-
 import UIKit
 
 final class StatementAttributeView: CodedView {
@@ -22,7 +15,6 @@ final class StatementAttributeView: CodedView {
     // MARK: - Subviews
     private let titleLabel = {
         let label = UILabel()
-        label.text = "Valor"
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .primaryGray
@@ -33,7 +25,6 @@ final class StatementAttributeView: CodedView {
     
     private let valueLabel = {
         let label = UILabel()
-        label.text = "R$ 154,00"
         
         label.font = .avenirBold(size: Metrics.bigFontSize)
         label.textColor = .primaryGray
@@ -41,6 +32,16 @@ final class StatementAttributeView: CodedView {
         
         return label
     }()
+    
+    var title: String? {
+        get { titleLabel.text }
+        set { titleLabel.text = newValue}
+    }
+    
+    var value: String? {
+        get { valueLabel.text }
+        set { valueLabel.text = newValue}
+    }
 
     // MARK: CodedView life cycle
     override func addSubviews() {

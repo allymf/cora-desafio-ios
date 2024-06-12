@@ -75,7 +75,6 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let titleLabel = {
         let label = UILabel()
-        label.text = "Transferência Enviada"
         
         label.font = .avenirBold(size: Metrics.bigFontSize)
         label.textColor = .primaryGray
@@ -86,12 +85,14 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let valueAttributeView = {
         let attributeView = StatementAttributeView()
+        attributeView.title = String(localized: "StatementDetails.ValueTitle")
         attributeView.translatesAutoresizingMaskIntoConstraints = false
         return attributeView
     }()
     
     private let dateAttributeView = {
         let attributeView = StatementAttributeView()
+        attributeView.title = String(localized: "StatementDetails.DateTitle")
         attributeView.translatesAutoresizingMaskIntoConstraints = false
         return attributeView
     }()
@@ -99,19 +100,21 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let senderView = {
         let actorView = StatementItemActorView()
+        actorView.title = String(localized: "StatementDetails.FromTitle")
         actorView.translatesAutoresizingMaskIntoConstraints = false
         return actorView
     }()
     
     private let receiverView = {
         let actorView = StatementItemActorView()
+        actorView.title = String(localized: "StatementDetails.ToTitle")
         actorView.translatesAutoresizingMaskIntoConstraints = false
         return actorView
     }()
     
     private let descriptionTitleLabel = {
         let label = UILabel()
-        label.text = "Descrição"
+        label.text = String(localized: "StatementDetails.DescriptionTitle")
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .primaryGray
@@ -153,6 +156,8 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         
         button.configuration = configuration
         button.isEnabled = false
+        
+        button.titleLabel?.numberOfLines = 1
         
         button.addTarget(
             self,

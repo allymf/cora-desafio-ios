@@ -11,7 +11,6 @@ final class StatementItemActorView: CodedView {
     // MARK: - Subviews
     private let titleLabel = {
         let label = UILabel()
-        label.text = "De"
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .primaryGray
@@ -22,7 +21,6 @@ final class StatementItemActorView: CodedView {
     
     private let nameLabel = {
         let label = UILabel()
-        label.text = "Dev"
         
         label.font = .avenirBold(size: Metrics.bigFontSize)
         label.textColor = .primaryGray
@@ -33,7 +31,6 @@ final class StatementItemActorView: CodedView {
     
     private let documentLabel = {
         let label = UILabel()
-        label.text = "CPF 132.456.789-10"
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .secondaryGray
@@ -44,7 +41,6 @@ final class StatementItemActorView: CodedView {
     
     private let bankNameLabel = {
         let label = UILabel()
-        label.text = "Banco Cora"
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .secondaryGray
@@ -55,7 +51,6 @@ final class StatementItemActorView: CodedView {
     
     private let bankInformationLabel = {
         let label = UILabel()
-        label.text = "Agencia 1 conta 123123"
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .secondaryGray
@@ -63,6 +58,32 @@ final class StatementItemActorView: CodedView {
         
         return label
     }()
+    
+    var title: String? {
+        get { titleLabel.text }
+        set { titleLabel.text = newValue }
+    }
+    
+    var name: String? {
+        get { nameLabel.text }
+        set { nameLabel.text = newValue }
+    }
+    
+    var document: String? {
+        get { documentLabel.text }
+        set { documentLabel.text = newValue }
+    }
+    
+    var bankName: String? {
+        get { bankNameLabel.text }
+        set { bankNameLabel.text = newValue }
+    }
+    
+    var bankInformation: String? {
+        get { bankInformationLabel.text }
+        set { bankInformationLabel.text = newValue }
+    }
+    
     
     // MARK: - CodedView life cycle
     override func addSubviews() {
