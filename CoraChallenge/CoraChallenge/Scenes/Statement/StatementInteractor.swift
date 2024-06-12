@@ -12,7 +12,7 @@ final class StatementInteractor: StatementBusinessLogic {
     
     init(
         presenter: StatementPresentationLogic,
-        worker: StatementWorkingLogic,
+        worker: StatementWorkingLogic = StatementWorker(),
         tokenStorage: TokenStoring = TokenStorage()
     ) {
         self.presenter = presenter

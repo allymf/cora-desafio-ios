@@ -12,7 +12,7 @@ final class LoginPasswordInteractor: LoginPasswordBusinessLogic {
     
     init(
         presenter: LoginPasswordPresentationLogic,
-        worker: LoginPasswordWorkingLogic,
+        worker: LoginPasswordWorkingLogic = LoginPasswordWorker(),
         tokenStorage: TokenStoring = TokenStorage(),
         cpfText: String
     ) {

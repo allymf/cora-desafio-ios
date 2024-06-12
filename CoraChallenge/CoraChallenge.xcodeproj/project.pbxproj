@@ -27,6 +27,16 @@
 		3F1FB1222C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */; };
 		3F1FB1252C18FCD6003F2D94 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1242C18FCD6003F2D94 /* LoadingView.swift */; };
 		3F1FB1272C1911A9003F2D94 /* CoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1262C1911A9003F2D94 /* CoraViewController.swift */; };
+		3F1FB12A2C1916D4003F2D94 /* StatementDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1292C1916D4003F2D94 /* StatementDetailsViewController.swift */; };
+		3F1FB12C2C1916F3003F2D94 /* StatementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB12B2C1916F3003F2D94 /* StatementDetailsView.swift */; };
+		3F1FB12E2C191746003F2D94 /* StatementDetailsViewController+DisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB12D2C191746003F2D94 /* StatementDetailsViewController+DisplayLogic.swift */; };
+		3F1FB1322C19179E003F2D94 /* StatementDetailsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1312C19179E003F2D94 /* StatementDetailsEndpoint.swift */; };
+		3F1FB1342C19193D003F2D94 /* StatementDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1332C19193D003F2D94 /* StatementDetailsInteractor.swift */; };
+		3F1FB1362C191966003F2D94 /* StatementDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1352C191966003F2D94 /* StatementDetailsPresenter.swift */; };
+		3F1FB1382C1919C2003F2D94 /* StatementDetailsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1372C1919C2003F2D94 /* StatementDetailsWorker.swift */; };
+		3F1FB13A2C191A51003F2D94 /* StatementDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1392C191A51003F2D94 /* StatementDetailsRouter.swift */; };
+		3F1FB13C2C191A84003F2D94 /* StatementDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB13B2C191A84003F2D94 /* StatementDetailsModels.swift */; };
+		3F1FB13E2C191B62003F2D94 /* StatementDetailsSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB13D2C191B62003F2D94 /* StatementDetailsSceneFactory.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
@@ -145,6 +155,16 @@
 		3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCapitalizedFirstCharacter.swift; sourceTree = "<group>"; };
 		3F1FB1242C18FCD6003F2D94 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3F1FB1262C1911A9003F2D94 /* CoraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoraViewController.swift; sourceTree = "<group>"; };
+		3F1FB1292C1916D4003F2D94 /* StatementDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsViewController.swift; sourceTree = "<group>"; };
+		3F1FB12B2C1916F3003F2D94 /* StatementDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsView.swift; sourceTree = "<group>"; };
+		3F1FB12D2C191746003F2D94 /* StatementDetailsViewController+DisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatementDetailsViewController+DisplayLogic.swift"; sourceTree = "<group>"; };
+		3F1FB1312C19179E003F2D94 /* StatementDetailsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsEndpoint.swift; sourceTree = "<group>"; };
+		3F1FB1332C19193D003F2D94 /* StatementDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsInteractor.swift; sourceTree = "<group>"; };
+		3F1FB1352C191966003F2D94 /* StatementDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsPresenter.swift; sourceTree = "<group>"; };
+		3F1FB1372C1919C2003F2D94 /* StatementDetailsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsWorker.swift; sourceTree = "<group>"; };
+		3F1FB1392C191A51003F2D94 /* StatementDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsRouter.swift; sourceTree = "<group>"; };
+		3F1FB13B2C191A84003F2D94 /* StatementDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsModels.swift; sourceTree = "<group>"; };
+		3F1FB13D2C191B62003F2D94 /* StatementDetailsSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsSceneFactory.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +333,39 @@
 			path = "Foundation+Extensions";
 			sourceTree = "<group>";
 		};
+		3F1FB1282C1916AD003F2D94 /* StatementDetails */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FB1302C19178E003F2D94 /* Service */,
+				3F1FB12F2C191773003F2D94 /* Views */,
+				3F1FB1332C19193D003F2D94 /* StatementDetailsInteractor.swift */,
+				3F1FB1352C191966003F2D94 /* StatementDetailsPresenter.swift */,
+				3F1FB1372C1919C2003F2D94 /* StatementDetailsWorker.swift */,
+				3F1FB1392C191A51003F2D94 /* StatementDetailsRouter.swift */,
+				3F1FB13B2C191A84003F2D94 /* StatementDetailsModels.swift */,
+				3F1FB13D2C191B62003F2D94 /* StatementDetailsSceneFactory.swift */,
+			);
+			path = StatementDetails;
+			sourceTree = "<group>";
+		};
+		3F1FB12F2C191773003F2D94 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FB1292C1916D4003F2D94 /* StatementDetailsViewController.swift */,
+				3F1FB12B2C1916F3003F2D94 /* StatementDetailsView.swift */,
+				3F1FB12D2C191746003F2D94 /* StatementDetailsViewController+DisplayLogic.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3F1FB1302C19178E003F2D94 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3F1FB1312C19179E003F2D94 /* StatementDetailsEndpoint.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		3F3D72E32C0D56B700448F19 = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +428,7 @@
 				3F4A2E302C0E050000364913 /* Welcome */,
 				3F57CAB62C0F7F02001E0B76 /* Login */,
 				3F75B7202C10EEE00027524F /* Statement */,
+				3F1FB1282C1916AD003F2D94 /* StatementDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -768,6 +822,7 @@
 				3F75B7242C10EF190027524F /* StatementViewController.swift in Sources */,
 				3F1FB1252C18FCD6003F2D94 /* LoadingView.swift in Sources */,
 				3F4A2E3D2C0E0BF100364913 /* UIVIew+AddSubViews.swift in Sources */,
+				3F1FB13A2C191A51003F2D94 /* StatementDetailsRouter.swift in Sources */,
 				3FEE72BB2C15513B0096045E /* CoraNavigationController.swift in Sources */,
 				3F871E502C124015008004CF /* LoginEndpoint.swift in Sources */,
 				3F4A2E342C0E052200364913 /* WelcomePresenter.swift in Sources */,
@@ -800,20 +855,26 @@
 				3F75B7282C10EFBA0027524F /* StatementModels.swift in Sources */,
 				3F5264E12C17F2C2007B68DC /* Array+SafeSubscript.swift in Sources */,
 				3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */,
+				3F1FB12C2C1916F3003F2D94 /* StatementDetailsView.swift in Sources */,
+				3F1FB1382C1919C2003F2D94 /* StatementDetailsWorker.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
 				3F1FB1272C1911A9003F2D94 /* CoraViewController.swift in Sources */,
 				3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */,
 				3F871E492C123C01008004CF /* Endpoint.swift in Sources */,
 				3F027F152C0FFD710054F570 /* LoginPasswordWorker.swift in Sources */,
 				3FF97A002C0E956A0044D1D5 /* CodedView.swift in Sources */,
+				3F1FB12A2C1916D4003F2D94 /* StatementDetailsViewController.swift in Sources */,
 				3F871E4B2C123C1F008004CF /* Decoding.swift in Sources */,
 				3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */,
 				3F5264DD2C17E7AF007B68DC /* Int+Currency.swift in Sources */,
+				3F1FB1342C19193D003F2D94 /* StatementDetailsInteractor.swift in Sources */,
 				3F4A2E2F2C0E04F200364913 /* WelcomeViewController.swift in Sources */,
 				3FA1E05C2C13ED0B00E28AE6 /* NSLayoutConstraint+SugarSyntax.swift in Sources */,
+				3F1FB1362C191966003F2D94 /* StatementDetailsPresenter.swift in Sources */,
 				3F027F172C0FFDDF0054F570 /* LoginPasswordView.swift in Sources */,
 				3F5264DF2C17E94A007B68DC /* GenericTableViewCell.swift in Sources */,
 				3F4A2E3A2C0E08FE00364913 /* WelcomeView.swift in Sources */,
+				3F1FB12E2C191746003F2D94 /* StatementDetailsViewController+DisplayLogic.swift in Sources */,
 				3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */,
 				3FA1E05E2C13EE6100E28AE6 /* CPFValidator.swift in Sources */,
 				3F027F112C0FFC9D0054F570 /* LoginPasswordViewController.swift in Sources */,
@@ -827,13 +888,16 @@
 				3F871E412C123B13008004CF /* NetworkService.swift in Sources */,
 				3F027F0F2C0FFB390054F570 /* LoginPasswordRouter.swift in Sources */,
 				3F75B71E2C10EA870027524F /* KeyboardAdjustableViewProtocol.swift in Sources */,
+				3F1FB1322C19179E003F2D94 /* StatementDetailsEndpoint.swift in Sources */,
 				3F57CABD2C0F7FCC001E0B76 /* LoginCPFView.swift in Sources */,
 				3F1FB1202C18F91F003F2D94 /* String+CapitalizedFirstCharacter.swift in Sources */,
 				3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */,
 				3F57CAB92C0F7F57001E0B76 /* LoginCPFViewController.swift in Sources */,
+				3F1FB13C2C191A84003F2D94 /* StatementDetailsModels.swift in Sources */,
 				3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */,
 				3F871E452C123BBA008004CF /* URLSession+DataTaskResult.swift in Sources */,
 				3F75B72C2C10F01A0027524F /* StatementPresenter.swift in Sources */,
+				3F1FB13E2C191B62003F2D94 /* StatementDetailsSceneFactory.swift in Sources */,
 				3F4A2E362C0E061E00364913 /* WelcomeViewController+DisplayLogic.swift in Sources */,
 				3F4A2E322C0E051700364913 /* WelcomeInteractor.swift in Sources */,
 			);
