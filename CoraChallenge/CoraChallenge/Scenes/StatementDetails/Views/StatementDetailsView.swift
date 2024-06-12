@@ -6,6 +6,8 @@ protocol StatementDetailsViewActions {
 
 protocol StatementDetailsViewProtocol: ViewInitializer {
     var actions: StatementDetailsViewActions? { get set }
+    
+    func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel)
 }
 
 final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
@@ -170,7 +172,28 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         return button
     }()
 
+    // MARK: - Public API
     var actions: StatementDetailsViewActions?
+    
+    func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel) {
+        titleLabel.text = viewModel.title
+        valueAttributeView.value = viewModel.value
+        dateAttributeView.value = viewModel.dateText
+        
+        senderView.name = viewModel.senderViewModel.name
+        senderView.document = viewModel.senderViewModel.document
+        senderView.bankName = viewModel.senderViewModel.bankName
+        senderView.bankInformation = viewModel.senderViewModel.accountInformation
+        
+        receiverView.name = viewModel.receiverViewModel.name
+        receiverView.document = viewModel.receiverViewModel.document
+        receiverView.bankName = viewModel.receiverViewModel.bankName
+        receiverView.bankInformation = viewModel.receiverViewModel.accountInformation
+        
+        descriptionLabel.text = viewModel.description
+        
+        shareButton.isEnabled = true
+    }
     
     public override func layoutSubviews() {
         super.layoutSubviews()

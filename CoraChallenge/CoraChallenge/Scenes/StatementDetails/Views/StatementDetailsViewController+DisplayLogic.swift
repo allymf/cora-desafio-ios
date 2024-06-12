@@ -9,7 +9,11 @@ protocol StatementDetailsDisplayLogic: AnyObject {
 
 extension StatementDetailsViewController: StatementDetailsDisplayLogic {
     
-    func displayDetails(viewModel: StatementDetailsModels.DidLoad.ViewModel.Success) {}
+    func displayDetails(viewModel: StatementDetailsModels.DidLoad.ViewModel.Success) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewProtocol.setup(with: viewModel.sceneViewModel)
+        }
+    }
     
     func displayDetailsFailure(viewModel: StatementDetailsModels.DidLoad.ViewModel.Failure) {
         DispatchQueue.main.async { [weak self] in
