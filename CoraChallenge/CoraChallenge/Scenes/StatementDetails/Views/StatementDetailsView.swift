@@ -164,11 +164,19 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         
         return button
     }()
+    
+    private let loadingView = {
+        let loadingView = LoadingView()
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        return loadingView
+    }()
 
     // MARK: - Public API
     var actions: StatementDetailsViewActions?
     
     func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel) {
+        loadingView.removeFromSuperview()
+        
         iconImageView.image = UIImage(named: "transference")
         titleLabel.text = viewModel.title
         
@@ -205,7 +213,8 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     override func addSubviews() {
         addSubviews(
             scrollView,
-            shareButton
+            shareButton,
+            loadingView
         )
         scrollView.addSubview(contentView)
         contentView.addSubviews(
@@ -232,6 +241,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         constrainReceiverView()
         constrainDescriptionTitleLabel()
         constrainDescriptionLabel()
+        constrainLoadingView()
     }
     
     override func configureAdditionalSettings() {
@@ -431,4 +441,14 @@ private extension StatementDetailsView {
             shareButton.heightAnchor.constraint(equalToConstant: Metrics.ShareButton.height)
         )
     }
+    
+    func constrainLoadingView() {
+        NSLayoutConstraint.activate(
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        )
+    }
+    
 }

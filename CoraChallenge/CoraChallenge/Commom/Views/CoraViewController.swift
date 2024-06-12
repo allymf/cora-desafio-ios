@@ -4,7 +4,8 @@ open class CoraViewController: UIViewController {
     
     func makeErrorAlert(
         title: String = String(localized: "ErrorAlert.title"),
-        message: String = String(localized: "GenericErrorMessage")
+        message: String = String(localized: "GenericErrorMessage"),
+        didTapOkButton: (() -> Void)?
     ) -> UIAlertController {
         let alert = UIAlertController(
             title: title,
@@ -16,6 +17,7 @@ open class CoraViewController: UIViewController {
             title: String(localized: "Dismiss"),
             style: .default) { _ in
                 alert.dismiss(animated: true)
+                didTapOkButton?()
             }
         
         alert.addAction(okAction)
@@ -23,9 +25,9 @@ open class CoraViewController: UIViewController {
         return alert
     }
     
-    func presentDefaultErrorAlert() {
+    func presentDefaultErrorAlert(didTapOkButton: (() -> Void)? = nil) {
         present(
-            makeErrorAlert(),
+            makeErrorAlert(didTapOkButton: didTapOkButton),
             animated: true
         )
     }
