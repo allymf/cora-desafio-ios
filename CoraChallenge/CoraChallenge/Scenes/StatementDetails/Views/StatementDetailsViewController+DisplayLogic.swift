@@ -16,7 +16,7 @@ extension StatementDetailsViewController: StatementDetailsDisplayLogic {
             guard let self else { return }
             self.presentDefaultErrorAlert()
         }
-        debugPrint("Error: ", viewModels.error)
+        debugPrint("Error: ", viewModel.error)
     }
     
 }

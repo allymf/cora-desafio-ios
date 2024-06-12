@@ -36,6 +36,7 @@ final class StatementInteractor: StatementBusinessLogic {
         worker.getStatement(token: token) { [weak self] result in
             switch result {
             case let .success(response):
+                self?.response = response
                 self?.presenter.presentLoadStatement(response: .init(response: response))
             case let .failure(error):
                 self?.presenter.presentLoadStatementFailure(response: .init(error: error))

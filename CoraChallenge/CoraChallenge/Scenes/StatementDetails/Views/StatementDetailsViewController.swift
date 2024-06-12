@@ -28,5 +28,10 @@ final class StatementDetailsViewController: CoraViewController {
     override func loadView() {
         view = viewProtocol.concreteView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor.didLoad()
+    }
 
 }

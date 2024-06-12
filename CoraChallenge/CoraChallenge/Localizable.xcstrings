@@ -243,6 +243,39 @@
         }
       }
     },
+    "StatementDetail.LeadingDateTextFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EEEE"
+          }
+        }
+      }
+    },
+    "StatementDetails.AccountInformationFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agência %@ - Conta %@-%@"
+          }
+        }
+      }
+    },
+    "StatementDetails.DateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "'-' dd/MM/yyyy"
+          }
+        }
+      }
+    },
     "StatementDetails.DateTitle" : {
       "extractionState" : "manual",
       "localizations" : {
