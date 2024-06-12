@@ -68,7 +68,6 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let iconImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "transference")
         imageView.tintColor = .primaryGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -170,6 +169,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     var actions: StatementDetailsViewActions?
     
     func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel) {
+        iconImageView.image = UIImage(named: "transference")
         titleLabel.text = viewModel.title
         
         valueAttributeView.title = String(localized: "StatementDetails.ValueTitle")

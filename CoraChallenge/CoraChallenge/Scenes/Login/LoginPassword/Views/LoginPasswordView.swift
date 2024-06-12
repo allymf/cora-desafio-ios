@@ -80,6 +80,7 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
         
         textField.isSecureTextEntry = true
         textField.font = .avenirBold(size: Metrics.PasswordTextField.fontSize)
+        textField.textColor = .primaryGray
         textField.tintColor = .primaryGray
         
         textField.becomeFirstResponder()

@@ -31,6 +31,7 @@ final class StatementDetailsViewController: CoraViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = String(localized: "StatementDetails.Title")
         viewProtocol.actions = StatementDetailsModels.Actions(didTapShareButton: didTapShareButton)
         interactor.didLoad()
     }

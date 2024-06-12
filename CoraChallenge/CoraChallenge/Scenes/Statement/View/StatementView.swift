@@ -189,6 +189,7 @@ final class StatementView: CodedView, StatementViewProtocol {
         tableView.sectionFooterHeight = .zero
         tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
+        tableView.backgroundColor = .white
         
         tableView.register(GenericTableViewCell<StatementItemView>.self)
         

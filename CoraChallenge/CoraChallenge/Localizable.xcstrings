@@ -320,6 +320,17 @@
         }
       }
     },
+    "StatementDetails.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes da transferência"
+          }
+        }
+      }
+    },
     "StatementDetails.ToTitle" : {
       "extractionState" : "manual",
       "localizations" : {
