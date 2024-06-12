@@ -37,6 +37,7 @@
 		3F1FB13A2C191A51003F2D94 /* StatementDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1392C191A51003F2D94 /* StatementDetailsRouter.swift */; };
 		3F1FB13C2C191A84003F2D94 /* StatementDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB13B2C191A84003F2D94 /* StatementDetailsModels.swift */; };
 		3F1FB13E2C191B62003F2D94 /* StatementDetailsSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB13D2C191B62003F2D94 /* StatementDetailsSceneFactory.swift */; };
+		3F32D7FE2C194BBF007653DC /* StatementDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F32D7FD2C194BBF007653DC /* StatementDetailsResponse.swift */; };
 		3F3D72F02C0D56B700448F19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */; };
 		3F3D72F22C0D56B700448F19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */; };
 		3F3D72F92C0D56B800448F19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D72F82C0D56B800448F19 /* Assets.xcassets */; };
@@ -167,6 +168,7 @@
 		3F1FB1392C191A51003F2D94 /* StatementDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsRouter.swift; sourceTree = "<group>"; };
 		3F1FB13B2C191A84003F2D94 /* StatementDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsModels.swift; sourceTree = "<group>"; };
 		3F1FB13D2C191B62003F2D94 /* StatementDetailsSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsSceneFactory.swift; sourceTree = "<group>"; };
+		3F32D7FD2C194BBF007653DC /* StatementDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementDetailsResponse.swift; sourceTree = "<group>"; };
 		3F3D72EC2C0D56B700448F19 /* CoraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F3D72EF2C0D56B700448F19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F3D72F12C0D56B700448F19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				3F1FB1312C19179E003F2D94 /* StatementDetailsEndpoint.swift */,
+				3F32D7FD2C194BBF007653DC /* StatementDetailsResponse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				3F1FB12C2C1916F3003F2D94 /* StatementDetailsView.swift in Sources */,
 				3F1FB1382C1919C2003F2D94 /* StatementDetailsWorker.swift in Sources */,
 				3F4A2E452C0E0EAF00364913 /* UITableView+Reuser.swift in Sources */,
+				3F32D7FE2C194BBF007653DC /* StatementDetailsResponse.swift in Sources */,
 				3F1FB1272C1911A9003F2D94 /* CoraViewController.swift in Sources */,
 				3F5264B72C179E83007B68DC /* StatementEndpoint.swift in Sources */,
 				3F871E492C123C01008004CF /* Endpoint.swift in Sources */,
