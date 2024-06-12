@@ -265,13 +265,35 @@
         }
       }
     },
+    "StatementDetails.BankAgencyFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@-%@"
+          }
+        }
+      }
+    },
     "StatementDetails.DateFormat" : {
       "extractionState" : "manual",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "'-' dd/MM/yyyy"
+            "value" : "dd/MM/yyyy"
+          }
+        }
+      }
+    },
+    "StatementDetails.DateTextFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ %@"
           }
         }
       }
@@ -294,6 +316,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descrição"
+          }
+        }
+      }
+    },
+    "StatementDetails.DocumentFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ %@"
           }
         }
       }

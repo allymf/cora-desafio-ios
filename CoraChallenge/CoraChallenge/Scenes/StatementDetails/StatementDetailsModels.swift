@@ -30,7 +30,7 @@ enum StatementDetailsModels {
     }
     
     enum DocumentType: String {
-        case cpf, cnpj, none
+        case cpf = "CPF", cnpj = "CNPJ", none
     }
     
     struct StatementDetailViewModel: Equatable {

@@ -41,8 +41,8 @@ extension StatementDetailsResponse.Actor {
     ) -> StatementDetailsResponse.Actor {
         return .init(
             bankName: bankName,
-            bankNumber: bankName,
-            documentNumber: bankName,
+            bankNumber: bankNumber,
+            documentNumber: documentNumber,
             documentType: documentType,
             accountNumberDigit: accountNumberDigit,
             agencyNumberDigit: agencyNumberDigit,

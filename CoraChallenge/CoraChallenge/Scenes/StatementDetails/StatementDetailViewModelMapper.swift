@@ -57,7 +57,7 @@ final class StatementDetailViewModelMapper: StatementDetailViewModelMapping {
         dateFormatter.dateFormat = String(localized: "StatementDetails.DateFormat")
         let trailingDateText = dateFormatter.string(from: date)
         
-        return leadingDateText + " " + trailingDateText
+        return leadingDateText + trailingDateText
     }
     
     func makeLeadingDateText(from date: Date) -> String {
@@ -84,13 +84,22 @@ final class StatementDetailViewModelMapper: StatementDetailViewModelMapping {
     }
     
     func makeDocumentText(for actor: StatementDetailsResponse.Actor?) -> String {
-        let documentType: StatementDetailsModels.DocumentType = .init(rawValue: actor?.documentType?.lowercased() ?? "") ?? .none
+        let documentType: StatementDetailsModels.DocumentType = .init(rawValue: actor?.documentType ?? "") ?? .none
+        let documentFormat = String(localized: "StatementDetails.DocumentFormat")
         
         switch documentType {
         case .cpf:
-            return documentType.rawValue.uppercased() + " " + (actor?.documentNumber?.maskCPF ?? "")
+            return String(
+                format: documentFormat,
+                documentType.rawValue,
+                (actor?.documentNumber?.maskCPF ?? "")
+            )
         case .cnpj:
-            return documentType.rawValue.uppercased() + " " + (actor?.documentNumber?.maskCNPJ ?? "")
+            return String(
+                format: documentFormat,
+                documentType.rawValue,
+                (actor?.documentNumber?.maskCNPJ ?? "")
+            )
         default:
             return ""
         }
@@ -99,9 +108,15 @@ final class StatementDetailViewModelMapper: StatementDetailViewModelMapping {
     func makeAccountInformation(for actor: StatementDetailsResponse.Actor?) -> String {
         let accountInformationFormat = String(localized: "StatementDetails.AccountInformationFormat")
         
+        
         var agencyCompleteNumber = actor?.agencyNumber ?? ""
         if let agencyNumberDigit = actor?.agencyNumberDigit {
-            agencyCompleteNumber += "-" + agencyNumberDigit
+            let completeAgencyNumberFormat = String(localized: "StatementDetails.BankAgencyFormat")
+            agencyCompleteNumber = String(
+                format: completeAgencyNumberFormat,
+                actor?.agencyNumber ?? "",
+                agencyNumberDigit
+            )
         }
         
         return String(
