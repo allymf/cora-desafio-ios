@@ -14,6 +14,7 @@ final class StatementInteractorTests: XCTestCase {
         )
     }()
     
+    // MARK: - LoadStatement tests
     func test_loadStatement_givenTokenStorageWillNotReturnToken_whenMethodIsCalled_itShouldCallCorrectMethodFromPresenter() {
         // Given
         tokenFetchingStub.fetchTokenValueToReturn = nil
@@ -73,20 +74,132 @@ final class StatementInteractorTests: XCTestCase {
         XCTAssertEqual(presentationLogicSpy.presentLoadStatementParametersPassed, expectedPresentLoadStatementParametersPassed)
     }
     
+    // MARK: - DidSelectItem tests
+    func test_didSelectItem_givenResponseIsNil_whenRequestIsPassed_itShouldPassCorrectErrorToPresenter() {
+        // Given
+        let dummyIndexPath = IndexPath()
+        let dummyRequest = StatementModels.SelectItem.Request(indexPath: dummyIndexPath)
+        
+        let expectedPresentSelectedItemFailureCalls = 1
+        let expectedErrorPassed: StatementModels.SceneErrors = .itemUnavailable
+        
+        // When
+        sut.didSelectItem(request: dummyRequest)
+        
+        // Then
+        XCTAssertEqual(presentationLogicSpy.presentSelectedItemFailureParametersPassed.count, expectedPresentSelectedItemFailureCalls)
+        XCTAssertEqual(
+            presentationLogicSpy.presentSelectedItemFailureParametersPassed.first?.error.localizedDescription,
+            expectedErrorPassed.localizedDescription
+        )
+    }
+    
+    func test_didSelectItem_givenResponseHasValueAndIndexPathSectionOutOfBounds_whenRequestIsPassed_itShouldPassCorrectErrorToPresenter() {
+        // Given
+        let expectedToken = UUID().uuidString
+        tokenFetchingStub.fetchTokenValueToReturn = expectedToken
+        
+        let stubResponse: StatementResponse = .fixture(
+            sections: [
+                .fixture(items: [.fixture()])
+            ]
+        )
+        workingLogicSpy.getStatementValueToStub = .success(stubResponse)
+        
+        sut.loadStatement()
+        
+        let stubIndexPath = IndexPath(
+            row: 0,
+            section: 1
+        )
+        let stubRequest = StatementModels.SelectItem.Request(indexPath: stubIndexPath)
+        
+        let expectedPresentSelectedItemFailureCalls = 1
+        let expectedErrorPassed: StatementModels.SceneErrors = .itemUnavailable
+        
+        // When
+        sut.didSelectItem(request: stubRequest)
+        
+        // Then
+        XCTAssertEqual(presentationLogicSpy.presentSelectedItemFailureParametersPassed.count, expectedPresentSelectedItemFailureCalls)
+        XCTAssertEqual(
+            presentationLogicSpy.presentSelectedItemFailureParametersPassed.first?.error.localizedDescription,
+            expectedErrorPassed.localizedDescription
+        )
+    }
+    
+    func test_didSelectItem_givenResponseHasValueAndIndexPathItemOutOfBounds_whenRequestIsPassed_itShouldPassCorrectErrorToPresenter() {
+        // Given
+        let expectedToken = UUID().uuidString
+        tokenFetchingStub.fetchTokenValueToReturn = expectedToken
+        
+        let stubResponse: StatementResponse = .fixture(
+            sections: [
+                .fixture(items: [.fixture()])
+            ]
+        )
+        workingLogicSpy.getStatementValueToStub = .success(stubResponse)
+        
+        sut.loadStatement()
+        
+        let stubIndexPath = IndexPath(
+            row: 1,
+            section: 0
+        )
+        let stubRequest = StatementModels.SelectItem.Request(indexPath: stubIndexPath)
+        
+        let expectedPresentSelectedItemFailureCalls = 1
+        let expectedErrorPassed: StatementModels.SceneErrors = .itemUnavailable
+        
+        // When
+        sut.didSelectItem(request: stubRequest)
+        
+        // Then
+        XCTAssertEqual(presentationLogicSpy.presentSelectedItemFailureParametersPassed.count, expectedPresentSelectedItemFailureCalls)
+        XCTAssertEqual(
+            presentationLogicSpy.presentSelectedItemFailureParametersPassed.first?.error.localizedDescription,
+            expectedErrorPassed.localizedDescription
+        )
+    }
+    
+    func test_didSelectItem_givenResponseHasValueAndIndexPathIsValid_whenRequestIsPassed_itShouldStoreSelectedItemIdAndCallCorrectMethodFromPresenter() {
+        // Given
+        let expectedToken = UUID().uuidString
+        tokenFetchingStub.fetchTokenValueToReturn = expectedToken
+        
+        let expectedSelectedId = UUID().uuidString
+        
+        let stubResponse: StatementResponse = .fixture(
+            sections: [
+                .fixture(items: [.fixture(id: expectedSelectedId)])
+            ]
+        )
+        workingLogicSpy.getStatementValueToStub = .success(stubResponse)
+        
+        sut.loadStatement()
+        
+        let stubIndexPath = IndexPath(
+            row: 0,
+            section: 0
+        )
+        let stubRequest = StatementModels.SelectItem.Request(indexPath: stubIndexPath)
+        
+        let expectedPresentSelectedItemCalls = 1
+        
+        // When
+        sut.didSelectItem(request: stubRequest)
+        
+        // Then
+        XCTAssertEqual(sut.selectedId, expectedSelectedId)
+        XCTAssertEqual(presentationLogicSpy.presentSelectedItemCalls, expectedPresentSelectedItemCalls)
+    }
+    
 }
 
 // MARK: - Test doubles
 extension StatementInteractorTests {
     
     final class PresentationLogicSpy: StatementPresentationLogic {
-        func presentSelectedItem() {
-            
-        }
-        
-        func presentSelectedItemFailure(response: CoraChallenge.StatementModels.SelectItem.Response.Failure) {
-            
-        }
-        
         
         private(set) var presentLoadStatementParametersPassed = [StatementModels.LoadStatement.Response.Success]()
         func presentLoadStatement(response: StatementModels.LoadStatement.Response.Success) {
@@ -96,6 +209,16 @@ extension StatementInteractorTests {
         private(set) var presentLoadStatementFailureParametersPassed = [StatementModels.LoadStatement.Response.Failure]()
         func presentLoadStatementFailure(response: StatementModels.LoadStatement.Response.Failure) {
             presentLoadStatementFailureParametersPassed.append(response)
+        }
+        
+        private(set) var presentSelectedItemCalls = 0
+        func presentSelectedItem() {
+            presentSelectedItemCalls += 1
+        }
+        
+        private(set) var presentSelectedItemFailureParametersPassed = [StatementModels.SelectItem.Response.Failure]()
+        func presentSelectedItemFailure(response: StatementModels.SelectItem.Response.Failure) {
+            presentSelectedItemFailureParametersPassed.append(response)
         }
         
         private(set) var presentLogoutCalls = 0

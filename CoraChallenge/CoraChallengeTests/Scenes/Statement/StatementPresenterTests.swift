@@ -50,6 +50,37 @@ final class StatementPresenterTests: XCTestCase {
         )
     }
     
+    // MARK: - PresentSelectedItem tests
+    func test_presentSelectedItem_whenMethodIsCalled_itShouldCallCorrectMethodFromDisplayer() {
+        // Given
+        let expectedDisplaySelectedItemCalls = 1
+        
+        // When
+        sut.presentSelectedItem()
+        
+        // Then
+        XCTAssertEqual(displayLogicSpy.displaySelectedItemCalls, expectedDisplaySelectedItemCalls)
+    }
+    
+    // MARK: - PresentSelectedItem tests
+    func test_presentSelectedItemFailure_givenStubError_whenStubResponseIsPassed_itShouldPassCorrectErrorToDisplayer() {
+        // Given
+        let expectedErrorPassed: StubError = .stub
+        let stubResponse = StatementModels.SelectItem.Response.Failure(error: expectedErrorPassed)
+        
+        let expectedDisplaySelectedItemFailureCalls = 1
+        
+        // When
+        sut.presentSelectedItemFailure(response: stubResponse)
+        
+        // Then
+        XCTAssertEqual(displayLogicSpy.displaySelectedItemFailureParametersPassed.count, expectedDisplaySelectedItemFailureCalls)
+        XCTAssertEqual(
+            displayLogicSpy.displaySelectedItemFailureParametersPassed.first?.error.localizedDescription,
+            expectedErrorPassed.localizedDescription
+        )
+    }
+    
     // MARK: - PresentLogout tests
     func test_presentLogout_whenMethodIsCalled_itShouldCallCorrectMethodFromDisplayer() {
         // Given
@@ -68,15 +99,6 @@ final class StatementPresenterTests: XCTestCase {
 extension StatementPresenterTests {
     
     final class DisplayLogicSpy: StatementDisplayLogic {
-        func displaySelectedItem() {
-            
-        }
-        
-        func displaySelectedItemFailure(viewModel: CoraChallenge.StatementModels.SelectItem.ViewModel.Failure) {
-            
-        }
-        
-        
         private(set) var displayLoadStatementParametersPassed = [StatementModels.LoadStatement.ViewModel.Success]()
         func displayLoadStatement(viewModel: StatementModels.LoadStatement.ViewModel.Success) {
             displayLoadStatementParametersPassed.append(viewModel)
@@ -85,6 +107,16 @@ extension StatementPresenterTests {
         private(set) var displayLoadStatementFailureParametersPassed = [StatementModels.LoadStatement.ViewModel.Failure]()
         func displayLoadStatementFailure(viewModel: StatementModels.LoadStatement.ViewModel.Failure) {
             displayLoadStatementFailureParametersPassed.append(viewModel)
+        }
+        
+        private(set) var displaySelectedItemCalls = 0
+        func displaySelectedItem() {
+            displaySelectedItemCalls += 1
+        }
+        
+        private(set) var displaySelectedItemFailureParametersPassed = [StatementModels.SelectItem.ViewModel.Failure]()
+        func displaySelectedItemFailure(viewModel: StatementModels.SelectItem.ViewModel.Failure) {
+            displaySelectedItemFailureParametersPassed.append(viewModel)
         }
         
         private(set) var displayLogoutCalls = 0
