@@ -17,6 +17,19 @@ final class StatementViewModelMapperTests: XCTestCase {
         dateFormatter.timeZone = timeZoneStub
     }
     
+    // MARK: - MakeViewModel tests
+    func test_makeViewModel_givenStubResponse_whenResponseIsPassed_itShouldReturnCorrectViewModel() {
+        // Given
+        let stubResponse: StatementResponse = .fixture(sections: [])
+        let expectedResult: StatementModels.StatementViewModel = .fixture()
+        
+        // When
+        let result = sut.makeViewModel(with: stubResponse)
+        
+        // Then
+        XCTAssertEqual(result, expectedResult)
+    }
+    
     // MARK: - MakeSections tests
     func test_makeSections_givenDecodableSectionArray_whenArrayIsPassedToMethod_itShouldReturnCorrectViewModel() throws {
         // Given

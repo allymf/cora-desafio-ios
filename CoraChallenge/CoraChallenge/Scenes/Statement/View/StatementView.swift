@@ -189,12 +189,19 @@ final class StatementView: CodedView, StatementViewProtocol {
         tableView.sectionFooterHeight = .zero
         tableView.separatorStyle = .none
         tableView.refreshControl = refreshControl
+        tableView.backgroundColor = .white
         
         tableView.register(GenericTableViewCell<StatementItemView>.self)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         return tableView
+    }()
+    
+    private let loadingView = {
+        let loadingView = LoadingView()
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        return loadingView
     }()
     
     private var selectableButtons: [UIButton] {
@@ -223,6 +230,7 @@ final class StatementView: CodedView, StatementViewProtocol {
     }
     
     func reloadTableView() {
+        loadingView.removeFromSuperview()
         stopRefresh()
         tableView.reloadData()
     }
@@ -236,7 +244,8 @@ final class StatementView: CodedView, StatementViewProtocol {
         addSubviews(
             optionsStackView,
             selectedButtonView,
-            tableView
+            tableView,
+            loadingView
         )
     }
     
@@ -244,6 +253,7 @@ final class StatementView: CodedView, StatementViewProtocol {
         constrainOptionsStackView()
         constrainTableView()
         constrainSelectedButtonView()
+        constrainLoadingView()
     }
     
     override func configureAdditionalSettings() {
@@ -340,6 +350,15 @@ private extension StatementView {
             selectedButtonViewCenterXConstraint,
             selectedButtonView.widthAnchor.constraint(equalToConstant: Metrics.SelectedButtonView.width),
             selectedButtonView.heightAnchor.constraint(equalToConstant: Metrics.SelectedButtonView.height)
+        )
+    }
+    
+    func constrainLoadingView() {
+        NSLayoutConstraint.activate(
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor)
         )
     }
     

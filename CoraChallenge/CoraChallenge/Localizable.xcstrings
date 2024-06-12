@@ -243,6 +243,61 @@
         }
       }
     },
+    "StatementDetail.LeadingDateTextFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EEEE"
+          }
+        }
+      }
+    },
+    "StatementDetails.AccountInformationFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agência %@ - Conta %@-%@"
+          }
+        }
+      }
+    },
+    "StatementDetails.BankAgencyFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@-%@"
+          }
+        }
+      }
+    },
+    "StatementDetails.DateFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dd/MM/yyyy"
+          }
+        }
+      }
+    },
+    "StatementDetails.DateTextFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ %@"
+          }
+        }
+      }
+    },
     "StatementDetails.DateTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -265,6 +320,17 @@
         }
       }
     },
+    "StatementDetails.DocumentFormat" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ %@"
+          }
+        }
+      }
+    },
     "StatementDetails.FromTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -283,6 +349,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compartilhar comprovante "
+          }
+        }
+      }
+    },
+    "StatementDetails.Title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalhes da transferência"
           }
         }
       }

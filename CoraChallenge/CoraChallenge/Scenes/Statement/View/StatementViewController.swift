@@ -3,7 +3,7 @@ import UIKit
 final class StatementViewController: CoraViewController {
     
     let viewProtocol: StatementViewProtocol
-    private let interactor: StatementBusinessLogic
+    let interactor: StatementBusinessLogic
     let router: StatementRoutingLogic
     
     var viewModel: StatementModels.StatementViewModel?
@@ -44,11 +44,11 @@ final class StatementViewController: CoraViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = String(localized: "Statement.Title")
+        navigationItem.backButtonTitle = String()
+        navigationItem.rightBarButtonItem = rightBarButtonItem
         
         viewProtocol.setupTableView(with: self)
         viewProtocol.actions = StatementModels.Action(didPullToRefresh: didPullToRefresh)
-        
-        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {

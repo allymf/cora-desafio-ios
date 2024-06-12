@@ -14,5 +14,17 @@ final class StringCapitalizedFirstCharacter: XCTestCase {
         // Then
         XCTAssertEqual(result, expectedResult)
     }
+    
+    func test_capitalizedFirstCharacter_givenEmptyValue_whenVariableIsCalled_itShouldReturnCorrectValue() {
+        // Given
+        let sut = ""
+        let expectedResult = sut
+        
+        // When
+        let result = sut.capitalizedFirstCharacter
+        
+        // Then
+        XCTAssertEqual(result, expectedResult)
+    }
 
 }

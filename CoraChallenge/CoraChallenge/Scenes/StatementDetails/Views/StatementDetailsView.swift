@@ -1,11 +1,13 @@
 import UIKit
 
 protocol StatementDetailsViewActions {
-    var didTapShareButton: () -> Void { get }
+    var didTapShareButton: (UIImage) -> Void { get }
 }
 
 protocol StatementDetailsViewProtocol: ViewInitializer {
     var actions: StatementDetailsViewActions? { get set }
+    
+    func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel)
 }
 
 final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
@@ -66,7 +68,6 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let iconImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "transference")
         imageView.tintColor = .primaryGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -85,14 +86,12 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let valueAttributeView = {
         let attributeView = StatementAttributeView()
-        attributeView.title = String(localized: "StatementDetails.ValueTitle")
         attributeView.translatesAutoresizingMaskIntoConstraints = false
         return attributeView
     }()
     
     private let dateAttributeView = {
         let attributeView = StatementAttributeView()
-        attributeView.title = String(localized: "StatementDetails.DateTitle")
         attributeView.translatesAutoresizingMaskIntoConstraints = false
         return attributeView
     }()
@@ -100,21 +99,18 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let senderView = {
         let actorView = StatementItemActorView()
-        actorView.title = String(localized: "StatementDetails.FromTitle")
         actorView.translatesAutoresizingMaskIntoConstraints = false
         return actorView
     }()
     
     private let receiverView = {
         let actorView = StatementItemActorView()
-        actorView.title = String(localized: "StatementDetails.ToTitle")
         actorView.translatesAutoresizingMaskIntoConstraints = false
         return actorView
     }()
     
     private let descriptionTitleLabel = {
         let label = UILabel()
-        label.text = String(localized: "StatementDetails.DescriptionTitle")
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .primaryGray
@@ -125,7 +121,6 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let descriptionLabel = {
         let label = UILabel()
-        label.text = "Como Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\n"
         label.numberOfLines = .zero
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .secondaryGray
@@ -169,8 +164,45 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         
         return button
     }()
+    
+    private let loadingView = {
+        let loadingView = LoadingView()
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        return loadingView
+    }()
 
+    // MARK: - Public API
     var actions: StatementDetailsViewActions?
+    
+    func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel) {
+        loadingView.removeFromSuperview()
+        
+        iconImageView.image = UIImage(named: "transference")
+        titleLabel.text = viewModel.title
+        
+        valueAttributeView.title = String(localized: "StatementDetails.ValueTitle")
+        valueAttributeView.value = viewModel.value
+        
+        dateAttributeView.title = String(localized: "StatementDetails.DateTitle")
+        dateAttributeView.value = viewModel.dateText
+        
+        senderView.title = String(localized: "StatementDetails.FromTitle")
+        senderView.name = viewModel.senderViewModel.name
+        senderView.document = viewModel.senderViewModel.document
+        senderView.bankName = viewModel.senderViewModel.bankName
+        senderView.bankInformation = viewModel.senderViewModel.accountInformation
+        
+        receiverView.title = String(localized: "StatementDetails.ToTitle")
+        receiverView.name = viewModel.receiverViewModel.name
+        receiverView.document = viewModel.receiverViewModel.document
+        receiverView.bankName = viewModel.receiverViewModel.bankName
+        receiverView.bankInformation = viewModel.receiverViewModel.accountInformation
+        
+        descriptionTitleLabel.text = String(localized: "StatementDetails.DescriptionTitle")
+        descriptionLabel.text = viewModel.description
+        
+        shareButton.isEnabled = true
+    }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
@@ -181,7 +213,8 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     override func addSubviews() {
         addSubviews(
             scrollView,
-            shareButton
+            shareButton,
+            loadingView
         )
         scrollView.addSubview(contentView)
         contentView.addSubviews(
@@ -208,15 +241,18 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
         constrainReceiverView()
         constrainDescriptionTitleLabel()
         constrainDescriptionLabel()
+        constrainLoadingView()
     }
     
     override func configureAdditionalSettings() {
         backgroundColor = .white
+        contentView.backgroundColor = .white
     }
     
     @objc
     private func didTapShareButton() {
-        actions?.didTapShareButton()
+        let receiptImage = contentView.asImage
+        actions?.didTapShareButton(receiptImage)
     }
     
 }
@@ -405,4 +441,14 @@ private extension StatementDetailsView {
             shareButton.heightAnchor.constraint(equalToConstant: Metrics.ShareButton.height)
         )
     }
+    
+    func constrainLoadingView() {
+        NSLayoutConstraint.activate(
+            loadingView.topAnchor.constraint(equalTo: topAnchor),
+            loadingView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        )
+    }
+    
 }

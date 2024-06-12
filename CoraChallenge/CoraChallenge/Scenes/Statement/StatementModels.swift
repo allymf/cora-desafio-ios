@@ -2,10 +2,13 @@ import Foundation
 
 enum StatementModels {
     
+    enum SceneErrors: Error {
+        case itemUnavailable
+    }
+    
     enum LoadStatement {
         
         enum Response {
-            
             struct Success: Equatable {
                 let response: StatementResponse
             }
@@ -13,11 +16,9 @@ enum StatementModels {
             struct Failure {
                 let error: Error
             }
-            
         }
         
         enum ViewModel {
-            
             struct Success: Equatable {
                 let sceneViewModel: StatementViewModel
             }
@@ -25,7 +26,26 @@ enum StatementModels {
             struct Failure {
                 let error: Error
             }
-            
+        }
+        
+    }
+    
+    enum SelectItem {
+        
+        struct Request {
+            let indexPath: IndexPath
+        }
+        
+        enum Response {
+            struct Failure {
+                let error: Error
+            }
+        }
+        
+        enum ViewModel {
+            struct Failure {
+                let error: Error
+            }
         }
         
     }

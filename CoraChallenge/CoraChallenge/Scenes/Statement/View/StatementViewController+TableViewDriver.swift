@@ -64,9 +64,7 @@ extension StatementViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Temporary
-        let vc = StatementDetailsSceneFactory.makeScene()
-        show(vc, sender: self)
+        interactor.didSelectItem(request: .init(indexPath: indexPath))
     }
     
 }
