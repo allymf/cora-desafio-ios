@@ -21,22 +21,22 @@ final class StatementView: CodedView, StatementViewProtocol {
     enum Metrics {
         
         enum OptionsStackView {
-            static var height: CGFloat = 56
+            static let height: CGFloat = 56
         }
         
         enum SelectedButtonView {
-            static var width: CGFloat = 32
-            static var height: CGFloat = 1
-            static var margin: CGFloat = 20
+            static let width: CGFloat = 32
+            static let height: CGFloat = 1
+            static let margin: CGFloat = 20
         }
         
         enum TableView {
-            static var sectionHeaderHeight: CGFloat = 32
-            static var cellHeight: CGFloat = 100
+            static let sectionHeaderHeight: CGFloat = 32
+            static let cellHeight: CGFloat = 100
         }
         
         enum Button {
-            static var fontSize: CGFloat = 14
+            static let fontSize: CGFloat = 14
         }
         
     }

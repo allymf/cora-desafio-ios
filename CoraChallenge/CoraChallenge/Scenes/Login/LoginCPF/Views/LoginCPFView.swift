@@ -17,32 +17,32 @@ public final class LoginCPFView: CodedView, LoginCPFViewProtocol {
     enum Metrics {
         
         enum LabelsStackView {
-            static var spacing: CGFloat = 8
-            static var topMargin: CGFloat = 8
-            static var margin: CGFloat = 20
+            static let spacing: CGFloat = 8
+            static let topMargin: CGFloat = 24
+            static let margin: CGFloat = 20
         }
         
         enum WelcomeLabel {
-            static var fontSize: CGFloat = 16
+            static let fontSize: CGFloat = 16
         }
         
         enum InsertCPFLabel {
-            static var fontSize: CGFloat = 22
+            static let fontSize: CGFloat = 22
         }
         
         enum CPFTextField {
-            static var fontSize: CGFloat = 22
-            static var height: CGFloat = 32
-            static var topMargin: CGFloat = 32
-            static var margin: CGFloat = 20
+            static let fontSize: CGFloat = 22
+            static let height: CGFloat = 32
+            static let topMargin: CGFloat = 32
+            static let margin: CGFloat = 20
         }
         
         enum NextButton {
-            static var fontSize: CGFloat = 14
-            static var imagePaddingMultiplier = 0.64
-            static var imagePadding: CGFloat = 230
-            static var height: CGFloat = 48
-            static var margin: CGFloat = 16
+            static let fontSize: CGFloat = 14
+            static let imagePaddingMultiplier = 0.64
+            static let imagePadding: CGFloat = 230
+            static let height: CGFloat = 48
+            static let margin: CGFloat = 24
         }
         
     }

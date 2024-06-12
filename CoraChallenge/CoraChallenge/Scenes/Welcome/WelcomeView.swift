@@ -13,44 +13,45 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
     // MARK: - Metrics
     enum Metrics {
         enum LogoImageView {
-            static var margin: CGFloat = 16
-            static var width: CGFloat = 90
-            static var height: CGFloat = 24
+            static let margin: CGFloat = 24
+            static let width: CGFloat = 90
+            static let height: CGFloat = 24
         }
         
         enum PersonImageView {
-            static var height: CGFloat = 340
+            static let height: CGFloat = 340
         }
         
         enum LabelsStackView {
-            static var margin: CGFloat = 16
-            static var spacing: CGFloat = 16
+            static let topMargin: CGFloat = 16
+            static let margin: CGFloat = 24
+            static let spacing: CGFloat = 16
         }
         
         enum TitleLabel {
-            static var fontSize: CGFloat = 28
+            static let fontSize: CGFloat = 28
         }
         
         enum RationaleLabel {
-            static var fontSize: CGFloat = 16
+            static let fontSize: CGFloat = 16
         }
         
         enum ButtonStackView {
-            static var spacing: CGFloat = 16
-            static var margin: CGFloat = 16
-            static var bottomMargin: CGFloat = 8
-            static var height: CGFloat = 128
+            static let spacing: CGFloat = 16
+            static let margin: CGFloat = 24
+            static let bottomMargin: CGFloat = 8
+            static let height: CGFloat = 128
         }
         
         enum SignUpButton {
-            static var fontSize: CGFloat = 16
-            static var height: CGFloat = 64
-            static var imagePaddingMultiplier = 0.4
-            static var imagePadding: CGFloat = 150
+            static let fontSize: CGFloat = 16
+            static let height: CGFloat = 64
+            static let imagePaddingMultiplier = 0.35
+            static let imagePadding: CGFloat = 150
         }
         
         enum LoginButton {
-            static var height: CGFloat = 48
+            static let height: CGFloat = 48
         }
     }
     
@@ -236,7 +237,7 @@ final class WelcomeView: CodedView, WelcomeViewProtocol {
         NSLayoutConstraint.activate(
             labelsStackView.topAnchor.constraint(
                 equalTo: personImageView.bottomAnchor,
-                constant: Metrics.LabelsStackView.margin
+                constant: Metrics.LabelsStackView.topMargin
             ),
             labelsStackView.leadingAnchor.constraint(
                 equalTo: safeAreaLayoutGuide.leadingAnchor,

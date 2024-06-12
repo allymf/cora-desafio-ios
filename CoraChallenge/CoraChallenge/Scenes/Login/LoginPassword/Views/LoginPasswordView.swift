@@ -15,36 +15,36 @@ final class LoginPasswordView: CodedView, LoginPasswordViewProtocol {
     // MARK: - Metrics
     enum Metrics {
         
-        static var margin: CGFloat = 16
+        static let margin: CGFloat = 24
         
         enum InsertPasswordLabel {
-            static var fontSize: CGFloat = 22
+            static let fontSize: CGFloat = 22
         }
         
         enum PasswordStackView {
-            static var spacing: CGFloat = 8
-            static var topMargin: CGFloat = 32
-            static var height: CGFloat = 32
+            static let spacing: CGFloat = 8
+            static let topMargin: CGFloat = 32
+            static let height: CGFloat = 32
         }
         
         enum PasswordTextField {
-            static var fontSize: CGFloat = 22
+            static let fontSize: CGFloat = 22
         }
         
         enum PasswordToggleButton {
-            static var width: CGFloat = 48
+            static let width: CGFloat = 48
         }
         
         enum ForgotPassword {
-            static var widthMultiplier: CGFloat = 0.35
-            static var height: CGFloat = 48
+            static let widthMultiplier: CGFloat = 0.35
+            static let height: CGFloat = 48
         }
         
         enum NextButton {
-            static var fontSize: CGFloat = 14
-            static var imagePadding: CGFloat = 8
-            static var imagePaddingMultiplier: CGFloat = 0.65
-            static var height: CGFloat = 48
+            static let fontSize: CGFloat = 14
+            static let imagePadding: CGFloat = 8
+            static let imagePaddingMultiplier: CGFloat = 0.64
+            static let height: CGFloat = 48
         }
         
     }
