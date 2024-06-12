@@ -87,14 +87,12 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let valueAttributeView = {
         let attributeView = StatementAttributeView()
-        attributeView.title = String(localized: "StatementDetails.ValueTitle")
         attributeView.translatesAutoresizingMaskIntoConstraints = false
         return attributeView
     }()
     
     private let dateAttributeView = {
         let attributeView = StatementAttributeView()
-        attributeView.title = String(localized: "StatementDetails.DateTitle")
         attributeView.translatesAutoresizingMaskIntoConstraints = false
         return attributeView
     }()
@@ -102,21 +100,18 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let senderView = {
         let actorView = StatementItemActorView()
-        actorView.title = String(localized: "StatementDetails.FromTitle")
         actorView.translatesAutoresizingMaskIntoConstraints = false
         return actorView
     }()
     
     private let receiverView = {
         let actorView = StatementItemActorView()
-        actorView.title = String(localized: "StatementDetails.ToTitle")
         actorView.translatesAutoresizingMaskIntoConstraints = false
         return actorView
     }()
     
     private let descriptionTitleLabel = {
         let label = UILabel()
-        label.text = String(localized: "StatementDetails.DescriptionTitle")
         
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .primaryGray
@@ -127,7 +122,6 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     private let descriptionLabel = {
         let label = UILabel()
-        label.text = "Como Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\nComo Quiabo cru\n"
         label.numberOfLines = .zero
         label.font = .avenir(size: Metrics.smallFontSize)
         label.textColor = .secondaryGray
@@ -177,19 +171,26 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
     
     func setup(with viewModel: StatementDetailsModels.StatementDetailViewModel) {
         titleLabel.text = viewModel.title
+        
+        valueAttributeView.title = String(localized: "StatementDetails.ValueTitle")
         valueAttributeView.value = viewModel.value
+        
+        dateAttributeView.title = String(localized: "StatementDetails.DateTitle")
         dateAttributeView.value = viewModel.dateText
         
+        senderView.title = String(localized: "StatementDetails.FromTitle")
         senderView.name = viewModel.senderViewModel.name
         senderView.document = viewModel.senderViewModel.document
         senderView.bankName = viewModel.senderViewModel.bankName
         senderView.bankInformation = viewModel.senderViewModel.accountInformation
         
+        receiverView.title = String(localized: "StatementDetails.ToTitle")
         receiverView.name = viewModel.receiverViewModel.name
         receiverView.document = viewModel.receiverViewModel.document
         receiverView.bankName = viewModel.receiverViewModel.bankName
         receiverView.bankInformation = viewModel.receiverViewModel.accountInformation
         
+        descriptionLabel.text = String(localized: "StatementDetails.DescriptionTitle")
         descriptionLabel.text = viewModel.description
         
         shareButton.isEnabled = true
