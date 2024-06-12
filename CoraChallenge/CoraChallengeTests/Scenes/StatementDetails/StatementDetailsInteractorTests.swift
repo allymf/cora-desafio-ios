@@ -1,7 +1,100 @@
 import XCTest
 @testable import CoraChallenge
 
-final class StatementDetailsInteractorTests: XCTestCase {}
+final class StatementDetailsInteractorTests: XCTestCase {
+    
+    private let presentationLogicSpy = PresentationLogicSpy()
+    private let workingLogicStub = WorkingLogicStub()
+    private let tokenFetchingStub = TokenFetchingStub()
+    private let stubItemId = UUID().uuidString
+    private lazy var sut = {
+        return StatementDetailsInteractor(
+            presenter: presentationLogicSpy,
+            worker: workingLogicStub,
+            tokenStorage: tokenFetchingStub,
+            itemId: stubItemId
+        )
+    }()
+    
+    func test_didLoad_givenTokenStorageWillReturnNil_whenMethodIsCalled_itShouldPassCorrectErrorToPresenter() {
+        // Given
+        tokenFetchingStub.fetchTokenValueToStub = nil
+        
+        let expectedFetchTokenCalls = 1
+        let expectedPresentDetailsFailureCalls = 1
+        let expectedErrorPassed: StatementDetailsModels.SceneErrors = .tokenIsNil
+        
+        // When
+        sut.didLoad()
+        
+        // Then
+        XCTAssertEqual(tokenFetchingStub.fetchTokenCalls, expectedFetchTokenCalls)
+        XCTAssertEqual(presentationLogicSpy.presentDetailsFailureParametersPassed.count, expectedPresentDetailsFailureCalls)
+        XCTAssertEqual(
+            presentationLogicSpy.presentDetailsFailureParametersPassed.first?.error.localizedDescription,
+            expectedErrorPassed.localizedDescription
+        )
+    }
+    
+    func test_didLoad_givenTokenStorageWillTokenAndWorkerWillPassFailure_whenMethodIsCalled_itShouldPassCorrectErrorToPresenter() {
+        // Given
+        let stubToken = UUID().uuidString
+        tokenFetchingStub.fetchTokenValueToStub = stubToken
+        
+        let expectedErrorPassed: NetworkLayerError = .noData
+        workingLogicStub.getStatementDetailsValueToStub = .failure(expectedErrorPassed)
+        
+        let expectedFetchTokenCalls = 1
+        let expectedGetStatementDetailsParametersPassed: [StatementDetailsModels.StatementDetailsParameters] = [
+            .init(
+                id: stubItemId,
+                token: stubToken
+            )
+        ]
+        let expectedPresentDetailsFailureCalls = 1
+        
+        // When
+        sut.didLoad()
+        
+        // Then
+        XCTAssertEqual(tokenFetchingStub.fetchTokenCalls, expectedFetchTokenCalls)
+        XCTAssertEqual(workingLogicStub.getStatementDetailsParametersPassed, expectedGetStatementDetailsParametersPassed)
+        XCTAssertEqual(presentationLogicSpy.presentDetailsFailureParametersPassed.count, expectedPresentDetailsFailureCalls)
+        XCTAssertEqual(
+            presentationLogicSpy.presentDetailsFailureParametersPassed.first?.error.localizedDescription,
+            expectedErrorPassed.localizedDescription
+        )
+    }
+    
+    func test_didLoad_givenTokenStorageWillTokenAndWorkerWillPassSuccess_whenMethodIsCalled_itShouldPassCorrectResponseToPresenter() {
+        // Given
+        let stubToken = UUID().uuidString
+        tokenFetchingStub.fetchTokenValueToStub = stubToken
+        
+        let stubDecodable: StatementDetailsResponse = .fixture(id: UUID().uuidString)
+        workingLogicStub.getStatementDetailsValueToStub = .success(stubDecodable)
+        
+        let expectedFetchTokenCalls = 1
+        let expectedGetStatementDetailsParametersPassed: [StatementDetailsModels.StatementDetailsParameters] = [
+            .init(
+                id: stubItemId,
+                token: stubToken
+            )
+        ]
+        let expectedPresentDetailsParametersPassed: [StatementDetailsModels.DidLoad.Response.Success] = [
+            .init(decodable: stubDecodable)
+        ]
+        
+        // When
+        sut.didLoad()
+        
+        // Then
+        XCTAssertEqual(tokenFetchingStub.fetchTokenCalls, expectedFetchTokenCalls)
+        XCTAssertEqual(workingLogicStub.getStatementDetailsParametersPassed, expectedGetStatementDetailsParametersPassed)
+        XCTAssertEqual(presentationLogicSpy.presentDetailsParametersPassed, expectedPresentDetailsParametersPassed)
+    }
+    
+}
 
 extension StatementDetailsInteractorTests {
     

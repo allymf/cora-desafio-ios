@@ -8,7 +8,7 @@ enum StatementDetailsModels {
     
     enum DidLoad {
         enum Response {
-            struct Success {
+            struct Success: Equatable {
                 let decodable: StatementDetailsResponse
             }
             
