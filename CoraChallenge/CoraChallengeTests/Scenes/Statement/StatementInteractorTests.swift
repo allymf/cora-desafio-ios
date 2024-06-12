@@ -79,6 +79,14 @@ final class StatementInteractorTests: XCTestCase {
 extension StatementInteractorTests {
     
     final class PresentationLogicSpy: StatementPresentationLogic {
+        func presentSelectedItem() {
+            
+        }
+        
+        func presentSelectedItemFailure(response: CoraChallenge.StatementModels.SelectItem.Response.Failure) {
+            
+        }
+        
         
         private(set) var presentLoadStatementParametersPassed = [StatementModels.LoadStatement.Response.Success]()
         func presentLoadStatement(response: StatementModels.LoadStatement.Response.Success) {

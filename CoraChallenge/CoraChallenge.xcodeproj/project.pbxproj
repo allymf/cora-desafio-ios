@@ -16,6 +16,7 @@
 		3F027F192C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F182C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift */; };
 		3F027F1B2C1002720054F570 /* LoginCPFModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F027F1A2C1002720054F570 /* LoginCPFModels.swift */; };
 		3F04F79A2C19F72800B0ABBA /* UIView+asImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F04F7992C19F72800B0ABBA /* UIView+asImage.swift */; };
+		3F04F79E2C1A02A800B0ABBA /* StringMasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F04F79D2C1A02A800B0ABBA /* StringMasksTests.swift */; };
 		3F1C1CA92C0E354B00F38F0D /* CoraButton+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */; };
 		3F1C1CAB2C0E38B800F38F0D /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */; };
 		3F1FB1132C1891E4003F2D94 /* StatementInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */; };
@@ -149,6 +150,7 @@
 		3F027F182C0FFEDA0054F570 /* LoginPasswordSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordSceneFactory.swift; sourceTree = "<group>"; };
 		3F027F1A2C1002720054F570 /* LoginCPFModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCPFModels.swift; sourceTree = "<group>"; };
 		3F04F7992C19F72800B0ABBA /* UIView+asImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+asImage.swift"; sourceTree = "<group>"; };
+		3F04F79D2C1A02A800B0ABBA /* StringMasksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMasksTests.swift; sourceTree = "<group>"; };
 		3F1C1CA82C0E354B00F38F0D /* CoraButton+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoraButton+Styles.swift"; sourceTree = "<group>"; };
 		3F1C1CAA2C0E38B800F38F0D /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		3F1FB1122C1891E4003F2D94 /* StatementInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementInteractorTests.swift; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				3F5264AA2C178761007B68DC /* StringUnmaskedCPFTests.swift */,
 				3F1FB1162C189CD6003F2D94 /* IntCurrencyTests.swift */,
 				3F1FB1212C18FA38003F2D94 /* StringCapitalizedFirstCharacter.swift */,
+				3F04F79D2C1A02A800B0ABBA /* StringMasksTests.swift */,
 			);
 			path = Commom;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 				3FA1E0652C13F1C200E28AE6 /* CPFValidatorTests.swift in Sources */,
 				3FF97A0B2C0EA9410044D1D5 /* WelcomePresenterTests.swift in Sources */,
 				3FF97A092C0EA75E0044D1D5 /* WelcomeInteractorTests.swift in Sources */,
+				3F04F79E2C1A02A800B0ABBA /* StringMasksTests.swift in Sources */,
 				3F618FA12C15401D0032B117 /* LoginCPFInteractorTests.swift in Sources */,
 				3F1FB11E2C18A3C7003F2D94 /* StatementViewModel+Fixtures.swift in Sources */,
 				3FCD68002C1681D500B23E96 /* TokenStorageTests.swift in Sources */,

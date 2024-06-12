@@ -68,6 +68,14 @@ final class StatementPresenterTests: XCTestCase {
 extension StatementPresenterTests {
     
     final class DisplayLogicSpy: StatementDisplayLogic {
+        func displaySelectedItem() {
+            
+        }
+        
+        func displaySelectedItemFailure(viewModel: CoraChallenge.StatementModels.SelectItem.ViewModel.Failure) {
+            
+        }
+        
         
         private(set) var displayLoadStatementParametersPassed = [StatementModels.LoadStatement.ViewModel.Success]()
         func displayLoadStatement(viewModel: StatementModels.LoadStatement.ViewModel.Success) {
