@@ -45,7 +45,7 @@ final class StatementDetailsView: CodedView, StatementDetailsViewProtocol {
             static let fontSize: CGFloat = 16
             static let height: CGFloat = 64
             static let imagePadding: CGFloat = 10
-            static let imagePaddingMultiplier: CGFloat = 0.3
+            static let imagePaddingMultiplier: CGFloat = 0.45
         }
         
     }

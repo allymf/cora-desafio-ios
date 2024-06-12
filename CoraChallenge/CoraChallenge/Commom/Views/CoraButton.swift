@@ -10,9 +10,9 @@ final class CoraButton: UIButton {
     }
     
     enum Metrics {
-        static var cornerRadius: CGFloat = 16
-        static var defaultFontSize: CGFloat = 14
-        static var largeFontSize: CGFloat = 16
+        static let cornerRadius: CGFloat = 16
+        static let defaultFontSize: CGFloat = 14
+        static let largeFontSize: CGFloat = 16
     }
     
     private let style: Style

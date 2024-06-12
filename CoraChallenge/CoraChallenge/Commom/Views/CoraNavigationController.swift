@@ -3,7 +3,7 @@ import UIKit
 final class CoraNavigationController: UINavigationController {
     
     private enum Metrics {
-        static var titleFontSize: CGFloat = 14
+        static let titleFontSize: CGFloat = 14
     }
     
     override func viewDidLoad() {

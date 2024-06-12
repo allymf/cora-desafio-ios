@@ -3,8 +3,8 @@ import UIKit
 final class StatementHeaderView: CodedView {
     
     enum Metrics {
-        static var fontSize: CGFloat = 12
-        static var margin: CGFloat = 16
+        static let fontSize: CGFloat = 12
+        static let margin: CGFloat = 16
     }
     
     private let titleLabel = {

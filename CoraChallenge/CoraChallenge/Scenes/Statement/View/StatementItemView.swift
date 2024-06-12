@@ -5,33 +5,30 @@ final class StatementItemView: CodedView {
     // MARK: - Metrics
     enum Metrics {
         
-        static var margin: CGFloat = 24
-        static var topMargin: CGFloat = 2
-        static var smallLabelHeight: CGFloat = 18
+        static let margin: CGFloat = 24
+        static let topMargin: CGFloat = 2
+        static let smallLabelHeight: CGFloat = 18
         
         enum IconImageView {
-            static var dimension: CGFloat = 24
-        }
-        
-        enum LabelsStackView {
+            static let dimension: CGFloat = 24
         }
         
         enum ValueLabel {
-            static var fontSize: CGFloat = 16
-            static var height: CGFloat = 20
+            static let fontSize: CGFloat = 16
+            static let height: CGFloat = 20
         }
         
         enum DescriptionLabel {
-            static var fontSize: CGFloat = 14
+            static let fontSize: CGFloat = 14
         }
         
         enum ProponentLabel {
-            static var fontSize: CGFloat = 14
+            static let fontSize: CGFloat = 14
         }
         
         enum TimeLabel {
-            static var fontSize: CGFloat = 12
-            static var width: CGFloat = 60
+            static let fontSize: CGFloat = 12
+            static let width: CGFloat = 60
         }
         
     }
