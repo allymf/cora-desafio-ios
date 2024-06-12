@@ -18,7 +18,7 @@ enum StatementDetailsModels {
         }
         
         enum ViewModel {
-            struct Success {
+            struct Success: Equatable{
                 let sceneViewModel: StatementDetailViewModel
             }
             
