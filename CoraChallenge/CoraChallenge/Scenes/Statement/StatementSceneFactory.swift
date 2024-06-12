@@ -3,11 +3,7 @@ import Foundation
 struct StatementSceneFactory {
     static func makeScene() -> StatementViewController {
         let presenter = StatementPresenter()
-        let worker = StatementWorker()
-        let interactor = StatementInteractor(
-            presenter: presenter,
-            worker: worker
-        )
+        let interactor = StatementInteractor(presenter: presenter)
         let router = StatementRouter()
         
         let viewController = StatementViewController(

@@ -3,10 +3,8 @@ import Foundation
 struct LoginPasswordSceneFactory {
     static func makeScene(cpfText: String) -> LoginPasswordViewController {
         let presenter = LoginPasswordPresenter()
-        let worker = LoginPasswordWorker()
         let interactor = LoginPasswordInteractor(
             presenter: presenter,
-            worker: worker, 
             cpfText: cpfText
         )
         let router = LoginPasswordRouter()
